@@ -138,7 +138,6 @@ section {
     transition: opacity 0.125s ease-in-out;
    
 }
-
 .section-active{
     opacity: 1;
 }
