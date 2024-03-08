@@ -114,7 +114,7 @@
 
         <div class="additional-infos">
           <div>
-            <h4>Interesets</h4>
+            <h3>Interests</h3>
             <ul>
               <li>Mixed Reality</li>
               <li>Avatar-based Communication</li>
@@ -123,7 +123,7 @@
             </ul>
           </div>
           <div>
-            <h4>Education</h4>
+            <h3>Education</h3>
             <ul class="fa-ul eduction-list">
               <li>
                 <span class="fa-li"><i class="fa-solid fa-graduation-cap"></i></span>
@@ -483,7 +483,7 @@
         article.links.map(item => {
           let newLink = document.createElement("a");
           newLink.href = item.link;
-          newLink.textContent = item.name;
+          newLink.innerHTML = ""+item.name+" <i class='fa-solid fa-arrow-up-right-from-square'></i>";
           newLink.target ="_blank";
           linkContainer.appendChild(newLink);
         })
