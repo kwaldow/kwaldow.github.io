@@ -72,7 +72,7 @@
             "category": "publications",
             "year": 2022,
             "tags":["full"],
-            "image": "",
+            "image": "imgs/TowardsAvasag.png",
             "title": "Towards Automated Sign Language Production: A Pipeline for Creating Inclusive Virtual Humans",
             "authors": [
                 "Lucas Bernhard", "Fabrizio Nunnari", "Amelie Unger", "Judith Bauerdiek", "Christian Dold", "Marcel Hauck", "Alexander Stricker", "Tobias Baur", "Alexander Heimerl", "Elisabeth André", "Melissa Reinecker", "Cristina España-Bonet", "Yasser Hamidullah", "Stephan Busemann", "Patrick Gebhard", "Corinna Jäger", "Sonja Wecker", "Yvonne Kossel", "Henrik Müller", "Kristoffer Waldow", "Arnulph Fuhrmann", "Martin Misiak", "Dieter Wallach"
@@ -92,7 +92,7 @@
             "category": "publications",
             "year": 2021,
             "tags":["full"],
-            "image": "",
+            "image": "imgs/Avasag.png",
             "title": "AVASAG: A German Sign Language Translation System for Public Services",
             "authors": [
                 "Fabrizio Nunnari ",

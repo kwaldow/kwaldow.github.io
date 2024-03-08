@@ -160,12 +160,12 @@
     <div class="divider"></div>
     <div class="row">
       <div class="tabs" id="tabs">
-        <div class="nav-item nav-active">Publications</div>
+        <div class="nav-item nav-active" id="tab-publication">Publications</div>
         <div class="nav-item">Research Projects</div>
         <div class="nav-item">Teaching</div>
       </div>
 
-      <section id="publications" >
+      <section id="publications" class="section-active" >
         <div class="year-selection">
           <a href="#2024_FaceEnhance">2024</a>
           <a href="#2022_AVASAG">2022</a>
@@ -212,12 +212,9 @@
 
                 </div>
                 <div class="article-abstract">
-
                   <div class="collapse" id="abstract-data-toggle">
                     Hello World
                   </div>
-
-
                 </div>
               </div>
             </div>
@@ -495,6 +492,7 @@
         img.src = article.image;
       }
 
+      const tabs = document.getElementById("tab-publication").innerText = `Publications (${data.articles.length})`;
 
       const children = document.getElementById("tabs").children;
       const sections = document.getElementsByTagName("section");
@@ -509,10 +507,23 @@
         }
         children[id].classList.add("nav-active");
 
+
         for (let i = 0; i < sections.length; i++) {
-          sections[i].classList.add("hidden");
+          sections[i].classList.remove("section-active");
         }
-        sections[id].classList.remove("hidden");
+        setTimeout(()=>{
+          const local_id = id;
+          for (let i = 0; i < sections.length; i++) {
+            sections[i].classList.add("hidden");
+          }
+            sections[local_id].classList.remove("hidden");
+            setTimeout(()=>{
+              sections[local_id].classList.add("section-active");
+            },125)
+         
+  
+        },125);
+        
       }
     }
 
