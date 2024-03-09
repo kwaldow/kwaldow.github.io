@@ -57,7 +57,7 @@ body {
     background-color: whitesmoke;
     border-radius: 1rem;
     padding: 2rem;
-    width: 60%;
+    width: fit-content;
 }
 .news-content > h4{
     text-align: left;
@@ -90,7 +90,7 @@ body {
     z-index: 999999; */
     display: flex;
     justify-content: space-evenly;
-    padding: 30px;
+    padding: 4rem;
     
 }
 
@@ -100,6 +100,7 @@ body {
     font-weight: bolder;
     scroll-behavior: smooth;
     margin-left: 2rem;
+    margin-right: 2rem;
     text-align: center;
 
 }
@@ -138,6 +139,7 @@ footer {
 }
 
 section {
+    border-radius: 1rem;
     border: solid white;
     background-color: whitesmoke;
     padding: 2rem;
@@ -344,7 +346,7 @@ article {
 .year-selection{
     display: flex;
     justify-content: center;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     font-size: larger;
     flex-wrap: wrap;
 }
@@ -426,4 +428,18 @@ article {
     .additional-infos{
         font-size: smaller;
     }
+    .toTop-btn{
+        font-size: x-large;
+    
+    }
+    .tabs {
+        justify-content: space-around;
+        padding: 3rem;
+        
+    }
+    .nav-item{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+   
 }
