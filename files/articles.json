@@ -16,7 +16,7 @@
             "abstract": "Facial recognition is crucial in sign language communication. Especially for virtual reality and avatar-based communication, increased facial features have the potential to integrate the deaf and hard-of-hearing community to improve speech comprehension and empathy. But, current methods lack precision in capturing nuanced expressions. To address this, we present a real-time solution that utilizes personalized Convolutional Neural Networks (CNNs) to capture intricate facial details, such as tongue movement and individual puffed cheeks. Our system's classification models offer easy expansion and integration into existing facial recognition systems via UDP network broadcasting.",
             "links": [
                 {
-                    "name": "Preprint - ResearchGate",
+                    "name": "Preprint",
                     "link": "http://dx.doi.org/10.13140/RG.2.2.28631.85922"
                 }
             ]
@@ -40,7 +40,7 @@
             "abstract": "Depth perception is essential for our daily experiences, aiding in orientation and interaction with our surroundings. Virtual Reality allows us to decouple such depth cues mainly represented through binocular disparity and motion parallax. Dealing with fully-mesh-based rendering methods these cues are not problematic as they originate from the object's underlying geometry. However, manipulating motion parallax, as seen in stereoscopic imposter-based rendering, raises multiple perceptual questions. Therefore, we conducted a user experiment to investigate how varying object sizes affect such visual errors and perceived 3-dimensionality, revealing an interestingly significant negative correlation and new assumptions about visual quality.",
             "links": [
                 {
-                    "name": "Preprint - ResearchGate",
+                    "name": "Preprint",
                     "link": "http://dx.doi.org/10.13140/RG.2.2.21920.97286"
                 }
             ]

@@ -25,10 +25,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
+
 
   <script src="https://kit.fontawesome.com/5e613ea1c3.js" crossorigin="anonymous"></script>
 </head>
@@ -52,11 +49,14 @@
                   class="fa-brands fa-google-scholar"></i> Google Scholar</a></div>
             <div><a href="https://www.researchgate.net/profile/Kristoffer-Waldow/publications" target="_blank"> <i
                   class="fa-brands fa-researchgate"></i> ResearchGate</a></div>
-            <div><a href="https://orcid.org/0000-0002-5176-7530" target="_blank"><i class="fa-brands fa-orcid"></i> ORCID</a></div>
-            <div><a href="https://www.linkedin.com/in/kristoffer-waldow/" target="_blank"><i class="fa-brands fa-linkedin"></i>
+            <div><a href="https://orcid.org/0000-0002-5176-7530" target="_blank"><i class="fa-brands fa-orcid"></i>
+                ORCID</a></div>
+            <div><a href="https://www.linkedin.com/in/kristoffer-waldow/" target="_blank"><i
+                  class="fa-brands fa-linkedin"></i>
                 LinkedIn</a></div>
             <!-- <div><a href="#"><i class="fa-brands fa-github"></i> Github</a></div> -->
-            <div><a href="https://cg.web.th-koeln.de" target="_blank"><i class="fa-solid fa-globe"></i> Computer Graphics Group</a>
+            <div><a href="https://cg.web.th-koeln.de" target="_blank"><i class="fa-solid fa-globe"></i> Computer
+                Graphics Group</a>
             </div>
 
           </div>
@@ -149,13 +149,14 @@
     <div class="news-container">
       <div class="news-content">
         <h4>NEWS</h4>
-        <div>
-          <li>[03/2024] <span>New Website 🎉 But I am not sure who will see this!</span></li>
+        <div id="news">
           <!-- <li>[03/2024] <span>New Website 🎉 But I am not sure who will see this!</span></li> -->
 
         </div>
       </div>
     </div>
+
+
 
     <div class="divider"></div>
     <div class="row">
@@ -165,8 +166,24 @@
         <div class="nav-item">Teaching</div>
       </div>
 
-      <section id="publications" class="section-active" >
-        <div class="year-selection">
+      <section id="publications" class="section-active">
+        <div style="text-align: center; margin-top: 3rem;">
+          <span style="font-size: smaller;">Published on:</span>
+          <div class="published-list">
+            <span class="highlight">IEEE VR</span>
+            <span class="highlight">IEEE AIxVR</span>
+            <span class="highlight">ACM VRST</span>
+            <span class="highlight">Springer EuroXR</span>
+            <span>ACM MuC</span>
+            <span>ACM PETRA</span>
+            <span>AT4SSL</span>
+          </div>
+          
+        </div>
+        <div style="text-align: center; margin-top: 1rem;">
+          <span style="font-size: smaller;">in</span>
+        </div>
+          <div class="year-selection">
           <a href="#2024_FaceEnhance">2024</a>
           <a href="#2022_AVASAG">2022</a>
           <a href="#2021_AVASAG">2021</a>
@@ -178,8 +195,6 @@
         </div>
 
         <article id="article-template" class="hidden">
-
-
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 text-center">
               <div class="article-year">2024</div>
@@ -192,7 +207,7 @@
                 <img src="" alt="">
               </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="col-lg-8 col-md-8 col-sm-12 center-vertically">
               <div class="article-content">
 
                 <div class="article-title">Title
@@ -205,7 +220,7 @@
                 </div>
                 <div class="article-links">
                   <a id="abstract-link" data-toggle="collapse" href="#abstract-data-toggle" role="button"
-                    aria-expanded="false" aria-controls="abstract-data-toggle">Abstract</a>
+                    aria-expanded="false" aria-controls="abstract-data-toggle" class="abstract-btn">Abstract</a>
                   <div id="additional-links">
                     <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10445598">IEEE</a> -->
                   </div>
@@ -218,6 +233,7 @@
                 </div>
               </div>
             </div>
+          </div>
         </article>
 
       </section>
@@ -231,30 +247,31 @@
               <div class="tags">
               </div>
               <div class="article-teaser-img">
-                <img
-                  src=""
-                  alt="">
+                <img src="" alt="">
               </div>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
               <div class="article-content">
-  
-                <div class="article-title">KLEAN - Analysis of AI-based cleaning of motion capture data for the use of sign language avatars
+
+                <div class="article-title">KLEAN - Analysis of AI-based cleaning of motion capture data for the use of
+                  sign language avatars
                 </div>
                 <div class="article-authors">
                   <span>Charamel GmbH</span>
                   <span>TH Köln</span>
                 </div>
-                
+
                 <div class="body">
-                  <b>In order to overcome the challenges necessary for creating sign language avatars, a prototype software is to be developed as part of an MID innovation voucher that can be used to automatically clean up motion capture data.</b>
+                  <b>In order to overcome the challenges necessary for creating sign language avatars, a prototype
+                    software is to be developed as part of an MID innovation voucher that can be used to automatically
+                    clean up motion capture data.</b>
                 </div>
                 <div class="article-links">
                   <div id="additional-links">
                     <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10445598">IEEE</a> -->
-                  
+
                   </div>
-  
+
                 </div>
               </div>
             </div>
@@ -274,7 +291,7 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
               <div class="article-content">
-  
+
                 <div class="article-title">Verbundprojekt AVASAG - gemeinsam für digitale, barrierefreie Kommunikation
                 </div>
                 <div class="article-authors">
@@ -285,41 +302,72 @@
                   <span>Universität Augsburg</span>
                   <span>TH Köln</span>
                 </div>
-                
+
                 <div class="body">
                   <b>
-                    Weltweit gibt es etwa 70 Millionen gehörlose Menschen. Für viele von ihnen ist Textsprache eine Fremdsprache; sie bedienen sich stattdessen der Gebärdensprache. In dem vom Bundesministerium für Bildung und Forschung (BMBF) unterstützten Projekt „AVASAG“ erarbeiten Experten gemeinsam einen 3D-Gebärdensprach-Avatar.
+                    Weltweit gibt es etwa 70 Millionen gehörlose Menschen. Für viele von ihnen ist Textsprache eine
+                    Fremdsprache; sie bedienen sich stattdessen der Gebärdensprache. In dem vom Bundesministerium für
+                    Bildung und Forschung (BMBF) unterstützten Projekt „AVASAG“ erarbeiten Experten gemeinsam einen
+                    3D-Gebärdensprach-Avatar.
                   </b>
                   <br><br>
                   Verbundprojekt AVASAG – gemeinsam für digitale, barrierefreie Kommunikation
                   Gebärdensprach-Avatar (Bild: Kristoffer Waldow / TH Köln)
-                  Weltweit gibt es etwa 70 Millionen gehörlose Menschen. Für viele von ihnen ist Textsprache eine Fremdsprache; sie bedienen sich stattdessen der Gebärdensprache. In dem vom Bundesministerium für Bildung und Forschung (BMBF) unterstützten Projekt „AVASAG“ erarbeiten Experten gemeinsam einen 3D-Gebärdensprach-Avatar.
+                  Weltweit gibt es etwa 70 Millionen gehörlose Menschen. Für viele von ihnen ist Textsprache eine
+                  Fremdsprache; sie bedienen sich stattdessen der Gebärdensprache. In dem vom Bundesministerium für
+                  Bildung und Forschung (BMBF) unterstützten Projekt „AVASAG“ erarbeiten Experten gemeinsam einen
+                  3D-Gebärdensprach-Avatar.
                   <br><br>
-                  Digitale Kommunikation unterliegt einem schnelllebigen Wandel. Nimmt sie aber jeden mit? Weltweit leben ca. 70 Millionen Gehörlose. Für die meisten ist Textsprache eine Fremdsprache. Der Gesetzgeber hat auf den spezifischen Informationsbedarf von Menschen mit Handicap reagiert und verpflichtet in Deutschland Behörden und öffentliche Stellen zu barrierefreier digitaler Kommunikation. Digitale Barrierefreiheit wird immer wichtiger, um Inhalte dynamisch und für alle Zielgruppen richtig aufbereitet zu kommunizieren. Automatisierte Instrumente helfen bei einer barrierefreien Kommunikation.
+                  Digitale Kommunikation unterliegt einem schnelllebigen Wandel. Nimmt sie aber jeden mit? Weltweit
+                  leben ca. 70 Millionen Gehörlose. Für die meisten ist Textsprache eine Fremdsprache. Der Gesetzgeber
+                  hat auf den spezifischen Informationsbedarf von Menschen mit Handicap reagiert und verpflichtet in
+                  Deutschland Behörden und öffentliche Stellen zu barrierefreier digitaler Kommunikation. Digitale
+                  Barrierefreiheit wird immer wichtiger, um Inhalte dynamisch und für alle Zielgruppen richtig
+                  aufbereitet zu kommunizieren. Automatisierte Instrumente helfen bei einer barrierefreien
+                  Kommunikation.
                   <br><br>
-                  Im Projekt wird eine neuartige Gebärdenanimations-Methode für 3D-Avatare geschaffen. Sie kombiniert Methoden des maschinellen Lernens mit regel-basierten Synthesemethoden, die Text in Gebärden abbilden. Dabei werden zeitliche und räumliche Abhängigkeiten der Gebärdenelemente sehr genau aufgelöst.
+                  Im Projekt wird eine neuartige Gebärdenanimations-Methode für 3D-Avatare geschaffen. Sie kombiniert
+                  Methoden des maschinellen Lernens mit regel-basierten Synthesemethoden, die Text in Gebärden abbilden.
+                  Dabei werden zeitliche und räumliche Abhängigkeiten der Gebärdenelemente sehr genau aufgelöst.
                   <br><br>
-                  Das Ziel des Verbundprojekts AVASAG (Avatar-basierter Sprachassistent zur automatisierten Gebärdenübersetzung) wird ein echtzeitgesteuerter 3D-Gebärdensprach-Avatar zur automatischen Übersetzung deutscher Texte in Gebärdensprache sein. Hierdurch soll eine qualitativ realistische Darstellung eines 3D-Gebärdensprach-Avatars eine digitale und barrierefreie Kommunikation ermöglichen, um so einen Mehrwert für Gehörlose zu bieten, die besser an der Digitalen Gesellschaft teilhaben können. Unternehmen bietet AVASAG die Möglichkeit, Inhalte automatisiert und dynamisch generieren zu können und so die Interaktion und Kommunikation auf digitalen Kanälen zu optimieren. Als Demonstrator wird ein Gebärdensprach-Avatar zur automatisierten Übersetzung im Bereich Reiseinformation und -service mit Fokus auf Verkehr und Tourismus realisiert.
+                  Das Ziel des Verbundprojekts AVASAG (Avatar-basierter Sprachassistent zur automatisierten
+                  Gebärdenübersetzung) wird ein echtzeitgesteuerter 3D-Gebärdensprach-Avatar zur automatischen
+                  Übersetzung deutscher Texte in Gebärdensprache sein. Hierdurch soll eine qualitativ realistische
+                  Darstellung eines 3D-Gebärdensprach-Avatars eine digitale und barrierefreie Kommunikation ermöglichen,
+                  um so einen Mehrwert für Gehörlose zu bieten, die besser an der Digitalen Gesellschaft teilhaben
+                  können. Unternehmen bietet AVASAG die Möglichkeit, Inhalte automatisiert und dynamisch generieren zu
+                  können und so die Interaktion und Kommunikation auf digitalen Kanälen zu optimieren. Als Demonstrator
+                  wird ein Gebärdensprach-Avatar zur automatisierten Übersetzung im Bereich Reiseinformation und
+                  -service mit Fokus auf Verkehr und Tourismus realisiert.
                   <br><br>
-                  Unter Leitung von Charamel arbeiten folgende Forscher und Entwickler aus Deutschland die nächsten drei Jahre zusammen: yomma GmbH – Experten für Gebärdensprache in Hamburg; Ergosign GmbH, Pionier für User Experience Design in Saarbrücken; DFKI GmbH – Kognitive Assistenzsysteme und Language Technology (DFKI), in Saarbrücken, Technische Hochschule Köln / Institut für Medien- und Phototechnik, Köln sowie die Universität Augsburg / Human Centered Multimedia (HCM) in Augsburg.
+                  Unter Leitung von Charamel arbeiten folgende Forscher und Entwickler aus Deutschland die nächsten drei
+                  Jahre zusammen: yomma GmbH – Experten für Gebärdensprache in Hamburg; Ergosign GmbH, Pionier für User
+                  Experience Design in Saarbrücken; DFKI GmbH – Kognitive Assistenzsysteme und Language Technology
+                  (DFKI), in Saarbrücken, Technische Hochschule Köln / Institut für Medien- und Phototechnik, Köln sowie
+                  die Universität Augsburg / Human Centered Multimedia (HCM) in Augsburg.
                   <br><br>
-                  Die Technische Hochschule Köln bearbeitet das Teilvorhaben "Automatisierte Erfassung von Gebärden mittels simultaner Aufnahme von Körper-, Finger-, und Gesichtsbewegungen" und wird dabei folgende Aspekte und technische Herausforderungen im Rahmen des Projektes näher untersuchen:
+                  Die Technische Hochschule Köln bearbeitet das Teilvorhaben "Automatisierte Erfassung von Gebärden
+                  mittels simultaner Aufnahme von Körper-, Finger-, und Gesichtsbewegungen" und wird dabei folgende
+                  Aspekte und technische Herausforderungen im Rahmen des Projektes näher untersuchen:
                   <ul>
                     <li>Neuartige Aufnahmetechniken mittels Sensorfusion</li>
                     <li>Umsetzung geeigneter Verfahren zur Abbildung von detaillierten Gesichtsausdrücken</li>
-                    <li>Umsetzung und Evaluierung von Verfahren zur synchronen Aufnahme von Körper- und Fingerbewegungen</li>
-                    <li>Erstellen eines umfangreichen Motion-Capture Datensatzes zur Animation eines 3D-Gebärdensprach-Avatars</li>
+                    <li>Umsetzung und Evaluierung von Verfahren zur synchronen Aufnahme von Körper- und Fingerbewegungen
+                    </li>
+                    <li>Erstellen eines umfangreichen Motion-Capture Datensatzes zur Animation eines
+                      3D-Gebärdensprach-Avatars</li>
                   </ul>
-  
-  
+
+
                 </div>
                 <div class="article-links">
                   <div id="additional-links">
                     <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10445598">IEEE</a> -->
-                    <a
-                      href="https://www.th-koeln.de/informations-medien-und-elektrotechnik/verbundprojekt-avasag_76412.php">Zur Projektseite</a>
+                    <a target="_blank"
+                      href="https://www.th-koeln.de/informations-medien-und-elektrotechnik/verbundprojekt-avasag_76412.php">Zur
+                      Projektseite <i class='fa-solid fa-arrow-up-right-from-square'></i></a>
                   </div>
-  
+
                 </div>
               </div>
             </div>
@@ -327,132 +375,150 @@
         </article>
 
         <article id="retail">
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12 text-center">
-            <div class="article-year">2017 - 2020</div>
-            <div class="tags">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+              <div class="article-year">2017 - 2020</div>
+              <div class="tags">
+              </div>
+              <div class="article-teaser-img">
+                <img
+                  src="https://www.th-koeln.de/mam/bilder/hochschule/fakultaeten/f07/imp/forschung/resize__358_201_on_031b9ecfa578cd6afcb5705160bdb421_feedback.jpg"
+                  alt="">
+              </div>
             </div>
-            <div class="article-teaser-img">
-              <img
-                src="https://www.th-koeln.de/mam/bilder/hochschule/fakultaeten/f07/imp/forschung/resize__358_201_on_031b9ecfa578cd6afcb5705160bdb421_feedback.jpg"
-                alt="">
-            </div>
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-12">
-            <div class="article-content">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+              <div class="article-content">
 
-              <div class="article-title">Forschungsprojekt Retail 4.0 - AR und VR Lösungen für die Modebranche
-              </div>
-              <div class="article-authors">
-                <span>Assyst GmbH</span>
-                <span>Brax Leineweber GmbH &Co. KG</span>
-                <span>Human Solutions GmbH</span>
-                <span>Deutsche Institute für Textil und Faserforschung</span>
-                <span>TH Köln</span>
-              </div>
-              
-              <div class="body">
-                <b>
-                  Das Retail 4.0 Projekt entwickelt AR/VR Lösungen für die Modebranche zur Einbindung von Einzelhändlern
-                  und Endkunden in den Feedbackprozess während der Kollektionsentwicklung. Zu den besonderen technischen
-                  Herausforderungen gehören das realistische Rendering und die akkurate Farbwiedergabe der
-                  Kleidungsstücke auf mobilen VR/AR-Displays.
-                </b>
-                <br><br>
-                Digitale Technologien erobern die Modebranche und eröffnen neue Möglichkeiten der Einflussnahme auf die
-                Kollektionsentwicklung durch Einzelhandel und Endkunden.
-                <br><br>
-                Ziel des Forschungsprojekts Retail 4.0 ist die Entwicklung einer modularen skalierbaren Softwarelösung,
-                die eine zeitnahe Weitergabe von Feedback des Einzelhandels zur Kollektionsentwicklung an den Hersteller
-                ermöglicht und den Kunden über ein neues, digitales VR/AR Shoppingerlebnis direkt mit einbindet.
-                <br><br>
-                Um dieses Ziel zu erreichen, wird auf der Basis einer heute eingesetzten Lösung für 3D-Simulation und
-                Visualisierung eine VR/AR-Anwendung mit Cloud-Anbindung entwickelt, die auch mobile Endgeräte
-                unterstützt. Hierzu werden innovative Prozesse zur Kommunikation zwischen dem Einzelhändler und dem
-                Hersteller konzipiert und implementiert. Für den Fall der Verfügbarkeit der Kollektion im Geschäft
-                werden Methoden für ein effizientes Feedback des Endkunden an den Hersteller eingebunden. Virtuelle
-                Produkte sollen vom Endkunden auch zur Kommunikation in sozialen Netzwerken genutzt werden können. Die
-                Lösung wird dem Einzelhändler als Dienstleistung angeboten, der es dann wiederum den Endkunden zur
-                Verfügung stellt.
-                <br><br>
-                Die prototypische Umsetzung der Lösung erfolgt im Entwicklungszentrum des projektbegleitenden
-                Herstellers unter Einbindung ausgewählter Einzelhändler.
-                <br><br>
-                Die Lösungen von Retail 4.0 ermöglichen Bekleidungseinzelhändlern, nennenswerten Einfluss auf ihr
-                zukünftiges Sortiment bereits in einer frühen Phase der Entwicklung zu nehmen sowie den Kunden ein
-                einzigartiges Shoppingerlebnis zu vermitteln. Insbesondere die Mechanismen für
-                User-Community-Interaktion führen zur Nutzbarmachung neuer Kreativpotenziale, einer erhöhten
-                Kundenbindung und somit signifikanten Wettbewerbsvorteilen.
-                <br><br>
-
-                Folgende Aspekte und technischen Herausforderungen werden im Rahmen des Projekts beleuchtet und näher
-                untersucht:
-                <ul>
-                  <li> lebensechte virtuelle Prototypen der Bekleidungsstücke</li>
-                  <li>neue Verfahren für ein Echtzeitrendering von Kleidungsstücken in 3D auf mobilen Geräten</li>
-                  <li>neue Verfahren für die akkurate Farbwiedergabe auf mobilen Geräten</li>
-                  <li>Identifizierung der richtigen Passform für den Kunden</li>
-                  <li>Diskussion von Farben, Kollektionsthemen, Materialauswahl, Schnitten und Kollektionselementen mit
-                    Hilfe von Annotationen</li>
-                  <li>Interaktion und Kollaboration der Nutzer untereinander</li>
-                  <li>Ermittlung von Kundenverhalten und Präferenzen</li>
-                </ul>
-
-
-              </div>
-              <div class="article-links">
-                <div id="additional-links">
-                  <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10445598">IEEE</a> -->
-                  <a
-                    href="https://www.th-koeln.de/informations-medien-und-elektrotechnik/forschungsprojekt-retail-40_50232.php">Zur Projektseite</a>
+                <div class="article-title">Forschungsprojekt Retail 4.0 - AR und VR Lösungen für die Modebranche
+                </div>
+                <div class="article-authors">
+                  <span>Assyst GmbH</span>
+                  <span>Brax Leineweber GmbH &Co. KG</span>
+                  <span>Human Solutions GmbH</span>
+                  <span>Deutsche Institute für Textil und Faserforschung</span>
+                  <span>TH Köln</span>
                 </div>
 
+                <div class="body">
+                  <b>
+                    Das Retail 4.0 Projekt entwickelt AR/VR Lösungen für die Modebranche zur Einbindung von
+                    Einzelhändlern
+                    und Endkunden in den Feedbackprozess während der Kollektionsentwicklung. Zu den besonderen
+                    technischen
+                    Herausforderungen gehören das realistische Rendering und die akkurate Farbwiedergabe der
+                    Kleidungsstücke auf mobilen VR/AR-Displays.
+                  </b>
+                  <br><br>
+                  Digitale Technologien erobern die Modebranche und eröffnen neue Möglichkeiten der Einflussnahme auf
+                  die
+                  Kollektionsentwicklung durch Einzelhandel und Endkunden.
+                  <br><br>
+                  Ziel des Forschungsprojekts Retail 4.0 ist die Entwicklung einer modularen skalierbaren
+                  Softwarelösung,
+                  die eine zeitnahe Weitergabe von Feedback des Einzelhandels zur Kollektionsentwicklung an den
+                  Hersteller
+                  ermöglicht und den Kunden über ein neues, digitales VR/AR Shoppingerlebnis direkt mit einbindet.
+                  <br><br>
+                  Um dieses Ziel zu erreichen, wird auf der Basis einer heute eingesetzten Lösung für 3D-Simulation und
+                  Visualisierung eine VR/AR-Anwendung mit Cloud-Anbindung entwickelt, die auch mobile Endgeräte
+                  unterstützt. Hierzu werden innovative Prozesse zur Kommunikation zwischen dem Einzelhändler und dem
+                  Hersteller konzipiert und implementiert. Für den Fall der Verfügbarkeit der Kollektion im Geschäft
+                  werden Methoden für ein effizientes Feedback des Endkunden an den Hersteller eingebunden. Virtuelle
+                  Produkte sollen vom Endkunden auch zur Kommunikation in sozialen Netzwerken genutzt werden können. Die
+                  Lösung wird dem Einzelhändler als Dienstleistung angeboten, der es dann wiederum den Endkunden zur
+                  Verfügung stellt.
+                  <br><br>
+                  Die prototypische Umsetzung der Lösung erfolgt im Entwicklungszentrum des projektbegleitenden
+                  Herstellers unter Einbindung ausgewählter Einzelhändler.
+                  <br><br>
+                  Die Lösungen von Retail 4.0 ermöglichen Bekleidungseinzelhändlern, nennenswerten Einfluss auf ihr
+                  zukünftiges Sortiment bereits in einer frühen Phase der Entwicklung zu nehmen sowie den Kunden ein
+                  einzigartiges Shoppingerlebnis zu vermitteln. Insbesondere die Mechanismen für
+                  User-Community-Interaktion führen zur Nutzbarmachung neuer Kreativpotenziale, einer erhöhten
+                  Kundenbindung und somit signifikanten Wettbewerbsvorteilen.
+                  <br><br>
+
+                  Folgende Aspekte und technischen Herausforderungen werden im Rahmen des Projekts beleuchtet und näher
+                  untersucht:
+                  <ul>
+                    <li> lebensechte virtuelle Prototypen der Bekleidungsstücke</li>
+                    <li>neue Verfahren für ein Echtzeitrendering von Kleidungsstücken in 3D auf mobilen Geräten</li>
+                    <li>neue Verfahren für die akkurate Farbwiedergabe auf mobilen Geräten</li>
+                    <li>Identifizierung der richtigen Passform für den Kunden</li>
+                    <li>Diskussion von Farben, Kollektionsthemen, Materialauswahl, Schnitten und Kollektionselementen
+                      mit
+                      Hilfe von Annotationen</li>
+                    <li>Interaktion und Kollaboration der Nutzer untereinander</li>
+                    <li>Ermittlung von Kundenverhalten und Präferenzen</li>
+                  </ul>
+
+
+                </div>
+                <div class="article-links">
+                  <div id="additional-links">
+                    <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10445598">IEEE</a> -->
+                    <a href="https://www.th-koeln.de/informations-medien-und-elektrotechnik/forschungsprojekt-retail-40_50232.php"
+                      target="_blank">Zur Projektseite <i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
       </section>
+
       <section id="teaching" class="hidden">
         <article>
           <p>
             Asisstant teaching at the Institute for Media and Photo Technology (IMP), TH Köln <br><br>
-            
+
             <b>Own courses:</b>
-            <ul>
-              <li>WEB1 - Backend Technologies (Bachelor)</li>
-              <li>WEB2 - Frontend Technologies (Bachelor)</li>
-            </ul>
-            
-            <b>Modules:</b>
-            <ul>
-              <li>Computer Science (Bachelor/Masters)</li>
-              <li>Computer Graphics (Bachelor)</li>
-              <li>Parallel Computing on CPU and GPU (Masters)</li>
-            </ul>
-            <br>
-            <b>Additional Tasks:</b>
-            <ul>
-              <li>Supervision of the motion capture studio</li>
+          <ul>
+            <li>WEB1 - Backend Technologies (Bachelor)</li>
+            <li>WEB2 - Frontend Technologies (Bachelor)</li>
+          </ul>
+
+          <b>Modules:</b>
+          <ul>
+            <li>Computer Science (Bachelor/Masters)</li>
+            <li>Computer Graphics (Bachelor)</li>
+            <li>Parallel Computing on CPU and GPU (Masters)</li>
+          </ul>
+          <br>
+          <b>Additional Tasks:</b>
+          <ul>
+            <li>Supervision of the motion capture studio</li>
             <li>Supervision of Bachelor's and Master's theses</li>
-            </ul>
+          </ul>
           </p>
         </article>
       </section>
+
+      <button id="scroll-btn" class="abstract-btn toTop-btn" style="display: none;" onclick="window.location.href = '#tabs';" ><i class="fa-solid fa-arrow-up"></i></button>
     </div>
   </div>
   <footer> Copyright @ Kristoffer Waldow | This is my personal webpage.</footer>
 
 
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
   <script>
 
-    async function setup() {
+    async function getJsonData(url) {
+      const jsonArticles = await fetch(url);
+      const data = await jsonArticles.json();
+      return data;
+    }
+
+    async function buildPublications() {
 
       const article_template = document.getElementById("article-template");
-
-      const jsonArticles = await fetch("files/articles.json");
-      const data = await jsonArticles.json();
+      const data = await getJsonData("files/articles.json")
 
       for (let i = 0; i < data.articles.length; i++) {
         const article = data.articles[i];
@@ -467,7 +533,9 @@
 
         newArticle.querySelector('.article-year').textContent = article.year;
         newArticle.querySelector('.article-title').textContent = article.title;
-        newArticle.querySelector('.article-authors').innerHTML = article.authors.map(author => `<span>${(author.trim()== "Kristoffer Waldow")?"<b>Kristoffer Waldow</b>":author.trim()}</span>`).join('');
+   
+        
+        newArticle.querySelector('.article-authors').innerHTML = article.authors.map(author => `<span>${(author.trim() == "Kristoffer Waldow") ? "<b>Kristoffer Waldow</b>" : author.trim()}</span>`).join('');
         newArticle.querySelector('.article-publication').textContent = article.published;
 
         newArticle.querySelector('.tags').innerHTML = article.tags.map(tag => `<span class=${tag}></span>`).join('');
@@ -483,16 +551,19 @@
         article.links.map(item => {
           let newLink = document.createElement("a");
           newLink.href = item.link;
-          newLink.innerHTML = ""+item.name+" <i class='fa-solid fa-arrow-up-right-from-square'></i>";
-          newLink.target ="_blank";
+          newLink.innerHTML = "" + item.name + " <i class='fa-solid fa-arrow-up-right-from-square'></i>";
+          newLink.target = "_blank";
           linkContainer.appendChild(newLink);
         })
 
         let img = newArticle.querySelector("img");
         img.src = article.image;
       }
+      return data;
+    }
 
-      const tabs = document.getElementById("tab-publication").innerText = `Publications (${data.articles.length})`;
+    function buildTabs(articleCount) {
+      const tabs = document.getElementById("tab-publication").innerText = `Publications (${articleCount})`;
 
       const children = document.getElementById("tabs").children;
       const sections = document.getElementsByTagName("section");
@@ -502,7 +573,7 @@
       }
 
 
-      
+
       function changeTab(id) {
         for (let i = 0; i < children.length; i++) {
           children[i].classList.remove("nav-active");
@@ -513,22 +584,70 @@
         for (let i = 0; i < sections.length; i++) {
           sections[i].classList.remove("section-active");
         }
-        setTimeout(()=>{
+        setTimeout(() => {
           const local_id = id;
           for (let i = 0; i < sections.length; i++) {
             sections[i].classList.add("hidden");
           }
-            sections[local_id].classList.remove("hidden");
-            setTimeout(()=>{
-              sections[local_id].classList.add("section-active");
-            },125)
-         
-  
-        },125);
+          sections[local_id].classList.remove("hidden");
+          setTimeout(() => {
+            sections[local_id].classList.add("section-active");
+          }, 125)
+
+
+        }, 125);
+
+      }
+
+
+    }
+
+    async function buildNews(){
+      const data = await getJsonData("files/news.json");
+      const newsContainer = document.getElementById("news");
+      const newsHTMLData = data.news.map(newsItem =>` <li>[${newsItem.date}] <span>${newsItem.message}</span></li>`).join("");
+      newsContainer.innerHTML = newsHTMLData;
+    }
+
+    function scrollBtnBehaviour(){
+      let mybutton = document.getElementById("scroll-btn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        const tabs = document.getElementById("tab-publication").getBoundingClientRect();
         
+        
+      
+        // console.log(document.documentElement.scrollTop);
+        
+        if (tabs.y < -100){
+          mybutton.style.display = "block";
+        }else{
+          mybutton.style.display = "none";
+        }
+        
+        // const threshhold = 500;
+        // if (document.body.scrollTop > threshhold || document.documentElement.scrollTop > threshhold) {
+        //   mybutton.style.display = "block";
+        // } else {
+        //   mybutton.style.display = "none";
+        // }
       }
     }
 
+    async function setup() {
+
+      const articleData = await buildPublications();
+
+      buildTabs(articleData.articles.length);
+
+      await buildNews();
+
+
+      scrollBtnBehaviour();
+    }
 
   </script>
 </body>
