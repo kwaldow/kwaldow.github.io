@@ -23,7 +23,7 @@
       "year": 2024,
       "tags": ["poster", "preprint"],
       "image": "imgs/DepthPerception.png",
-      "title": "Investigating Incoherent Depth Perception Features in Virtual Reality using Stereoscopic Impostor-Based Rendering",
+      "title": "🏆 Investigating Incoherent Depth Perception Features in Virtual Reality using Stereoscopic Impostor-Based Rendering",
       "authors": [
         "Kristoffer Waldow",
         "Lukas Decker",
@@ -39,7 +39,8 @@
           "name": "Preprint",
           "link": "http://dx.doi.org/10.13140/RG.2.2.21920.97286"
         }
-      ]
+      ],
+      "award": true
     },
     {
       "id": "2024_DeepNeuralLabeling",
