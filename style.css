@@ -340,7 +340,7 @@ article {
   font-size: larger;
 }
 
-.award {
+/* .award {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -351,8 +351,24 @@ article {
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 .award > * {
+  transform: rotate(-20deg);
   position: relative;
   left: 5%;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(227, 193, 0);
+} */
+
+.award {
+  position: absolute;
+  right: 10%;
+  top: -10%;
+  color: gold;
+  font-size: 400%;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.award > * {
+  transform: rotate(-10deg);
+
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(227, 193, 0);
 }
@@ -425,5 +441,11 @@ article {
   .nav-item {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .award {
+    position: absolute;
+    right: 24%;
+    top: -10%;
   }
 }
