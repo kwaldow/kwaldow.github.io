@@ -1,28 +1,28 @@
-<!--<TITLE>Forschungsprojekt Retail 4.0 - AR und VR Lösungen für die Modebranche<TITLE> -->
+<!--<TITLE>Retail 4.0 Research Project - AR and VR solutions for the Fashion Industry<TITLE> -->
 <!--<PARTNERS>Assyst GmbH,Brax Leineweber GmbH & Co. KG,Human Solutions GmbH,Deutsche Institute für Textil und Faserforschung,TH Köln<PARTNERS> -->
 <!--<IMAGE>https://www.th-koeln.de/mam/bilder/hochschule/fakultaeten/f07/imp/forschung/resize__358_201_on_031b9ecfa578cd6afcb5705160bdb421_feedback.jpg<IMAGE> -->
 <!--<TIME>2017 - 2020<TIME> -->
 
-**Das Retail 4.0 Projekt entwickelt AR/VR Lösungen für die Modebranche zur Einbindung von Einzelhändlern und Endkunden in den Feedbackprozess während der Kollektionsentwicklung. Zu den besonderen technischen Herausforderungen gehören das realistische Rendering und die akkurate Farbwiedergabe der Kleidungsstücke auf mobilen VR/AR-Displays.**
+**The Retail 4.0 project develops AR/VR solutions for the fashion industry to integrate retailers and end customers into the feedback process during the development of collections. The particular technical challenges include realistic rendering and accurate color reproduction of the garments on mobile VR/AR displays.**
 
-Digitale Technologien erobern die Modebranche und eröffnen neue Möglichkeiten der Einflussnahme auf die Kollektionsentwicklung durch Einzelhandel und Endkunden.
+Digital technologies are taking the fashion industry by storm and opening up new opportunities for retailers and end customers to influence collection development.
 
-Ziel des Forschungsprojekts Retail 4.0 ist die Entwicklung einer modularen skalierbaren Softwarelösung, die eine zeitnahe Weitergabe von Feedback des Einzelhandels zur Kollektionsentwicklung an den Hersteller ermöglicht und den Kunden über ein neues, digitales VR/AR Shoppingerlebnis direkt mit einbindet.
+The aim of the Retail 4.0 research project is to develop a modular, scalable software solution that enables retailers to promptly pass on feedback on collection development to the manufacturer and directly involve the customer via a new, digital VR/AR shopping experience.
 
-Um dieses Ziel zu erreichen, wird auf der Basis einer heute eingesetzten Lösung für 3D-Simulation und Visualisierung eine VR/AR-Anwendung mit Cloud-Anbindung entwickelt, die auch mobile Endgeräte unterstützt. Hierzu werden innovative Prozesse zur Kommunikation zwischen dem Einzelhändler und dem Hersteller konzipiert und implementiert. Für den Fall der Verfügbarkeit der Kollektion im Geschäft werden Methoden für ein effizientes Feedback des Endkunden an den Hersteller eingebunden. Virtuelle Produkte sollen vom Endkunden auch zur Kommunikation in sozialen Netzwerken genutzt werden können. Die Lösung wird dem Einzelhändler als Dienstleistung angeboten, der es dann wiederum den Endkunden zur Verfügung stellt.
+To achieve this goal, a VR/AR application with a cloud connection that also supports mobile devices is being developed on the basis of a 3D simulation and visualization solution currently in use. Innovative processes for communication between the retailer and the manufacturer are being designed and implemented for this purpose. Methods for efficient feedback from the end customer to the manufacturer are integrated in the event that the collection is available in the store. The end customer will also be able to use virtual products for communication in social networks. The solution is offered as a service to the retailer, who in turn makes it available to the end customer.
 
-Die prototypische Umsetzung der Lösung erfolgt im Entwicklungszentrum des projektbegleitenden Herstellers unter Einbindung ausgewählter Einzelhändler.
+The prototype implementation of the solution takes place in the development center of the project's accompanying manufacturer with the involvement of selected retailers.
 
-Die Lösungen von Retail 4.0 ermöglichen Bekleidungseinzelhändlern, nennenswerten Einfluss auf ihr zukünftiges Sortiment bereits in einer frühen Phase der Entwicklung zu nehmen sowie den Kunden ein einzigartiges Shoppingerlebnis zu vermitteln. Insbesondere die Mechanismen für User-Community-Interaktion führen zur Nutzbarmachung neuer Kreativpotenziale, einer erhöhten Kundenbindung und somit signifikanten Wettbewerbsvorteilen.
+The Retail 4.0 solutions enable clothing retailers to have a significant influence on their future product range at an early stage of development and to provide customers with a unique shopping experience. In particular, the mechanisms for user-community interaction lead to the utilization of new creative potential, increased customer loyalty and thus significant competitive advantages.
 
-Folgende Aspekte und technischen Herausforderungen werden im Rahmen des Projekts beleuchtet und näher untersucht:
+The following aspects and technical challenges will be highlighted and examined in more detail as part of the project:
 
-- lebensechte virtuelle Prototypen der Bekleidungsstücke
-- neue Verfahren für ein Echtzeitrendering von Kleidungsstücken in 3D auf mobilen Geräten
-- neue Verfahren für die akkurate Farbwiedergabe auf mobilen Geräten
-- Identifizierung der richtigen Passform für den Kunden
-- Diskussion von Farben, Kollektionsthemen, Materialauswahl, Schnitten und Kollektionselementen mit Hilfe von Annotationen
-- Interaktion und Kollaboration der Nutzer untereinander
-  Ermittlung von Kundenverhalten und Präferenzen
+- Lifelike virtual prototypes of the garments
+- New processes for real-time rendering of garments in 3D on mobile devices
+- New methods for accurate color reproduction on mobile devices
+- Identification of the right fit for the customer
+- Discussion of colors, collection themes, material selection, cuts and collection elements with the help of annotations
+- Interaction and collaboration between users
+  Determination of customer behavior and preferences
 
-[Zur Projekseite](https://www.th-koeln.de/informations-medien-und-elektrotechnik/forschungsprojekt-retail-40_50232.php)
+[Project Site](https://www.th-koeln.de/informations-medien-und-elektrotechnik/forschungsprojekt-retail-40_50232.php)

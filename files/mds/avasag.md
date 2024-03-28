@@ -1,25 +1,28 @@
-<!--<TITLE>Verbundprojekt AVASAG - gemeinsam für digitale, barrierefreie Kommunikation<TITLE> -->
+<!--<TITLE>AVASAG Joint Project - Together for Digital, Accessible Communication<TITLE> -->
 <!--<PARTNERS>Charamel GmbH,yomma GmbH,Ergosign GmbH,DFKI GmbH,Universität Augsburg,TH Köln<PARTNERS> -->
 <!--<IMAGE>https://www.th-koeln.de/mam/bilder/hochschule/fakultaeten/f07/imp/forschung/fittosize_358_201_f9b73a17f386194a3626493944e2adf3_gebardensprach-avatar.jpg<IMAGE> -->
 <!--<TIME>2020 - 2023<TIME> -->
 
-**Weltweit gibt es etwa 70 Millionen gehörlose Menschen. Für viele von ihnen ist Textsprache eine Fremdsprache; sie bedienen sich stattdessen der Gebärdensprache. In dem vom Bundesministerium für Bildung und Forschung (BMBF) unterstützten Projekt „AVASAG“ erarbeiten Experten gemeinsam einen 3D-Gebärdensprach-Avatar.**
+**There are around 70 million deaf people worldwide. For many of them, text language is a foreign language; they use sign language instead. In the "AVASAG" project supported by the Federal Ministry of Education and Research (BMBF), experts are working together to develop a 3D sign language avatar.**
 
-Verbundprojekt AVASAG – gemeinsam für digitale, barrierefreie Kommunikation Gebärdensprach-Avatar (Bild: Kristoffer Waldow / TH Köln) Weltweit gibt es etwa 70 Millionen gehörlose Menschen. Für viele von ihnen ist Textsprache eine Fremdsprache; sie bedienen sich stattdessen der Gebärdensprache. In dem vom Bundesministerium für Bildung und Forschung (BMBF) unterstützten Projekt „AVASAG“ erarbeiten Experten gemeinsam einen 3D-Gebärdensprach-Avatar.
+Joint project AVASAG - together for digital, barrier-free communication Sign language avatar.
 
-Digitale Kommunikation unterliegt einem schnelllebigen Wandel. Nimmt sie aber jeden mit? Weltweit leben ca. 70 Millionen Gehörlose. Für die meisten ist Textsprache eine Fremdsprache. Der Gesetzgeber hat auf den spezifischen Informationsbedarf von Menschen mit Handicap reagiert und verpflichtet in Deutschland Behörden und öffentliche Stellen zu barrierefreier digitaler Kommunikation. Digitale Barrierefreiheit wird immer wichtiger, um Inhalte dynamisch und für alle Zielgruppen richtig aufbereitet zu kommunizieren. Automatisierte Instrumente helfen bei einer barrierefreien Kommunikation.
+There are around 70 million deaf people worldwide. For many of them, text language is a foreign language; they use sign language instead. In the "AVASAG" project supported by the Federal Ministry of Education and Research (BMBF), experts are working together to develop a 3D sign language avatar.
 
-Im Projekt wird eine neuartige Gebärdenanimations-Methode für 3D-Avatare geschaffen. Sie kombiniert Methoden des maschinellen Lernens mit regel-basierten Synthesemethoden, die Text in Gebärden abbilden. Dabei werden zeitliche und räumliche Abhängigkeiten der Gebärdenelemente sehr genau aufgelöst.
+Digital communication is subject to rapid change. But is it taking everyone with it? There are around 70 million deaf people worldwide. For most of them, text language is a foreign language. Legislation has responded to the specific information needs of people with disabilities and obliges authorities and public bodies in Germany to provide barrier-free digital communication. Digital accessibility is becoming increasingly important in order to communicate content dynamically and correctly for all target groups. Automated tools help with barrier-free communication.
 
-Das Ziel des Verbundprojekts AVASAG (Avatar-basierter Sprachassistent zur automatisierten Gebärdenübersetzung) wird ein echtzeitgesteuerter 3D-Gebärdensprach-Avatar zur automatischen Übersetzung deutscher Texte in Gebärdensprache sein. Hierdurch soll eine qualitativ realistische Darstellung eines 3D-Gebärdensprach-Avatars eine digitale und barrierefreie Kommunikation ermöglichen, um so einen Mehrwert für Gehörlose zu bieten, die besser an der Digitalen Gesellschaft teilhaben können. Unternehmen bietet AVASAG die Möglichkeit, Inhalte automatisiert und dynamisch generieren zu können und so die Interaktion und Kommunikation auf digitalen Kanälen zu optimieren. Als Demonstrator wird ein Gebärdensprach-Avatar zur automatisierten Übersetzung im Bereich Reiseinformation und -service mit Fokus auf Verkehr und Tourismus realisiert.
+The project is creating a novel sign animation method for 3D avatars. It combines machine learning methods with rule-based synthesis methods that map text into gestures. The temporal and spatial dependencies of the gesture elements are resolved very precisely.
 
-Unter Leitung von Charamel arbeiten folgende Forscher und Entwickler aus Deutschland die nächsten drei Jahre zusammen: yomma GmbH – Experten für Gebärdensprache in Hamburg; Ergosign GmbH, Pionier für User Experience Design in Saarbrücken; DFKI GmbH – Kognitive Assistenzsysteme und Language Technology (DFKI), in Saarbrücken, Technische Hochschule Köln / Institut für Medien- und Phototechnik, Köln sowie die Universität Augsburg / Human Centered Multimedia (HCM) in Augsburg.
+The aim of the joint project AVASAG (Avatar-based language assistant for automated sign language translation) will be a real-time controlled 3D sign language avatar for the automatic translation of German texts into sign language.
+The aim is to enable digital and accessible communication through a qualitatively realistic representation of a 3D sign language avatar in order to offer added value for deaf people who can better participate in the digital society. AVASAG offers companies the opportunity to generate content automatically and dynamically and thus optimize interaction and communication on digital channels. A sign language avatar for automated translation in the field of travel information and service with a focus on transport and tourism is being implemented as a demonstrator.
 
-Die Technische Hochschule Köln bearbeitet das Teilvorhaben "Automatisierte Erfassung von Gebärden mittels simultaner Aufnahme von Körper-, Finger-, und Gesichtsbewegungen" und wird dabei folgende Aspekte und technische Herausforderungen im Rahmen des Projektes näher untersuchen:
+Under the management of Charamel, the following researchers and developers from Germany will be working together for the next three years: yomma GmbH - experts for sign language in Hamburg; Ergosign GmbH, pioneer for user experience design in Saarbrücken; DFKI GmbH - Cognitive Assistance Systems and Language Technology (DFKI), in Saarbrücken, Cologne University of Applied Sciences / Institute for Media and Photo Technology, Cologne and the University of Augsburg / Human Centered Multimedia (HCM) in Augsburg.
 
-- Neuartige Aufnahmetechniken mittels Sensorfusion
-- Umsetzung geeigneter Verfahren zur Abbildung von detaillierten Gesichtsausdrücken
-- Umsetzung und Evaluierung von Verfahren zur synchronen Aufnahme von Körper- und Fingerbewegungen
-- Erstellen eines umfangreichen Motion-Capture Datensatzes zur Animation eines 3D-Gebärdensprach-Avatars
+The TH Köln is working on the sub-project "Automated recording of gestures using simultaneous recording of body, finger and facial movements" and will examine the following aspects and technical challenges in more detail as part of the project:
 
-[Zur Projekseite](https://www.th-koeln.de/informations-medien-und-elektrotechnik/verbundprojekt-avasag_76412.php)
+- Novel recording techniques using sensor fusion
+- Implementation of suitable methods for mapping detailed facial expressions
+- Implementation and evaluation of methods for synchronous recording of body and finger movements
+- Creation of a comprehensive motion capture data set for the animation of a 3D sign language avatar
+
+[Project Site](https://www.th-koeln.de/informations-medien-und-elektrotechnik/verbundprojekt-avasag_76412.php)
