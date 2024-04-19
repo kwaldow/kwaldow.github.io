@@ -200,6 +200,13 @@ async function buildTeaching() {
   // console.log(teachingHtml);
 }
 
+async function buildInteractiveProjects() {
+  const teachingData = await getMarkdownData("/files/mds/interactive-projects.md");
+  const teachingHtml = marked.parse(teachingData);
+  document.getElementById("interactive-projects-content").innerHTML = teachingHtml;
+  // console.log(teachingHtml);
+}
+
 async function setup() {
   const articleData = await buildPublications();
 
@@ -209,6 +216,7 @@ async function setup() {
   scrollBtnBehaviour();
   await buildProjects();
   await buildTeaching();
+  await buildInteractiveProjects();
 }
 
 setup();
