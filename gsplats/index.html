@@ -101,6 +101,7 @@
     }
 
     .button {
+      position: relative;
       color: #3C5060;
       border: #AEC5D7 1px solid;
       background-color: #E5EAEE;
@@ -114,6 +115,11 @@
       color: #1B242B;
       background-color: #E4EFF9;
       border-color: #4A5A67;
+    }
+    .button:active {
+      top:2px;
+      left:2px;
+      filter: drop-shadow(0px 0px 3px #aaaaaa);
     }
 
     .text-input {
@@ -574,8 +580,10 @@
 
   </script>
   <script>
-    function openDemo(mode, file) {
-      window.location = 'gsplatViewer.html?mode=' + mode + '&file=' + file;
+    function openDemo(mode, file,sceneSettings,viewerSettings) {
+      let scene = JSON.stringify(sceneSettings);
+      let viewer = JSON.stringify(viewerSettings);
+      window.location = 'gsplatViewer.html?mode=' + mode + '&file=' + file+"&sceneSettings="+scene+"&viewerSettings="+viewer;
     }
     function reset() {
       window.location = 'index.html';
@@ -605,7 +613,7 @@
     </div>
     <br>
     <!-- MARK: Scenes -->
-    <div class="header-content-container">
+    <div  class="header-content-container">
       <div class="title">
         <div style="margin: auto; font-size: 14pt;">
           Scenes
@@ -613,29 +621,22 @@
       </div>
 
       <div style="text-align:center;">
-        <div class="content-row"
+        <div id="scene-container" class="content-row"
           style="max-width: 800px; margin:auto; display:flex; align-items: center; justify-content: center;">
-          <div class="demo-scene-panel">
-            <img src="assets/images/bonsai.png" class="demo-scene-panel-image">
-            <span class="small-title">Bonsai</span>
+          
+          
+          <div id="scene-template" class="demo-scene-panel hidden">
+            <img id="scene-image" src="assets/images/bonsai.png" class="demo-scene-panel-image">
+            <span id="scene-name" class="small-title">Bonsai</span>
             <hr>
             <div class="viewer-btn">
-              <button onclick="openDemo('static','bonsai')" class="button">View</button>
-              <button onclick="openDemo('ar','bonsai')" class="button">AR</button>
-              <button onclick="openDemo('vr','bonsai')" class="button">VR</button>
+              <button id="scene-btn-static" onclick="openDemo('static','bonsai')" class="button">View</button>
+              <button id="scene-btn-ar" onclick="openDemo('ar','bonsai')" class="button">AR</button>
+              <button id="scene-btn-vr" onclick="openDemo('vr','bonsai')" class="button">VR</button>
             </div>
           </div>
-          <div class="demo-scene-panel">
-            <img src="assets/images/bonsai.png" class="demo-scene-panel-image">
-            <span class="small-title">Other</span>
-            <hr>
-            <div class="viewer-btn">
-              <button onclick="openDemo('static','other')" class="button">View</button>
-              <button onclick="openDemo('ar','other')" class="button">AR</button>
-              <button onclick="openDemo('vr','other')" class="button">VR</button>
-            </div>
-          </div>
-        </div>
+
+
       </div>
     </div>
 
@@ -854,6 +855,40 @@
 
 </body>
 <script>
+
+  async function getJsonData(url) {
+    const jsonData = await fetch(url);
+    const data = await jsonData.json();
+    return data;
+  }
+
+  async function buildScenes(){
+    let sceneTemplate = document.getElementById("scene-template");
+    let scenesData = await getJsonData("splats.json");
+    let scenes = scenesData.scenes;
+    for (let i = 0; i < scenes.length; i++) {
+      const scene = scenes[i];
+      let newScene = sceneTemplate.cloneNode(true);
+      document.getElementById("scene-container").appendChild(newScene);
+      newScene.classList.remove("hidden");
+      console.log(scene);
+      newScene.querySelector("#scene-name").textContent = scene.name;
+      newScene.querySelector("#scene-image").src = scene.img;
+      newScene.querySelector("#scene-btn-static").addEventListener("click",()=>{
+        openDemo("static",scene.fileName,scene.sceneSettings,scene.viewerSetttings);
+      });
+      newScene.querySelector("#scene-btn-ar").addEventListener("click",()=>{
+        openDemo("ar",scene.fileName,scene.sceneSettings,scene.viewerSetttings);
+      });
+      newScene.querySelector("#scene-btn-vr").addEventListener("click",()=>{
+        openDemo("vr",scene.fileName,scene.sceneSettings,scene.viewerSetttings);
+      });
+    }
+   
+  }
+
+  buildScenes();
+
   function toggleMore(){
     let obj = document.getElementById("more-content");
     if(obj.classList.contains("hidden")){
@@ -862,6 +897,8 @@
       obj.classList.add("hidden");
     }
   }
+
+  
 </script>
 <script>
   document.body.onload = function () {

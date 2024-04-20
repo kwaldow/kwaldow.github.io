@@ -41,53 +41,61 @@
     var mode = params.get("mode");
     var file = params.get("file");
 
-    if(mode == "static" || mode == undefined){
-      const viewer = new GaussianSplats3D.Viewer({
-          'cameraUp': [0.01933, -0.75830, -0.65161],
-          'initialCameraPosition': [1.54163, 2.68515, -6.37228],
-          'initialCameraLookAt': [0.45622, 1.95338, 1.51278],
-          'sharedMemoryForWorkers': false
-      });
-      let path = 'assets/splats/'+file+'.ksplat';
-      viewer.addSplatScene(path, {
-        'streamView': true
-      })
-      .then(() => {
-          viewer.start();
-      });
+    var settingsString = params.get("sceneSettings");
+    let sceneSettings = JSON.parse(settingsString);
+    sceneSettings.streamView = true;
+
+    
+    var viewString = params.get("viewerSettings");
+    let viewerSettings = JSON.parse(viewString);
+    viewerSettings.sharedMemoryForWorkers = false;
+    console.log(viewerSettings);
+   
+
+    // let viewerSettings = {
+    //   'cameraUp': [0.01933, -0.75830, -0.65161],
+    //   'initialCameraPosition': [1.54163, 2.68515, -6.37228],
+    //   'initialCameraLookAt': [0.45622, 1.95338, 1.51278],
+    //   'sharedMemoryForWorkers': false
+    // }
+    // let viewerSettings = {
+    //   'initialCameraPosition': [1, 2, 3],
+    //   'sharedMemoryForWorkers': false,
+    // }
+    // let sceneSettings = {
+    //   'streamView': true,
+    // }
+
+    // let viewerSettingsXR = {
+    //   'initialCameraLookAt': [0.20786, -0.68154, -0.27311],
+    //   'webXRMode': GaussianSplats3D.WebXRMode.AR,
+    //   'sharedMemoryForWorkers': false
+    // }
+    // //#'rotation': new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0.01933, -0.75830, -0.65161).normalize(), new THREE.Vector3(0, 1, 0)).toArray(),
+    // let sceneSettingsXR = {
+    //   'rotation': new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0.01933, -0.75830, -0.65161).normalize(), new THREE.Vector3(0, 1, 0)).toArray(),
+    //   'scale': [0.25, 0.25, 0.25],
+    //   'position': [0, 0.5, 0]
+    // }
+    //x: 
+    //Z: Höhe
+    //Y: Tiefe
+
+    if(mode == "ar"){
+      viewerSettings.webXRMode = GaussianSplats3D.WebXRMode.VR;
     }
-    else if(mode == "ar"){
-      const viewer = new GaussianSplats3D.Viewer({
-        'initialCameraLookAt': [0.20786, -0.68154, -0.27311],
-        'webXRMode': GaussianSplats3D.WebXRMode.AR,
-        'sharedMemoryForWorkers': false
-      });
-      let path = 'assets/splats/'+file+'.ksplat';;
-      viewer.addSplatScene(path, {
-          'rotation': new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0.01933, -0.75830, -0.65161).normalize(), new THREE.Vector3(0, 1, 0)).toArray(),
-          'scale': [0.25, 0.25, 0.25],
-          'position': [0, 0.5, 0]
-      })
-      .then(() => {
-          viewer.start();
-      });
+
+    if(mode == "vr"){
+      viewerSettings.webXRMode = GaussianSplats3D.WebXRMode.VR;
     }
-    else if(mode == "vr"){
-      const viewer = new GaussianSplats3D.Viewer({
-        'initialCameraLookAt': [0.20786, -0.68154, -0.27311],
-        'webXRMode': GaussianSplats3D.WebXRMode.VR,
-        'sharedMemoryForWorkers': false
-      });
-      let path = 'assets/splats/'+file+'.ksplat';;
-      viewer.addSplatScene(path, {
-          'rotation': new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0.01933, -0.75830, -0.65161).normalize(), new THREE.Vector3(0, 1, 0)).toArray(),
-          'scale': [0.25, 0.25, 0.25],
-          'position': [0, 0.5, 0]
-      })
-      .then(() => {
-          viewer.start();
-      });
-    }
+
+    let path = 'assets/splats/'+file+'.ksplat';
+    const viewer = new GaussianSplats3D.Viewer(viewerSettings);
+    viewer.addSplatScene(path, sceneSettings)
+    .then(() => {
+      viewer.start();
+    });
+    
 
 
   </script>
