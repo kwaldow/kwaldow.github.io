@@ -21,6 +21,20 @@
       background-color: #000000;
       height: 100vh;
       margin: 0px;
+     
+    }
+    
+    .file-info{
+      color: white;
+      position: absolute;
+      top:50vh;
+      left: 50vh;
+      transform: translate(-50%,-50%);
+      font-size: larger;
+      font-weight: bolder;
+    }
+    .hidde{
+      display: none;;
     }
 
   </style>
@@ -28,28 +42,51 @@
 </head>
 
 <body>
+  <p class="file-info">No file selected</p>
 
-
-  <script>
-   
-  </script>
   <script type="module">
     import * as GaussianSplats3D from '@mkkellogg/gaussian-splats-3d';
     import * as THREE from 'three';
 
-    var params = new URL(document.location.toString()).searchParams;
-    var mode = params.get("mode");
-    var file = params.get("file");
-
-    var settingsString = params.get("sceneSettings");
-    let sceneSettings = JSON.parse(settingsString);
-    sceneSettings.streamView = true;
-
     
-    var viewString = params.get("viewerSettings");
-    let viewerSettings = JSON.parse(viewString);
-    viewerSettings.sharedMemoryForWorkers = false;
-    console.log(viewerSettings);
+
+    function init(){
+      var params = new URL(document.location.toString()).searchParams;
+      var mode = params.get("mode");
+      var file = params.get("file");
+
+      if(file == undefined)
+      {   
+          return;
+      }
+
+      var settingsString = params.get("sceneSettings");
+      let sceneSettings = JSON.parse(settingsString);
+      sceneSettings.streamView = true;
+
+      
+      var viewString = params.get("viewerSettings");
+      let viewerSettings = JSON.parse(viewString);
+      viewerSettings.sharedMemoryForWorkers = false;
+      console.log(viewerSettings);
+
+      if(mode == "ar"){
+        viewerSettings.webXRMode = GaussianSplats3D.WebXRMode.AR;
+      }
+
+      if(mode == "vr"){
+        viewerSettings.webXRMode = GaussianSplats3D.WebXRMode.VR;
+      }
+
+      let path = 'assets/splats/'+file+'.ksplat';
+      const viewer = new GaussianSplats3D.Viewer(viewerSettings);
+      viewer.addSplatScene(path, sceneSettings)
+      .then(() => {
+        viewer.start();
+      });
+    }
+
+    init();
    
 
     // let viewerSettings = {
@@ -81,20 +118,7 @@
     //Z: Höhe
     //Y: Tiefe
 
-    if(mode == "ar"){
-      viewerSettings.webXRMode = GaussianSplats3D.WebXRMode.VR;
-    }
-
-    if(mode == "vr"){
-      viewerSettings.webXRMode = GaussianSplats3D.WebXRMode.VR;
-    }
-
-    let path = 'assets/splats/'+file+'.ksplat';
-    const viewer = new GaussianSplats3D.Viewer(viewerSettings);
-    viewer.addSplatScene(path, sceneSettings)
-    .then(() => {
-      viewer.start();
-    });
+    
     
 
 

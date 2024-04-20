@@ -89,11 +89,13 @@ body {
     background-color: white;
     z-index: 999999; */
   display: flex;
+flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 4rem;
 }
 
 .nav-item {
+  flex: 1;
   display: inline-block;
   text-transform: uppercase;
   font-weight: bolder;
@@ -437,10 +439,10 @@ article {
   .tabs {
     justify-content: space-around;
     padding: 3rem;
+    /* flex-direction: column; */
   }
   .nav-item {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
   }
 
   .award {

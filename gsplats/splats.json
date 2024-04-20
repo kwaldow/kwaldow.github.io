@@ -15,8 +15,8 @@
         },
         {
             "name": "Wohnung (3DGS)",
-            "img": "assets/images/flat_3DGS.png",
-            "fileName": "flat_3DGS",
+            "img": "assets/images/flat3DGS.png",
+            "fileName": "flat3DGS",
             "sceneSettings": {
                 "rotation": [0,0,0],
                 "scale": [-1.0,-1.0,1.0],
