@@ -26,6 +26,20 @@
             "viewerSetttings": {
                 "initialCameraPosition": [1, 2, 3]
             }
+        },
+        {
+            "name": "Wohnung (Polycam)",
+            "img": "assets/images/flatPolycam.png",
+            "fileName": "flatPolycam",
+            "sceneSettings": {
+                "rotation": [0,0,0],
+                "scale": [1.0,1.0,1.0],
+                "position": [0.0,2.0,0]
+               
+            },
+            "viewerSetttings": {
+                "initialCameraPosition": [1.8, 0.84, -4.0]
+            }
         }
     ]
 }
