@@ -1,6 +1,6 @@
 ### Asisstant teaching at the Institute for Media and Photo Technology (IMP), TH Köln
 
-**My Interactive Projects:**
+**Own Courses:**
 
 - WEB1 - Backend Technologies (Bachelor)
 - WEB2 - Frontend Technologies (Bachelor)
