@@ -1,0 +1,69 @@
+{
+  "scenes": [
+    {
+      "name": "Beispiel",
+      "img": "assets/images/bonsai.png",
+      "fileName": "Beispiel",
+      "sceneSettings": {
+        "rotation": [0, 0, 0],
+        "scale": [1.0, 1.0, 1.0],
+        "position": [0, 0.0, 0]
+      },
+      "viewerSetttings": {
+        "initialCameraPosition": [1, 2, 3]
+      }
+    },
+    {
+      "name": "A1",
+      "img": "assets/images/bonsai.png",
+      "fileName": "A1",
+      "sceneSettings": {
+        "rotation": [0, 0, 0],
+        "scale": [-1.0, -1.0, 1.0],
+        "position": [0, 0.0, 0]
+      },
+      "viewerSetttings": {
+        "initialCameraPosition": [1, 2, 3]
+      }
+    },
+    {
+      "name": "A2",
+      "img": "assets/images/bonsai.png",
+      "fileName": "A2",
+      "sceneSettings": {
+        "rotation": [0, 0, 0],
+        "scale": [1.0, 1.0, 1.0],
+        "position": [0, 0.0, 0]
+      },
+      "viewerSetttings": {
+        "initialCameraPosition": [1, 2, 3]
+      }
+    },
+    {
+      "name": "B1",
+      "img": "assets/images/bonsai.png",
+      "fileName": "B1",
+      "sceneSettings": {
+        "rotation": [0, 0, 0],
+        "scale": [-1.0, -1.0, 1.0],
+        "position": [0, 0.0, 0]
+      },
+      "viewerSetttings": {
+        "initialCameraPosition": [1, 2, 3]
+      }
+    },
+    {
+      "name": "B2",
+      "img": "assets/images/bonsai.png",
+      "fileName": "B2",
+      "sceneSettings": {
+        "rotation": [0, 0, 0],
+        "scale": [-1.0, -1.0, 1.0],
+        "position": [0, 0.0, 0]
+      },
+      "viewerSetttings": {
+        "initialCameraPosition": [1, 2, 3]
+      }
+    }
+  ]
+}
