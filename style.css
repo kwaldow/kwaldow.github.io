@@ -131,7 +131,6 @@ flex-wrap: wrap;
 footer {
   margin-top: 10rem;
   background-color: var(--gray-color);
-
   text-align: center;
   padding: 2rem;
 }
