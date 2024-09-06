@@ -220,3 +220,21 @@ async function setup() {
 }
 
 setup();
+
+
+document.addEventListener("scroll", function() {
+  const reveals = document.querySelectorAll("article");
+
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementVisible = 0;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("is-visible");
+    } 
+    else {
+      reveals[i].classList.remove("is-visible");
+    }
+  }
+});
