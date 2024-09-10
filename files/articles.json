@@ -17,7 +17,12 @@
       ],
       "published": "Virtuelle und Erweiterte Realität – 21. Workshop der GI-Fachgruppe VR/AR, 2024, Hamburg, Germany",
       "abstract": "Anti-aliasing is essential for Virtual Reality (VR) applications, as the pixels of current VR displays subtend a large field of view. This makes various undersampling artifacts particularly noticeable. Understanding state-of-the-art anti-aliasing techniques and their trade-offs is therefore crucial for optimizing VR experiences and developing high-quality VR applications. This paper investigates multiple anti-aliasing techniques through a user study with pairwise comparisons to determine the best method for image quality in VR, considering both static and moving objects in four different plausible environments. Results indicate that the ranking of methods does not differ significantly between moving and static scenes. While naive Supersampling Anti-Aliasing provides the best image quality from the tested methods and Fast Approximate Anti-Aliasing the worst, Temporal Anti-Aliasing and Multisample Anti-Aliasing achieved similar results in terms of image quality.",
-      "links": []
+      "links": [
+        {
+          "name": "Preprint",
+          "link": "https://www.researchgate.net/publication/383908180_Anti-aliasing_Techniques_in_Virtual_Reality_A_User_Study_with_Perceptual_Pairwise_Comparison_Ranking_Scheme"
+        }
+      ]
     },
     {
       "id": "2024_FaceEnhance",
