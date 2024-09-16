@@ -40,6 +40,8 @@ async function buildPublications() {
     newArticle.querySelector(".article-publication").textContent =
       article.published;
 
+    newArticle.classList.add(article.tags[0]);
+
     newArticle.querySelector(".tags").innerHTML = article.tags
       .map((tag) => `<span class=${tag}></span>`)
       .join("");
@@ -201,9 +203,12 @@ async function buildTeaching() {
 }
 
 async function buildInteractiveProjects() {
-  const teachingData = await getMarkdownData("/files/mds/interactive-projects.md");
+  const teachingData = await getMarkdownData(
+    "/files/mds/interactive-projects.md"
+  );
   const teachingHtml = marked.parse(teachingData);
-  document.getElementById("interactive-projects-content").innerHTML = teachingHtml;
+  document.getElementById("interactive-projects-content").innerHTML =
+    teachingHtml;
   // console.log(teachingHtml);
 }
 
@@ -221,8 +226,7 @@ async function setup() {
 
 setup();
 
-
-document.addEventListener("scroll", function() {
+document.addEventListener("scroll", function () {
   const reveals = document.querySelectorAll("article");
 
   for (let i = 0; i < reveals.length; i++) {
@@ -232,9 +236,9 @@ document.addEventListener("scroll", function() {
 
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("is-visible");
-    } 
-    else {
+    } else {
       reveals[i].classList.remove("is-visible");
     }
   }
 });
+
