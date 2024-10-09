@@ -1,6 +1,10 @@
 {
   "news": [
     {
+      "date": "10/2024",
+      "message": "Attending this years <a href='https://vrst.hosting.acm.org/vrst2024/'>30th ACM Symposium on Virtual Reality Software and Technology (VRST)</a> in Trier, Germany."
+    },
+    {
       "date": "09/2024",
       "message": "Attending this years <a href='https://givrar2024.mt.haw-hamburg.de/'>GI VR/AR Workshop</a> in Hamburg<br>presenting a <a href='#2024_AnitAliasing'>full paper</a>, as well as beeing part as a session chair."
     },
