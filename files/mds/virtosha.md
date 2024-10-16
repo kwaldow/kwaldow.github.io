@@ -1,5 +1,5 @@
 <!--<TITLE>VIRTOSHA Joint Project - Authoring tool for Virtual Reality training simulations of osteosynthesis with haptis feedback und tissue simulation<TITLE> -->
-<!--<PARTNERS>Universitätsklinikum Bonn,TH Köln,Haption<PARTNERS> -->
+<!--<PARTNERS>MindPort GmbH, Universitätsklinikum Bonn,TH Köln,Haption<PARTNERS> -->
 <!--<IMAGE>/files/mds/imgs/VIRTOSHA.png<IMAGE> -->
 <!--<TIME>2024 - now<TIME> -->
 
