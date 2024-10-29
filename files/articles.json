@@ -1,6 +1,27 @@
 {
   "articles": [
     {
+      "id": "2024_3DGSConstruction",
+      "category": "publications",
+      "year": 2024,
+      "tags": ["full"],
+      "image": "imgs/CONVR2024.png",
+      "title": "3D Gaussian Splatting for Construction Sites",
+      "authors": [
+        "Sina Rüter",
+        "Kristoffer Waldow",
+        "Niels Bartels",
+        "Arnulph Fuhrmann"
+      ],
+      "published": "24th International Conference on Construction Applications of Virtual Reality (CONVR 2024), Western Sydney University, NSW, Australia",
+      "abstract": "This paper explores the potential of 3D Gaussian Splatting (3DGS) for construction site visualization. While Virtual Reality (VR) is gaining traction in the Architecture, Engineering, and Construction (AEC) industry, there is a gap between its potential and its application on real construction sites. This paper proposes 3DGS as a method to create fast, high quality 3D models from simple video capture. This eliminates the need for time-consuming traditional methods such as laser scanning.  The resulting models can then be viewed in VR, enabling immersive walkthroughs and inspections. The results of the structured interviews indicate that Kerbl et al.'s 3DGS provides the highest quality and detail, but requires powerful hardware, while online services like Polycam are a more cost-effective alternative for short-term modeling. Photogrammetry, while less expensive, produces models with less detail. In terms of usability, respondents generally preferred models with more detail and recognition of specific components. 3DGS performed well in VR, providing an immersive experience similar to an actual site visit. However, some concerns were raised about motion sickness and discomfort when wearing such VR head-mounted system.",
+      "links": [
+        {
+          "name":"Digital Transformation of Construction Industry (Book) - not published yet"
+        }
+      ]
+    },
+    {
       "id": "2024_AnitAliasing",
       "category": "publications",
       "year": 2024,
@@ -329,7 +350,7 @@
       "category": "publications",
       "year": 2016,
       "tags": ["poster"],
-      "image": "",
+      "image": "imgs/SiamC2016.png",
       "title": "SIAMC: a socially immersive avatar mediated communication platform",
       "authors": [
         "Daniel Roth",
