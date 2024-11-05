@@ -8,15 +8,27 @@ async function getMarkdownData(url) {
   const mdText = await markdownData.text();
   return mdText;
 }
-
-async function buildPublications() {
+let buildPublicationArticles = [];
+async function buildPublications(type) {
   const article_template = document.getElementById("article-template");
   const data = await getJsonData("files/articles.json");
+
+  for (let i = 0; i < buildPublicationArticles.length; i++) {
+    buildPublicationArticles[i].remove();
+  }
+  buildPublicationArticles = [];
 
   for (let i = 0; i < data.articles.length; i++) {
     const article = data.articles[i];
     const id = article.id;
     //console.log(article.links)
+    // if (article.authors[0].trim() != "Kristoffer Waldow") continue;
+
+    if(type != "all"){
+      if (!article.tags.includes(type)) {
+        continue; // Wenn der Artikel den Typ nicht hat, wird er übersprungen
+      }
+    }
 
     let newArticle = article_template.cloneNode(true);
     document.getElementById("publications").appendChild(newArticle);
@@ -74,8 +86,9 @@ async function buildPublications() {
     if (article.award) {
       newArticle.querySelector(".award").classList.remove("hidden");
     }
+    buildPublicationArticles.push(newArticle);
   }
-  return data;
+  return buildPublicationArticles;
 }
 
 function buildTabs(articleCount) {
@@ -213,9 +226,9 @@ async function buildInteractiveProjects() {
 }
 
 async function setup() {
-  const articleData = await buildPublications();
+  const articleData = await buildPublications("all");
 
-  buildTabs(articleData.articles.length);
+  buildTabs(articleData.length);
 
   await buildNews();
   scrollBtnBehaviour();
@@ -240,5 +253,11 @@ document.addEventListener("scroll", function () {
       reveals[i].classList.remove("is-visible");
     }
   }
+});
+
+document.getElementById("type-selector").addEventListener("change", async function () {
+  const selectedType = this.value;
+  const articleData = await buildPublications(selectedType);
+  document.getElementById("tab-publication").innerText = `Publications (${articleData.length})`;
 });
 
