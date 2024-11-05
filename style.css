@@ -324,7 +324,7 @@ article {
 .year-selection {
   display: flex;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   font-size: larger;
   flex-wrap: wrap;
 }
@@ -475,8 +475,8 @@ article.is-visible {
 }  */
 
 .publication-type-selector{
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  place-items: center;
   margin-bottom: 20px;
 }
 .publication-type-selector > select{
