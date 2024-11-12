@@ -255,9 +255,43 @@ document.addEventListener("scroll", function () {
   }
 });
 
-document.getElementById("type-selector").addEventListener("change", async function () {
-  const selectedType = this.value;
-  const articleData = await buildPublications(selectedType);
-  document.getElementById("tab-publication").innerText = `Publications (${articleData.length})`;
+
+const toggle = document.getElementById('threeOptionToggle');
+const options = toggle.querySelectorAll('.option');
+const activeArea = toggle.querySelector('.active-area');
+
+// Funktion, um den aktiven Bereich und Text basierend auf der Auswahl zu aktualisieren
+function updateToggle(state) {
+  // Entferne aktive Klasse von allen Optionen und füge sie zur gewählten hinzu
+  options.forEach(option => option.classList.remove('active'));
+  const selectedOption = toggle.querySelector(`.option[data-state="${state}"]`);
+  selectedOption.classList.add('active');
+
+  // Ändere den Schalter-Hintergrund und die Position basierend auf der Auswahl
+  toggle.className = `toggle ${state}`;
+
+  // Verschiebe den aktiven Bereich je nach Zustand
+  if (state === 'all') {
+    activeArea.style.transform = 'translateX(0%)';
+  } else if (state === 'full') {
+    activeArea.style.transform = 'translateX(100%)';
+  } else if (state === 'poster') {
+    activeArea.style.transform = 'translateX(200%)';
+  }
+}
+
+// Event-Listener für jede Option, um den Zustand zu wechseln
+options.forEach(option => {
+  option.addEventListener('click', async function (event) {
+    const selectedState = event.target.getAttribute('data-state');
+    updateToggle(selectedState);
+    const articleData = await buildPublications(selectedState);
+    document.getElementById("tab-publication").innerText = `Publications (${articleData.length})`;
+  });
+
 });
+
+// Setze den Standardzustand
+updateToggle('all');
+
 

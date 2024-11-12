@@ -201,13 +201,13 @@
           <a href="#2017_SIAMC">2017</a>
           <a href="#2016_SIAMC">2016</a>
         </div>
-        <div class="publication-type-selector">
-          <select name="" id="type-selector" onchange="()=>console.log('Test')">
-            <option value="all" selected >All</option>
-            <option value="full">Full Paper</option>
-            <option value="poster">Poster</option>
-            <!-- <option value="">Preprint</option> -->
-          </select>
+        <div class="toggle-container">
+          <div class="toggle all" id="threeOptionToggle">
+            <div class="active-area"></div>
+            <div class="option" data-state="all">All</div>
+            <div class="option" data-state="full">Full Paper</div>
+            <div class="option" data-state="poster">Poster</div>
+          </div>
         </div>
         <article id="article-template" class="hidden">
           <div class="row">
