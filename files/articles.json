@@ -1,5 +1,53 @@
 {
+  
   "articles": [
+    {
+      "id": "2025_PTE",
+      "category": "publications",
+      "year": 2025,
+      "tags": ["preprint"],
+      "image": "imgs/PTE.png",
+      "title": "Investigating the Impact of Video Pass-Through Embodiment on Presence and Performance in Virtual Reality",
+      "authors": [
+        "Kristoffer Waldow",
+        "Constantin Kleinbeck",
+        "Arnulph Fuhrmann",
+        "Daniel Roth"
+      ],
+      "published": "IEEE Transactions on Visualization and Computer Graphics (TVCG)",
+      "abstract": "Creating a compelling sense of presence and embodiment can enhance the user experience in virtual reality (VR). One method to accomplish this is through self-representation with embodied personalized avatars or video self-avatars. However, these approaches require external hardware and primarily evaluate hand representations in VR across various tasks. We therefore present in this paper an alternative approach: video Pass-Through Embodiment (PTE), which utilizes the per-eye real-time depth map from Head-Mounted Displays (HMDs) traditionally used for Augmented Reality features. This method allows the user’s real body to be cut out of the pass-through video stream and be represented in the VR environment without the need for additional hardware. To evaluate our approach, we conducted a between-subjects study involving 40 participants who completed a seated object sorting task using either PTE or a customized avatar. The results show that PTE, despite its limited depth resolution that leads to some visual artifacts, significantly enhances the user’s sense of presence and embodiment. In addition, PTE does not negatively affect task performance, cognitive load, or cause VR sickness. These findings imply that video pass-through embodiment offers a practical and efficient alternative to traditional avatar-based methods in VR.",
+      "links": [
+        {
+          "name":"ResearchGate",
+          "link": "https://www.researchgate.net/publication/389168105_Investigating_the_Impact_of_Video_Pass-Through_Embodiment_on_Presence_and_Performance_in_Virtual_Reality"
+        }
+      ]
+    },
+    {
+      "id": "2025_DimSplat",
+      "category": "publications",
+      "year": 2025,
+      "tags": ["preprint"],
+      "image": "imgs/DimSplat.png",
+      "title": "DimSplat: A Real-Time Diminished Reality System for Revisiting Environments Using Gaussian Splats in Mobile WebXR",
+      "authors": [
+        "Kristoffer Waldow",
+        "Jonas Scholz",
+        "Arnulph Fuhrmann"
+      ],
+      "published": "Proceedings of 32th IEEE Virtual Reality Conference (VR ’25)",
+      "abstract": "Diminished Reality (DR) allows for the selective removal or transformation of real-world objects from a user’s feld of view. In certain cases, it becomes essential to revisit environments and observe them in their original state. While Smartphone and Web-based approaches provide intuitive and convenient AR platforms, it also faces challenges like limited resources. This work introduces a DR system using Gaussian splats for real-time object removal on WebXR-enabled devices. We achieve up to 60 FPS while maintaining high visual fdelity, validated with different image quality metrics, offering a scalable solution for revisiting and manipulating temporally altered environments.",
+      "links": [
+        {
+          "name":"Video",
+          "link": "https://www.youtube.com/watch?v=FgRtNsRKDBI"
+        },
+        {
+          "name":"ResearchGate",
+          "link": "https://www.researchgate.net/publication/389168516_DimSplat_A_Real-Time_Diminished_Reality_System_for_Revisiting_Environments_Using_Gaussian_Splats_in_Mobile_WebXR"
+        }
+      ]
+    },
     {
       "id": "2024_3DGSConstruction",
       "category": "publications",
