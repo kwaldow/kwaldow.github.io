@@ -7,7 +7,7 @@
       "year": 2025,
       "tags": ["preprint"],
       "image": "imgs/PTE.png",
-      "title": "Investigating the Impact of Video Pass-Through Embodiment on Presence and Performance in Virtual Reality",
+      "title": "🏆Investigating the Impact of Video Pass-Through Embodiment on Presence and Performance in Virtual Reality",
       "authors": [
         "Kristoffer Waldow",
         "Constantin Kleinbeck",
@@ -21,7 +21,8 @@
           "name":"ResearchGate",
           "link": "https://www.researchgate.net/publication/389168105_Investigating_the_Impact_of_Video_Pass-Through_Embodiment_on_Presence_and_Performance_in_Virtual_Reality"
         }
-      ]
+      ],
+      "award": true
     },
     {
       "id": "2025_DimSplat",

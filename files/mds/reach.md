@@ -12,3 +12,5 @@ Based on contributions and previous work of the consortium, REACH combines MindP
 Beyond the state of the art, REACH enables seamless multi-user interactions and advanced human robot interaction (HRI) methods for creating ILEs with digital twins, incorporating intuitive user-robot communication, supporting asymmetric collaboration in MR, and ensuring scalability through modularity.
 
 Designed for industries like manufacturing, education, and healthcare, REACH impacts productivity and creativity in multi-user ILEs by bridging virtual and physical spaces. The support for multimodal human-robot interaction elevates interaction quality and innovation with a versatile tool for developing mixed reality remote collaboration platforms.
+
+[Project Team in 3D](gsplats/gsplatViewer.html?mode=static&file=reach&sceneSettings={"rotation":[0,0,0],"scale":[1,-1,1],"position":[0,0,0]}&viewerSettings={"initialCameraPosition":[1.8,0.84,-4]})

@@ -565,3 +565,13 @@ article.is-visible {
     .all .active-area { background-color: #313131; }
     .full .active-area { background-color: #464e7b; }
     .poster .active-area { background-color: #9290c3; }
+
+
+    .collapse {
+      transition: height 0.3s ease;
+      overflow: hidden;
+    }
+    
+    #abstract-data-toggle.collapsing {
+      height: auto;
+    }
