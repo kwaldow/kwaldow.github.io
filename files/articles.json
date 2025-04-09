@@ -5,7 +5,7 @@
       "id": "2025_PTE",
       "category": "publications",
       "year": 2025,
-      "tags": ["preprint"],
+      "tags": ["journal"],
       "image": "imgs/PTE.png",
       "title": "🏆Investigating the Impact of Video Pass-Through Embodiment on Presence and Performance in Virtual Reality",
       "authors": [
@@ -18,8 +18,8 @@
       "abstract": "Creating a compelling sense of presence and embodiment can enhance the user experience in virtual reality (VR). One method to accomplish this is through self-representation with embodied personalized avatars or video self-avatars. However, these approaches require external hardware and primarily evaluate hand representations in VR across various tasks. We therefore present in this paper an alternative approach: video Pass-Through Embodiment (PTE), which utilizes the per-eye real-time depth map from Head-Mounted Displays (HMDs) traditionally used for Augmented Reality features. This method allows the user’s real body to be cut out of the pass-through video stream and be represented in the VR environment without the need for additional hardware. To evaluate our approach, we conducted a between-subjects study involving 40 participants who completed a seated object sorting task using either PTE or a customized avatar. The results show that PTE, despite its limited depth resolution that leads to some visual artifacts, significantly enhances the user’s sense of presence and embodiment. In addition, PTE does not negatively affect task performance, cognitive load, or cause VR sickness. These findings imply that video pass-through embodiment offers a practical and efficient alternative to traditional avatar-based methods in VR.",
       "links": [
         {
-          "name":"ResearchGate",
-          "link": "https://www.researchgate.net/publication/389168105_Investigating_the_Impact_of_Video_Pass-Through_Embodiment_on_Presence_and_Performance_in_Virtual_Reality"
+          "name":"IEEE TVCG",
+          "link": "https://ieeexplore.ieee.org/abstract/document/10919005"
         }
       ],
       "award": true
@@ -28,7 +28,7 @@
       "id": "2025_DimSplat",
       "category": "publications",
       "year": 2025,
-      "tags": ["preprint"],
+      "tags": ["poster"],
       "image": "imgs/DimSplat.png",
       "title": "DimSplat: A Real-Time Diminished Reality System for Revisiting Environments Using Gaussian Splats in Mobile WebXR",
       "authors": [

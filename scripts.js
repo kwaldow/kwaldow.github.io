@@ -21,15 +21,20 @@ async function buildPublications(type) {
   for (let i = 0; i < data.articles.length; i++) {
     const article = data.articles[i];
     const id = article.id;
-    //console.log(article.links)
-    // if (article.authors[0].trim() != "Kristoffer Waldow") continue;
-
+  
+    //Hacky Solution
+    let temp_tag = article.tags[0];
+    if(article.tags[0] == "journal"){
+      article.tags[0] = "full";
+    }
     if(type != "all"){
       if (!article.tags.includes(type)) {
         continue; // Wenn der Artikel den Typ nicht hat, wird er übersprungen
       }
     }
+    article.tags[0] = temp_tag;
 
+    
     let newArticle = article_template.cloneNode(true);
     document.getElementById("publications").appendChild(newArticle);
     newArticle.classList.remove("hidden");
@@ -279,6 +284,7 @@ function updateToggle(state) {
     activeArea.style.transform = 'translateX(200%)';
   }
 }
+
 
 // Event-Listener für jede Option, um den Zustand zu wechseln
 options.forEach(option => {

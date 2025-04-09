@@ -191,6 +191,14 @@ article {
 .tags > .full::before {
   content: "Full Paper";
 }
+
+.tags > .journal {
+  background-color: #5060bd;
+}
+.tags > .journal::before {
+  content: "Journal";
+}
+
 .tags > .preprint {
   background-color: #858585;
 }
