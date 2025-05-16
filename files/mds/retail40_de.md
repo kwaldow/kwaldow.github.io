@@ -2,6 +2,7 @@
 <!--<PARTNERS>Assyst GmbH,Brax Leineweber GmbH & Co. KG,Human Solutions GmbH,Deutsche Institute für Textil und Faserforschung,TH Köln<PARTNERS> -->
 <!--<IMAGE>https://www.th-koeln.de/mam/bilder/hochschule/fakultaeten/f07/imp/forschung/resize__358_201_on_031b9ecfa578cd6afcb5705160bdb421_feedback.jpg<IMAGE> -->
 <!--<TIME>2017 - 2020<TIME> -->
+<!--<ID>retail40<ID> -->
 
 **Das Retail 4.0 Projekt entwickelt AR/VR Lösungen für die Modebranche zur Einbindung von Einzelhändlern und Endkunden in den Feedbackprozess während der Kollektionsentwicklung. Zu den besonderen technischen Herausforderungen gehören das realistische Rendering und die akkurate Farbwiedergabe der Kleidungsstücke auf mobilen VR/AR-Displays.**
 

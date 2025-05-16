@@ -109,7 +109,7 @@ function buildTabs(articleCount) {
       changeTab(index);
     });
   }
-
+  
   function changeTab(id) {
     for (let i = 0; i < children.length; i++) {
       children[i].classList.remove("nav-active");
@@ -130,6 +130,28 @@ function buildTabs(articleCount) {
       }, 125);
     }, 125);
   }
+  const params = new URLSearchParams(window.location.search);
+  const tabParam = params.get("section");
+  if (tabParam) {
+    switch (tabParam) {
+      case "publications":
+        changeTab(0);
+        break;
+      case "research-projects":
+        changeTab(1);
+        break;
+      case "teachingAndReviews":
+        changeTab(2);
+        break;
+      case "InteractiveProjects":
+        changeTab(3);
+        break;
+      default:
+        changeTab(0);
+    }
+   
+  }
+  
 }
 
 async function buildNews() {
@@ -179,11 +201,13 @@ function parseProjectMarkdown(md) {
   const partners = md.split("<PARTNERS>")[1].split(",");
   const image = md.split("<IMAGE>")[1];
   const time = md.split("<TIME>")[1];
+  const id = md.split("<ID>")[1];
   const body = marked.parse(md);
 
   //console.log(title, partners, image, time);
   // console.log(body);
   return {
+    id: id,
     title: title,
     partners: partners,
     image: image,
@@ -201,7 +225,7 @@ async function buildProjects() {
     let newArticle = article_template.cloneNode(true);
     document.getElementById("research-projects").appendChild(newArticle);
     newArticle.classList.remove("hidden");
-    newArticle.id = "ID_" + article.title;
+    newArticle.id = article.id;
 
     newArticle.querySelector(".article-year").textContent = article.time;
     newArticle.querySelector(".article-title").textContent = article.title;
@@ -298,6 +322,6 @@ options.forEach(option => {
 });
 
 // Setze den Standardzustand
-updateToggle('all');
+updateToggle('poster');
 
 

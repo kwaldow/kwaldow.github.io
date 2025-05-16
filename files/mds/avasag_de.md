@@ -2,6 +2,7 @@
 <!--<PARTNERS>Charamel GmbH,yomma GmbH,Ergosign GmbH,DFKI GmbH,Universität Augsburg,TH Köln<PARTNERS> -->
 <!--<IMAGE>https://www.th-koeln.de/mam/bilder/hochschule/fakultaeten/f07/imp/forschung/fittosize_358_201_f9b73a17f386194a3626493944e2adf3_gebardensprach-avatar.jpg<IMAGE> -->
 <!--<TIME>2020 - 2023<TIME> -->
+<!--<ID>avasag<ID> -->
 
 **Weltweit gibt es etwa 70 Millionen gehörlose Menschen. Für viele von ihnen ist Textsprache eine Fremdsprache; sie bedienen sich stattdessen der Gebärdensprache. In dem vom Bundesministerium für Bildung und Forschung (BMBF) unterstützten Projekt „AVASAG“ erarbeiten Experten gemeinsam einen 3D-Gebärdensprach-Avatar.**
 

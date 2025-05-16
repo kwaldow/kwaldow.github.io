@@ -2,6 +2,7 @@
 <!--<PARTNERS>Charamel GmbH,yomma GmbH,Ergosign GmbH,DFKI GmbH,Universität Augsburg,TH Köln<PARTNERS> -->
 <!--<IMAGE>https://www.th-koeln.de/mam/bilder/hochschule/fakultaeten/f07/imp/forschung/fittosize_358_201_f9b73a17f386194a3626493944e2adf3_gebardensprach-avatar.jpg<IMAGE> -->
 <!--<TIME>2020 - 2023<TIME> -->
+<!--<ID>avasag<ID> -->
 
 **There are around 70 million deaf people worldwide. For many of them, text language is a foreign language; they use sign language instead. In the "AVASAG" project supported by the Federal Ministry of Education and Research (BMBF), experts are working together to develop a 3D sign language avatar.**
 
