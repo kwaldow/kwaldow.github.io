@@ -1,5 +1,9 @@
 {
   "news": [
+     {
+      "date": "06/2025",
+      "message": "Building on the great feedback we received on the IEEE VR 25 conference, we’ve just started new evaluations and techniques alongside our ongoing work on <a href='#2025_PTE'>Pass-Through Embodiment (PTE)</a>, to better understand what makes it so compelling. We’re excited to continue our journey 🎉! <br> Be prepared 😉!"
+    },
     {
       "date": "03/2025",
       "message": "🏆 Our <b>TVCG Journal publication</b> on IEEE VR 25 for <a href='#2025_PTE'>Investigating the Impact of Video Pass-Through Embodiment on Presence and Performance in Virtual Reality</a> just received an <b>Honorable Mention Award</b>. <a target='_blank' href='https://www.linkedin.com/posts/kristoffer-waldow_ieeevr25-ieeevr-tvcg-activity-7304912245640052736-0bqN?utm_source=share&utm_medium=member_desktop&rcm=ACoAACs3DfQBKGJ9ewsDBQLg8-zfpIIKE0uDQLA'>LinkedIn Post</a>"
@@ -11,10 +15,6 @@
     {
       "date": "09/2024",
       "message": "<b>Keynote Speaker at <a href=\"https://eveeno.com/rmdz2024\">Rendezvous mit der Zukunft</a>:</b><br>Inclusion Through Innovation - Avatars as Pioneers for a Barrier-Free Society"
-    },
-    {
-      "date": "03/2024",
-      "message": "<b>🏆<a href='#2024_DepthPerception'>Best Poster Award</a> on IEEE VR 24</b><br><br><iframe src='https://www.linkedin.com/embed/feed/update/urn:li:share:7178364319795924992' height='300' width='100%' frameborder='0' allowfullscreen='' title='Eingebetteter Beitrag'></iframe>"
     }
   ]
 }

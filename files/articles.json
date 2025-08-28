@@ -1,5 +1,4 @@
 {
-  
   "articles": [
     {
       "id": "2025_PTE",
@@ -7,7 +6,7 @@
       "year": 2025,
       "tags": ["journal"],
       "image": "imgs/PTE.png",
-      "title": "🏆Investigating the Impact of Video Pass-Through Embodiment on Presence and Performance in Virtual Reality",
+      "title": "🏆 Investigating the Impact of Video Pass-Through Embodiment on Presence and Performance in Virtual Reality",
       "authors": [
         "Kristoffer Waldow",
         "Constantin Kleinbeck",
@@ -18,11 +17,16 @@
       "abstract": "Creating a compelling sense of presence and embodiment can enhance the user experience in virtual reality (VR). One method to accomplish this is through self-representation with embodied personalized avatars or video self-avatars. However, these approaches require external hardware and primarily evaluate hand representations in VR across various tasks. We therefore present in this paper an alternative approach: video Pass-Through Embodiment (PTE), which utilizes the per-eye real-time depth map from Head-Mounted Displays (HMDs) traditionally used for Augmented Reality features. This method allows the user’s real body to be cut out of the pass-through video stream and be represented in the VR environment without the need for additional hardware. To evaluate our approach, we conducted a between-subjects study involving 40 participants who completed a seated object sorting task using either PTE or a customized avatar. The results show that PTE, despite its limited depth resolution that leads to some visual artifacts, significantly enhances the user’s sense of presence and embodiment. In addition, PTE does not negatively affect task performance, cognitive load, or cause VR sickness. These findings imply that video pass-through embodiment offers a practical and efficient alternative to traditional avatar-based methods in VR.",
       "links": [
         {
+          "name":"Video",
+          "link": "https://www.youtube.com/watch?v=XyfXA59z33M"
+        },
+        {
           "name":"IEEE TVCG",
           "link": "https://ieeexplore.ieee.org/abstract/document/10919005"
         }
       ],
-      "award": true
+      "award": true,
+      "bibtex": true
     },
     {
       "id": "2025_DimSplat",
@@ -47,7 +51,8 @@
           "name":"ResearchGate",
           "link": "https://www.researchgate.net/publication/389168516_DimSplat_A_Real-Time_Diminished_Reality_System_for_Revisiting_Environments_Using_Gaussian_Splats_in_Mobile_WebXR"
         }
-      ]
+      ],
+        "bibtex": true
     },
     {
       "id": "2024_3DGSConstruction",
@@ -73,7 +78,8 @@
           "name":"ResearchGate",
           "link": "https://www.researchgate.net/publication/385552762_3D_Gaussian_Splatting_for_Construction_Sites"
         }
-      ]
+      ],
+      "bibtex": true
     },
     {
       "id": "2024_AnitAliasing",
@@ -97,7 +103,8 @@
           "name": "GI",
           "link": "https://dl.gi.de/items/d094d5b9-f6f5-4618-8178-349e257f7d9a"
         }
-      ]
+      ],
+       "bibtex": true
     },
     {
       "id": "2024_FaceEnhance",
@@ -114,7 +121,8 @@
           "name": "IEEE",
           "link": "https://ieeexplore.ieee.org/abstract/document/10536505"
         }
-      ]
+      ],
+       "bibtex": true
     },
     {
       "id": "2024_DepthPerception",
@@ -139,7 +147,8 @@
           "link": "https://ieeexplore.ieee.org/abstract/document/10536257"
         }
       ],
-      "award": true
+      "award": true,
+       "bibtex": true
     },
     {
       "id": "2024_DeepNeuralLabeling",
@@ -160,7 +169,8 @@
           "name": "IEEE",
           "link": "https://ieeexplore.ieee.org/abstract/document/10445598"
         }
-      ]
+      ],
+       "bibtex": true
     },
 
     {

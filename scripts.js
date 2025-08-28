@@ -8,6 +8,13 @@ async function getMarkdownData(url) {
   const mdText = await markdownData.text();
   return mdText;
 }
+
+async function getBibtexData(url) {
+  const bibtexData = await fetch(url);
+  const bibtexText = await bibtexData.text();
+  return bibtexText;
+}
+
 let buildPublicationArticles = [];
 async function buildPublications(type) {
   const article_template = document.getElementById("article-template");
@@ -91,6 +98,15 @@ async function buildPublications(type) {
     if (article.award) {
       newArticle.querySelector(".award").classList.remove("hidden");
     }
+    
+    if(article.bibtex){
+      let bibtexData = await getBibtexData(`files/bib/${article.id}.bib`);
+      newArticle.querySelector(".citeBtn").classList.remove("hidden");
+      newArticle.querySelector(".citeBtn").addEventListener("click", () => {
+        openCiteBox(bibtexData);
+      });
+    }
+
     buildPublicationArticles.push(newArticle);
   }
   return buildPublicationArticles;
@@ -324,4 +340,29 @@ options.forEach(option => {
 // Setze den Standardzustand
 updateToggle('poster');
 
+function openCiteBox(citePreText){
+  const overlay = document.getElementById("citeOverlay");
+  overlay.classList.remove("hidden");
+  overlay.querySelector(".bibtex").innerText = citePreText;
+}
 
+// Copy to clipboard
+document.getElementById("copyBibtexBtn").addEventListener("click", function() {
+  const text = document.getElementById("bibtexBlock").innerText;
+
+  navigator.clipboard.writeText(text).then(() => {
+    const msg = document.getElementById("copyMsg");
+    msg.style.display = "inline";
+    setTimeout(() => msg.style.display = "none", 1500);
+    const overlay = document.getElementById("citeOverlay");
+    setTimeout(() => overlay.classList.add("hidden"), 2500);
+  });
+});
+
+
+document.getElementById("citeOverlay").addEventListener("click", function(e) {
+  const citeBox = document.querySelector(".cite-box");
+  if (!citeBox.contains(e.target)) {
+    this.classList.add("hidden");
+  }
+});

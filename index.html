@@ -239,8 +239,11 @@
                   Conference
                 </div>
                 <div class="article-links">
-                  <a id="abstract-link" data-toggle="collapse" href="#abstract-data-toggle" role="button"
+                  <div class="left">
+                    <a id="abstract-link" data-toggle="collapse" href="#abstract-data-toggle" role="button"
                     aria-expanded="false" aria-controls="abstract-data-toggle" class="abstract-btn">Abstract</a>
+                    <a class="citeBtn hidden" style="cursor: pointer;" onclick="openCiteBox('TEST')" id="citeBtn"><i class="fa-solid fa-quote-left"></i></a>
+                  </div>
                   <div id="additional-links">
                     <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10445598">IEEE</a> -->
                   </div>
@@ -250,11 +253,31 @@
                   <div class="collapse" id="abstract-data-toggle">
                     Hello World
                   </div>
+        
                 </div>
               </div>
             </div>
           </div>
         </article>
+
+        <div class="cite-overlay hidden" id="citeOverlay">
+          <div class="cite-box" >
+              <pre class="bibtex" id="bibtexBlock">
+@article{sample2024,
+  title={Sample Article Title},
+  author={Author A and Author B},
+  journal={Sample Journal},
+  year={2024},
+  volume={1},
+  number={1},
+  pages={1-10},
+  doi={10.1234/sample.2024.1}
+}
+</pre>
+             <button class="citeBtn" id="copyBibtexBtn" >Copy</button>
+            <span id="copyMsg" style="display:none; margin-left:10px; color:green;">Copied!</span>
+          </div>
+        </div>
 
       </section>
 
