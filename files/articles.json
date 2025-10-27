@@ -1,5 +1,30 @@
 {
   "articles": [
+     {
+      "id": "2025_SASBE",
+      "category": "publications",
+      "year": 2025,
+      "tags": ["full"],
+      "image": "imgs/SASBE_Comparison_Construction.png",
+      "title": "Comparing 3D Gaussian Splatting and Laser Scanning for Assessing the Condition of Structural Concrete Elements for Circular Reuse",
+      "authors": [
+        "Philipp Hagedorn",
+        "Patrick Herbers",
+        "Kristoffer Waldow",
+        "Arnulph Fuhrmann",
+        "Niels Bartels"
+      ],
+      "published": "SASBE 2025: Smart and Sustainable Built Environment",
+      "abstract": "The reuse of structural concrete elements is gaining importance in the context of sustainable construction and the circular economy. This paper conducts an analysis of the usability of 3D Gaussian Splatting (3DGS) and handheld Mobile Laser Scanning (MLS) for the initial characterization of reinforced concrete components, facilitating their reuse. While handheld MLS enables the acquisition of accurate geometric data through LiDAR, 3DGS enables rapid and visually rich reconstructions from simple video input. The aim is to evaluate how these complementary methods can provide a low-cost and efficient means of roughly estimating the exterior condition and dismantling potential. The methods are applied to real building components extracted from a deconstruction site of an office building. The evaluation discusses the strengths and limitations of both methods in terms of surface detail and geometric accuracy. The study highlights the potential of digital surveying to support early decision-making in reuse strategies with minimal equipment and effort.",
+      "links": [
+        {
+          "name":"ResearchGate",
+          "link": "https://www.researchgate.net/publication/396854539_Comparing_3D_Gaussian_Splatting_and_Laser_Scanning_for_Assessing_the_Condition_of_Structural_Concrete_Elements_for_Circular_Reuse"
+        }
+      ],
+      "award": false,
+      "bibtex": false
+    },
     {
       "id": "2025_PTE",
       "category": "publications",
