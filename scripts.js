@@ -284,10 +284,77 @@ async function buildInteractiveProjects() {
   // console.log(teachingHtml);
 }
 
+async function buildTimeline() {
+  const data = await getJsonData("files/articles.json");
+  const timelineWrapper = document.getElementById("timelineWrapper");
+  
+  // Count publications per year
+  const yearCounts = {};
+  data.articles.forEach(article => {
+    const year = article.year;
+    yearCounts[year] = (yearCounts[year] || 0) + 1;
+  });
+  
+  // Get sorted years
+  const years = Object.keys(yearCounts).sort((a, b) => a - b);
+  
+  // Create timeline track
+  const track = document.createElement('div');
+  track.className = 'timeline-track';
+  
+  // Get max count for scaling
+  const maxCount = Math.max(...Object.values(yearCounts));
+  
+  // Create year items
+  years.forEach(year => {
+    const count = yearCounts[year];
+    const barHeight = Math.max(10, (count / maxCount) * 50); // Min 10px, max 50px
+    
+    const yearItem = document.createElement('div');
+    yearItem.className = 'timeline-year-item';
+    
+    const bar = document.createElement('div');
+    bar.className = 'year-bar';
+    bar.style.height = barHeight + 'px';
+    
+    const countLabel = document.createElement('div');
+    countLabel.className = 'year-count';
+    countLabel.textContent = count;
+    
+    const dot = document.createElement('div');
+    dot.className = 'year-dot';
+    
+    const label = document.createElement('div');
+    label.className = 'year-label';
+    label.textContent = year;
+    
+    yearItem.appendChild(countLabel);
+    yearItem.appendChild(bar);
+    yearItem.appendChild(dot);
+    yearItem.appendChild(label);
+    
+    // Add click handler to scroll to first article of that year
+    yearItem.addEventListener('click', () => {
+      const firstArticle = data.articles.find(a => a.year == year);
+      if (firstArticle) {
+        const element = document.getElementById(firstArticle.id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+    
+    track.appendChild(yearItem);
+  });
+  
+  timelineWrapper.appendChild(track);
+}
+
 async function setup() {
   const articleData = await buildPublications("all");
 
   buildTabs(articleData.length);
+  await buildTimeline();
 
   await buildNews();
   scrollBtnBehaviour();
