@@ -16,9 +16,15 @@ async function getBibtexData(url) {
 }
 
 let buildPublicationArticles = [];
-async function buildPublications(type) {
+let currentPublicationType = 'all';
+let currentAuthorFilter = 'all';
+
+async function buildPublications(type, authorFilter = 'all') {
   const article_template = document.getElementById("article-template");
   const data = await getJsonData("files/articles.json");
+
+  currentPublicationType = type;
+  currentAuthorFilter = authorFilter;
 
   for (let i = 0; i < buildPublicationArticles.length; i++) {
     buildPublicationArticles[i].remove();
@@ -40,6 +46,14 @@ async function buildPublications(type) {
       }
     }
     article.tags[0] = temp_tag;
+
+    // Filter by first author
+    if(authorFilter === 'first'){
+      const firstAuthor = article.authors[0]?.trim();
+      if(firstAuthor !== "Kristoffer Waldow"){
+        continue; // Skip if not first author
+      }
+    }
 
     
     let newArticle = article_template.cloneNode(true);
@@ -331,14 +345,27 @@ options.forEach(option => {
   option.addEventListener('click', async function (event) {
     const selectedState = event.target.getAttribute('data-state');
     updateToggle(selectedState);
-    const articleData = await buildPublications(selectedState);
+    const articleData = await buildPublications(selectedState, currentAuthorFilter);
     document.getElementById("tab-publication").innerText = `Publications (${articleData.length})`;
   });
 
 });
 
 // Setze den Standardzustand
-updateToggle('poster');
+updateToggle('all');
+
+// First Author Checkbox Toggle
+const firstAuthorCheckbox = document.getElementById('firstAuthorCheckbox');
+let isFirstAuthorActive = false;
+
+firstAuthorCheckbox.addEventListener('click', async function() {
+  isFirstAuthorActive = !isFirstAuthorActive;
+  this.classList.toggle('active', isFirstAuthorActive);
+  
+  const authorFilter = isFirstAuthorActive ? 'first' : 'all';
+  const articleData = await buildPublications(currentPublicationType, authorFilter);
+  document.getElementById("tab-publication").innerText = `Publications (${articleData.length})`;
+});
 
 function openCiteBox(citePreText){
   const overlay = document.getElementById("citeOverlay");

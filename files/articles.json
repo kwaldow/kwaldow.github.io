@@ -326,7 +326,7 @@
       "year": 2019,
       "tags": ["full"],
       "image": "imgs/RemoteCollaboration.png",
-      "title": "Investigating the effect of embodied visualization in remote collaborative augmented reality",
+      "title": "Investigating the Effect of Embodied Visualization in Remote Collaborative Augmented Reality",
       "authors": [
         "Kristoffer Waldow",
         "Arnulph Fuhrmann",
@@ -343,7 +343,8 @@
           "name": "Springer",
           "link": "https://link.springer.com/chapter/10.1007/978-3-030-31908-3_15"
         }
-      ]
+      ],
+      "bibtex": true
     },
 
     {
