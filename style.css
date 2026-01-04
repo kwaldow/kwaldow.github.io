@@ -311,7 +311,7 @@ article {
 
 /* Clean Timeline */
 .timeline-wrapper {
-  margin-top: -3rem;
+  /* margin-top: 3rem; */
   margin: 3rem auto 2rem;
   max-width: 900px;
   padding: 3rem 0 1rem;
@@ -349,22 +349,24 @@ article {
 .year-bar {
   position: relative;
   top: -6px;
-  width: 60px;
+  width: 40px;
   background-color: #464e7b;
   border-radius: 3px 3px 0 0;
   transition: all 0.3s ease;
-  opacity: 0;
-  transform: scaleY(0);
+  opacity: 0.5;
+  transform: scaleY(0.5);
   transform-origin: bottom;
 }
 
 .timeline-wrapper:hover .year-bar {
-  opacity: 1;
-  transform: scaleY(1);
+  opacity: 0.5;
+  transform: scaleY(0.5);
 }
 
 .timeline-year-item:hover .year-bar {
   background-color: #2e7d32;
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 .year-dot {
@@ -397,15 +399,20 @@ article {
   position: absolute;
   bottom: 100%;
   margin-bottom: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #999;
   font-weight: normal;
-  opacity: 0;
+  opacity: 0.5;
   transition: opacity 0.3s ease;
 }
 
 .timeline-wrapper:hover .year-count {
+  opacity: 0.5;
+}
+
+.timeline-year-item:hover .year-count {
   opacity: 1;
+  color: #464e7b;
 }
 
 @media screen and (max-width: 992px) {
