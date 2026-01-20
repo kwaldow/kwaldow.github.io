@@ -1,9 +1,5 @@
 ### Asisstant teaching at the Institute for Media and Photo Technology (IMP), TH Köln
 
-**Own Courses:**
-
-- WEB1 - Backend Technologies (Bachelor)
-- WEB2 - Frontend Technologies (Bachelor)
 
 **Modules:**
 
@@ -16,7 +12,11 @@
 - Supervision of the motion capture studio
 - Supervision of Bachelor's and Master's theses
 
-W
+**Old Courses:**
+
+- WEB1 - Backend Technologies (Bachelor)
+- WEB2 - Frontend Technologies (Bachelor)
+
 <br>
 <br>
 <br>

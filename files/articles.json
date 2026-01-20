@@ -73,8 +73,8 @@
           "link": "https://www.youtube.com/watch?v=FgRtNsRKDBI"
         },
         {
-          "name":"ResearchGate",
-          "link": "https://www.researchgate.net/publication/389168516_DimSplat_A_Real-Time_Diminished_Reality_System_for_Revisiting_Environments_Using_Gaussian_Splats_in_Mobile_WebXR"
+          "name":"IEEE",
+          "link": "https://ieeexplore.ieee.org/document/10972426"
         }
       ],
         "bibtex": true
@@ -100,8 +100,8 @@
           "link":"/gsplats/index.html"
         },
         {
-          "name":"ResearchGate",
-          "link": "https://www.researchgate.net/publication/385552762_3D_Gaussian_Splatting_for_Construction_Sites"
+          "name":"Springer",
+          "link": "https://link.springer.com/chapter/10.1007/978-981-96-8765-7_3"
         }
       ],
       "bibtex": true
