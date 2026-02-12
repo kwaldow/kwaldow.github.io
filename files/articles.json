@@ -1,6 +1,68 @@
 {
   "articles": [
-     {
+    {
+      "id": "2026_PTE_Cutout",
+      "category": "publications",
+      "year": 2026,
+      "tags": ["preprint"],
+      "image": "imgs/PTE_Cutout.png",
+      "title": "Evaluating Cutout Rendering Techniques for Pass-Through Embodiment Using a Real-Mirror Metaphor",
+      "authors": ["Kristoffer Waldow", "Arnulph Fuhrmann", "Daniel Roth"],
+      "published": "IEEE Transactions on Visualization and Computer Graphics (TVCG)",
+      "abstract": "Creating a convincing sense of embodiment is vital for Virtual Reality (VR), yet realistic avatar appearance remains challenging. One promising solution is Pass-Through Embodiment (PTE), which visualizes the user’s real body, but depth sensor limitations create visual artifacts at boundaries. Therefore, we evaluated three edge techniques: soft gradient, hard mask, and a novel dithering technique. Combined with a unique real mirror paradigm, we assessed their impact on presence and embodiment. Results show dithered and soft edges significantly outperform hard masks while dithering provides a computationally efficient, perceptually comparable alternative to smooth blending for enhancing PTE in immersive environments.",
+      "links": [
+        {
+          "name": "Preprint",
+          "link": "https://www.researchgate.net/publication/400345934_Evaluating_Cutout_Rendering_Techniques_for_Pass-Through_Embodiment_Using_a_Real-Mirror_Metaphor"
+        }
+      ],
+      "award": false,
+      "bibtex": false
+    },
+    {
+      "id": "2026_Aligning_Realities",
+      "category": "publications",
+      "year": 2026,
+      "tags": ["preprint"],
+      "image": "imgs/AligningRealities.png",
+      "title": "Aligning Realities: A Registration Pipeline for Arbitrary Objects in Mixed Reality Using Controller-Based Point Selection",
+      "authors": [
+        "David Mertens",
+        "Steffen Sascha Stein",
+        "Kristoffer Waldow",
+        "Arnulph Fuhrmann"
+      ],
+      "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
+      "abstract": "A wide range of Mixed Reality (MR) applications rely on haptic interaction with real-world objects. These interactions range from grasping and standing on objects, to writing on their surfaces. Accurate alignment of a real-world object with its virtual counterpart enables users to perceive and interact with it both visually and haptically. However, existing registration methods often rely on tracked, external markers, are geometrically constrained, or require complex setups that limit their practical applicability. Hence, we present an integrated pipeline for rapid and accurate registration of arbitrary physical objects in MR. The proposed approach combines custom 3D-printed add-ons for Meta Quest 3 controllers with a point-to-point matching algorithm based on Kabsch optimization, enabling precise selection, calibration, and registration. The method is objectively evaluated using a modern motion capture rig against other state-of-the-art registration techniques. An additional user-centric evaluation helps to understand the general usability of our pipeline. Source code and datasets are released as open resources to encourage reproducibility and further research.",
+      "links": [
+        {
+          "name": "Preprint",
+          "link": "https://www.researchgate.net/publication/400386706_Aligning_Realities_A_Registration_Pipeline_for_Arbitrary_Objects_in_Mixed_Reality_Using_Controller-Based_Point_Selection"
+        }
+      ],
+      "award": false,
+      "bibtex": false
+    },
+    {
+      "id": "2026_PTE_Demo",
+      "category": "publications",
+      "year": 2026,
+      "tags": ["preprint"],
+      "image": "imgs/PTE_Demo.png",
+      "title": "Seeing the Real Me: Experiencing Real-Body Pass-Through Embodiment and Interaction",
+      "authors": ["Kristoffer Waldow", "Arnulph Fuhrmann", "Daniel Roth"],
+      "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
+      "abstract": "Embodiment is fundamental to immersive VR, yet traditional avatars often suffer from perceptual mismatches. Pass-Through Embodiment (PTE) addresses this by integrating a stereoscopic live video feed of the user's body into the virtual environment. By combining depth-based segmentation with video-see-through streams, PTE provides a high-fidelity, photon-captured representation. We present the first public PTE demonstration, allowing users to perceive themselves while interacting with diverse virtual scenes. Participants can evaluate how their body, different edge rendering, and environmental contexts affect visual coherence in real-time. This demonstrates how PTE facilitates a naturally anchored sense of embodiment , bridging physical and virtual worlds through natural interaction.",
+      "links": [
+        {
+          "name": "Preprint",
+          "link": "https://doi.org/10.13140/RG.2.2.31676.71041"
+        }
+      ],
+      "award": false,
+      "bibtex": false
+    },
+    {
       "id": "2025_SASBE",
       "category": "publications",
       "year": 2025,
@@ -18,7 +80,7 @@
       "abstract": "The reuse of structural concrete elements is gaining importance in the context of sustainable construction and the circular economy. This paper conducts an analysis of the usability of 3D Gaussian Splatting (3DGS) and handheld Mobile Laser Scanning (MLS) for the initial characterization of reinforced concrete components, facilitating their reuse. While handheld MLS enables the acquisition of accurate geometric data through LiDAR, 3DGS enables rapid and visually rich reconstructions from simple video input. The aim is to evaluate how these complementary methods can provide a low-cost and efficient means of roughly estimating the exterior condition and dismantling potential. The methods are applied to real building components extracted from a deconstruction site of an office building. The evaluation discusses the strengths and limitations of both methods in terms of surface detail and geometric accuracy. The study highlights the potential of digital surveying to support early decision-making in reuse strategies with minimal equipment and effort.",
       "links": [
         {
-          "name":"ResearchGate",
+          "name": "ResearchGate",
           "link": "https://www.researchgate.net/publication/396854539_Comparing_3D_Gaussian_Splatting_and_Laser_Scanning_for_Assessing_the_Condition_of_Structural_Concrete_Elements_for_Circular_Reuse"
         }
       ],
@@ -42,11 +104,11 @@
       "abstract": "Creating a compelling sense of presence and embodiment can enhance the user experience in virtual reality (VR). One method to accomplish this is through self-representation with embodied personalized avatars or video self-avatars. However, these approaches require external hardware and primarily evaluate hand representations in VR across various tasks. We therefore present in this paper an alternative approach: video Pass-Through Embodiment (PTE), which utilizes the per-eye real-time depth map from Head-Mounted Displays (HMDs) traditionally used for Augmented Reality features. This method allows the user’s real body to be cut out of the pass-through video stream and be represented in the VR environment without the need for additional hardware. To evaluate our approach, we conducted a between-subjects study involving 40 participants who completed a seated object sorting task using either PTE or a customized avatar. The results show that PTE, despite its limited depth resolution that leads to some visual artifacts, significantly enhances the user’s sense of presence and embodiment. In addition, PTE does not negatively affect task performance, cognitive load, or cause VR sickness. These findings imply that video pass-through embodiment offers a practical and efficient alternative to traditional avatar-based methods in VR.",
       "links": [
         {
-          "name":"Video",
+          "name": "Video",
           "link": "https://www.youtube.com/watch?v=XyfXA59z33M"
         },
         {
-          "name":"IEEE TVCG",
+          "name": "IEEE TVCG",
           "link": "https://ieeexplore.ieee.org/abstract/document/10919005"
         }
       ],
@@ -60,24 +122,20 @@
       "tags": ["poster"],
       "image": "imgs/DimSplat.png",
       "title": "DimSplat: A Real-Time Diminished Reality System for Revisiting Environments Using Gaussian Splats in Mobile WebXR",
-      "authors": [
-        "Kristoffer Waldow",
-        "Jonas Scholz",
-        "Arnulph Fuhrmann"
-      ],
+      "authors": ["Kristoffer Waldow", "Jonas Scholz", "Arnulph Fuhrmann"],
       "published": "Proceedings of 32th IEEE Virtual Reality Conference (VR ’25)",
       "abstract": "Diminished Reality (DR) allows for the selective removal or transformation of real-world objects from a user’s feld of view. In certain cases, it becomes essential to revisit environments and observe them in their original state. While Smartphone and Web-based approaches provide intuitive and convenient AR platforms, it also faces challenges like limited resources. This work introduces a DR system using Gaussian splats for real-time object removal on WebXR-enabled devices. We achieve up to 60 FPS while maintaining high visual fdelity, validated with different image quality metrics, offering a scalable solution for revisiting and manipulating temporally altered environments.",
       "links": [
         {
-          "name":"Video",
+          "name": "Video",
           "link": "https://www.youtube.com/watch?v=FgRtNsRKDBI"
         },
         {
-          "name":"IEEE",
+          "name": "IEEE",
           "link": "https://ieeexplore.ieee.org/document/10972426"
         }
       ],
-        "bibtex": true
+      "bibtex": true
     },
     {
       "id": "2024_3DGSConstruction",
@@ -96,11 +154,11 @@
       "abstract": "This paper explores the potential of 3D Gaussian Splatting (3DGS) for construction site visualization. While Virtual Reality (VR) is gaining traction in the Architecture, Engineering, and Construction (AEC) industry, there is a gap between its potential and its application on real construction sites. This paper proposes 3DGS as a method to create fast, high quality 3D models from simple video capture. This eliminates the need for time-consuming traditional methods such as laser scanning.  The resulting models can then be viewed in VR, enabling immersive walkthroughs and inspections. The results of the structured interviews indicate that Kerbl et al.'s 3DGS provides the highest quality and detail, but requires powerful hardware, while online services like Polycam are a more cost-effective alternative for short-term modeling. Photogrammetry, while less expensive, produces models with less detail. In terms of usability, respondents generally preferred models with more detail and recognition of specific components. 3DGS performed well in VR, providing an immersive experience similar to an actual site visit. However, some concerns were raised about motion sickness and discomfort when wearing such VR head-mounted system.",
       "links": [
         {
-          "name":"Live Preview",
-          "link":"/gsplats/index.html"
+          "name": "Live Preview",
+          "link": "/gsplats/index.html"
         },
         {
-          "name":"Springer",
+          "name": "Springer",
           "link": "https://link.springer.com/chapter/10.1007/978-981-96-8765-7_3"
         }
       ],
@@ -129,7 +187,7 @@
           "link": "https://dl.gi.de/items/d094d5b9-f6f5-4618-8178-349e257f7d9a"
         }
       ],
-       "bibtex": true
+      "bibtex": true
     },
     {
       "id": "2024_FaceEnhance",
@@ -147,7 +205,7 @@
           "link": "https://ieeexplore.ieee.org/abstract/document/10536505"
         }
       ],
-       "bibtex": true
+      "bibtex": true
     },
     {
       "id": "2024_DepthPerception",
@@ -173,7 +231,7 @@
         }
       ],
       "award": true,
-       "bibtex": true
+      "bibtex": true
     },
     {
       "id": "2024_DeepNeuralLabeling",
@@ -195,7 +253,7 @@
           "link": "https://ieeexplore.ieee.org/abstract/document/10445598"
         }
       ],
-       "bibtex": true
+      "bibtex": true
     },
 
     {
