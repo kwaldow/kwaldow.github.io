@@ -16,10 +16,17 @@ async function getBibtexData(url) {
 }
 
 let buildPublicationArticles = [];
-let currentPublicationType = 'all';
-let currentAuthorFilter = 'all';
+let currentPublicationType = "all";
+let currentAuthorFilter = "all";
 
-async function buildPublications(type, authorFilter = 'all') {
+// Publication Group Configuration
+const publicationGroups = {
+  full: ["full", "journal", "workshop"],
+  short: ["poster", "demo", "preprint"],
+  // Add new groups here globally
+};
+
+async function buildPublications(type, authorFilter = "all") {
   const article_template = document.getElementById("article-template");
   const data = await getJsonData("files/articles.json");
 
@@ -34,30 +41,39 @@ async function buildPublications(type, authorFilter = 'all') {
   for (let i = 0; i < data.articles.length; i++) {
     const article = data.articles[i];
     const id = article.id;
-  
-    //Hacky Solution
+
+    // Filter logic based on groups
+    if (type !== "all") {
+      const allowedTags = publicationGroups[type] || [type];
+      const hasAllowedTag = article.tags.some((tag) =>
+        allowedTags.includes(tag),
+      );
+
+      if (!hasAllowedTag) {
+        continue;
+      }
+    }
+
+    //Hacky Solution to unify display tags (optional, can be refined)
+    // Here we can also map tags to display names if needed
+    /*
     let temp_tag = article.tags[0];
     if(article.tags[0] == "journal"){
       article.tags[0] = "full";
     }
-    if(type != "all"){
-      if (!article.tags.includes(type)) {
-        continue; // Wenn der Artikel den Typ nicht hat, wird er übersprungen
-      }
-    }
-    article.tags[0] = temp_tag;
+    */
 
     // Filter by first author
-    if(authorFilter === 'first'){
+    if (authorFilter === "first") {
       const firstAuthor = article.authors[0]?.trim();
-      if(firstAuthor !== "Kristoffer Waldow"){
+      if (firstAuthor !== "Kristoffer Waldow") {
         continue; // Skip if not first author
       }
     }
 
-    
     let newArticle = article_template.cloneNode(true);
-    document.getElementById("publications").appendChild(newArticle);
+    // document.getElementById("publications").appendChild(newArticle);
+    document.getElementById("publications-list").appendChild(newArticle);
     newArticle.classList.remove("hidden");
 
     newArticle.id = article.id;
@@ -72,7 +88,7 @@ async function buildPublications(type, authorFilter = 'all') {
             author.trim() == "Kristoffer Waldow"
               ? "<b>Kristoffer Waldow</b>"
               : author.trim()
-          }</span>`
+          }</span>`,
       )
       .join("");
     newArticle.querySelector(".article-publication").textContent =
@@ -90,9 +106,9 @@ async function buildPublications(type, authorFilter = 'all') {
       .querySelector("#abstract-link")
       .setAttribute("aria-controls", abstractID);
 
-    newArticle.querySelector("#abstract-data-toggle").textContent =
-      article.abstract;
     newArticle.querySelector("#abstract-data-toggle").id = abstractID;
+    newArticle.querySelector(`#${abstractID} .abstract-content`).textContent =
+      article.abstract;
 
     let linkContainer = newArticle.querySelector("#additional-links");
     article.links.map((item) => {
@@ -112,8 +128,8 @@ async function buildPublications(type, authorFilter = 'all') {
     if (article.award) {
       newArticle.querySelector(".award").classList.remove("hidden");
     }
-    
-    if(article.bibtex){
+
+    if (article.bibtex) {
       let bibtexData = await getBibtexData(`files/bib/${article.id}.bib`);
       newArticle.querySelector(".citeBtn").classList.remove("hidden");
       newArticle.querySelector(".citeBtn").addEventListener("click", () => {
@@ -123,13 +139,156 @@ async function buildPublications(type, authorFilter = 'all') {
 
     buildPublicationArticles.push(newArticle);
   }
+
+  // Generate Stats after building articles
+  if (type === "all" && authorFilter === "all") {
+    document.getElementById("publication-stats").classList.remove("hidden");
+    generateStats(data.articles);
+  } else {
+    document.getElementById("publication-stats").classList.add("hidden");
+  }
+
   return buildPublicationArticles;
 }
 
+function generateStats(articles) {
+  // 1. Calculate Type Stats
+  const typeCounts = {
+    "Full Paper": 0,
+    Journal: 0,
+    Poster: 0,
+    Demo: 0,
+    Workshop: 0,
+    Preprint: 0,
+    Other: 0,
+  };
+
+  // 2. Collect Keywords
+  const keywordsCount = {};
+
+  articles.forEach((article) => {
+    // Count Types based on tags
+    let typeFound = false;
+    article.tags.forEach((tag) => {
+      const lowerTag = tag.toLowerCase();
+      // Only count predefined types for the chart
+      if (lowerTag === "full" || lowerTag === "full paper") {
+        typeCounts["Full Paper"]++;
+        typeFound = true;
+      } else if (lowerTag === "journal") {
+        typeCounts["Journal"]++;
+        typeFound = true;
+      } else if (lowerTag === "poster") {
+        typeCounts["Poster"]++;
+        typeFound = true;
+      } else if (lowerTag === "demo") {
+        typeCounts["Demo"]++;
+        typeFound = true;
+      } else if (lowerTag === "workshop") {
+        typeCounts["Workshop"]++;
+        typeFound = true;
+      } else if (lowerTag === "preprint") {
+        typeCounts["Preprint"]++;
+        typeFound = true;
+      }
+    });
+
+    if (!typeFound) typeCounts["Other"]++;
+
+    // Count Keywords
+    // If article has "keywords" field, use it. Otherwise fall back to tags but filter out the "type" tags used above.
+    const sourceKeywords = article.keywords || article.tags;
+
+    if (sourceKeywords) {
+      sourceKeywords.forEach((keyword) => {
+        // Normalize keyword
+        const normKeyword = keyword.trim();
+        const lowerKeyword = normKeyword.toLowerCase();
+
+        // Filter out structural tags if we are falling back to tags
+        if (!article.keywords) {
+          const structuralTags = [
+            "full",
+            "journal",
+            "poster",
+            "demo",
+            "workshop",
+            "preprint",
+            "short",
+            "long",
+          ];
+          if (structuralTags.includes(lowerKeyword)) return;
+        }
+
+        if (!keywordsCount[normKeyword]) keywordsCount[normKeyword] = 0;
+        keywordsCount[normKeyword]++;
+      });
+    }
+  });
+
+  // Render Bar Chart
+  const barChartContainer = document.getElementById("stats-bar-chart");
+  barChartContainer.innerHTML = "";
+
+  const values = Object.values(typeCounts);
+  const maxCount = Math.max(...values);
+
+  Object.entries(typeCounts).forEach(([label, count]) => {
+    // Only show categories that have at least one paper
+    if (count === 0) return;
+
+    const percentage = maxCount > 0 ? (count / maxCount) * 100 : 0;
+
+    const row = document.createElement("div");
+    row.className = "stat-row";
+
+    // The bar width is relative to the max count to fill the space better
+    // But conceptually a true bar chart is % of total.
+    // Here we use % of max value for visual scaling in the container.
+
+    row.innerHTML = `
+      <div class="stat-label">${label}</div>
+      <div class="stat-bar-container">
+        <div class="stat-bar" style="width: 0%" data-target-width="${percentage}%">
+          ${count}
+        </div>
+      </div>
+    `;
+    barChartContainer.appendChild(row);
+
+    // Animate bars with a slight delay
+    setTimeout(() => {
+      const bar = row.querySelector(".stat-bar");
+      bar.style.width = bar.getAttribute("data-target-width");
+    }, 100);
+  });
+
+  // Render Keywords Cloud
+  const keywordsContainer = document.getElementById("keywords-cloud");
+  keywordsContainer.innerHTML = "";
+
+  // Sort keywords by count descending
+  const sortedKeywords = Object.entries(keywordsCount).sort(
+    (a, b) => b[1] - a[1],
+  );
+
+  if (sortedKeywords.length === 0) {
+    keywordsContainer.innerHTML =
+      '<p style="text-align:center; color:#999;">No keywords found.</p>';
+  } else {
+    // Take top 20 keywords to avoid overcrowding
+    sortedKeywords.slice(0, 20).forEach(([keyword, count]) => {
+      const tag = document.createElement("span");
+      tag.className = "keyword-tag";
+      tag.innerHTML = `${keyword} <span class="count">${count}</span>`;
+      keywordsContainer.appendChild(tag);
+    });
+  }
+}
+
 function buildTabs(articleCount) {
-  const tabs = (document.getElementById(
-    "tab-publication"
-  ).innerText = `Publications (${articleCount})`);
+  const tabs = (document.getElementById("tab-publication").innerText =
+    `Publications (${articleCount})`);
 
   const children = document.getElementById("tabs").children;
   const sections = document.getElementsByTagName("section");
@@ -139,7 +298,7 @@ function buildTabs(articleCount) {
       changeTab(index);
     });
   }
-  
+
   function changeTab(id) {
     for (let i = 0; i < children.length; i++) {
       children[i].classList.remove("nav-active");
@@ -179,9 +338,7 @@ function buildTabs(articleCount) {
       default:
         changeTab(0);
     }
-   
   }
-  
 }
 
 async function buildNews() {
@@ -190,7 +347,7 @@ async function buildNews() {
   const newsHTMLData = data.news
     .map(
       (newsItem) =>
-        ` <li><span class='time'>[${newsItem.date}]</span> <span class='message'>${newsItem.message}</span></li>`
+        ` <li><span class='time'>[${newsItem.date}]</span> <span class='message'>${newsItem.message}</span></li>`,
     )
     .join("");
   newsContainer.innerHTML = newsHTMLData;
@@ -276,7 +433,7 @@ async function buildTeaching() {
 
 async function buildInteractiveProjects() {
   const teachingData = await getMarkdownData(
-    "/files/mds/interactive-projects.md"
+    "/files/mds/interactive-projects.md",
   );
   const teachingHtml = marked.parse(teachingData);
   document.getElementById("interactive-projects-content").innerHTML =
@@ -287,66 +444,66 @@ async function buildInteractiveProjects() {
 async function buildTimeline() {
   const data = await getJsonData("files/articles.json");
   const timelineWrapper = document.getElementById("timelineWrapper");
-  
+
   // Count publications per year
   const yearCounts = {};
-  data.articles.forEach(article => {
+  data.articles.forEach((article) => {
     const year = article.year;
     yearCounts[year] = (yearCounts[year] || 0) + 1;
   });
-  
+
   // Get sorted years
   const years = Object.keys(yearCounts).sort((a, b) => a - b);
-  
+
   // Create timeline track
-  const track = document.createElement('div');
-  track.className = 'timeline-track';
-  
+  const track = document.createElement("div");
+  track.className = "timeline-track";
+
   // Get max count for scaling
   const maxCount = Math.max(...Object.values(yearCounts));
-  
+
   // Create year items
-  years.forEach(year => {
+  years.forEach((year) => {
     const count = yearCounts[year];
     const barHeight = Math.max(10, (count / maxCount) * 50); // Min 10px, max 50px
-    
-    const yearItem = document.createElement('div');
-    yearItem.className = 'timeline-year-item';
-    
-    const bar = document.createElement('div');
-    bar.className = 'year-bar';
-    bar.style.height = barHeight + 'px';
-    
-    const countLabel = document.createElement('div');
-    countLabel.className = 'year-count';
+
+    const yearItem = document.createElement("div");
+    yearItem.className = "timeline-year-item";
+
+    const bar = document.createElement("div");
+    bar.className = "year-bar";
+    bar.style.height = barHeight + "px";
+
+    const countLabel = document.createElement("div");
+    countLabel.className = "year-count";
     countLabel.textContent = count;
-    
-    const dot = document.createElement('div');
-    dot.className = 'year-dot';
-    
-    const label = document.createElement('div');
-    label.className = 'year-label';
+
+    const dot = document.createElement("div");
+    dot.className = "year-dot";
+
+    const label = document.createElement("div");
+    label.className = "year-label";
     label.textContent = year;
-    
+
     yearItem.appendChild(countLabel);
     yearItem.appendChild(bar);
     yearItem.appendChild(dot);
     yearItem.appendChild(label);
-    
+
     // Add click handler to scroll to first article of that year
-    yearItem.addEventListener('click', () => {
-      const firstArticle = data.articles.find(a => a.year == year);
+    yearItem.addEventListener("click", () => {
+      const firstArticle = data.articles.find((a) => a.year == year);
       if (firstArticle) {
         const element = document.getElementById(firstArticle.id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }
     });
-    
+
     track.appendChild(yearItem);
   });
-  
+
   timelineWrapper.appendChild(track);
 }
 
@@ -381,80 +538,84 @@ document.addEventListener("scroll", function () {
   }
 });
 
-
-const toggle = document.getElementById('threeOptionToggle');
-const options = toggle.querySelectorAll('.option');
-const activeArea = toggle.querySelector('.active-area');
+const toggle = document.getElementById("threeOptionToggle");
+const options = toggle.querySelectorAll(".option");
+const activeArea = toggle.querySelector(".active-area");
 
 // Funktion, um den aktiven Bereich und Text basierend auf der Auswahl zu aktualisieren
 function updateToggle(state) {
   // Entferne aktive Klasse von allen Optionen und füge sie zur gewählten hinzu
-  options.forEach(option => option.classList.remove('active'));
+  options.forEach((option) => option.classList.remove("active"));
   const selectedOption = toggle.querySelector(`.option[data-state="${state}"]`);
-  selectedOption.classList.add('active');
+  selectedOption.classList.add("active");
 
   // Ändere den Schalter-Hintergrund und die Position basierend auf der Auswahl
   toggle.className = `toggle ${state}`;
 
   // Verschiebe den aktiven Bereich je nach Zustand
-  if (state === 'all') {
-    activeArea.style.transform = 'translateX(0%)';
-  } else if (state === 'full') {
-    activeArea.style.transform = 'translateX(100%)';
-  } else if (state === 'poster') {
-    activeArea.style.transform = 'translateX(200%)';
+  if (state === "all") {
+    activeArea.style.transform = "translateX(0%)";
+  } else if (state === "full") {
+    activeArea.style.transform = "translateX(100%)";
+  } else if (state === "short") {
+    activeArea.style.transform = "translateX(200%)";
   }
 }
 
-
 // Event-Listener für jede Option, um den Zustand zu wechseln
-options.forEach(option => {
-  option.addEventListener('click', async function (event) {
-    const selectedState = event.target.getAttribute('data-state');
+options.forEach((option) => {
+  option.addEventListener("click", async function (event) {
+    const selectedState = event.target.getAttribute("data-state");
     updateToggle(selectedState);
-    const articleData = await buildPublications(selectedState, currentAuthorFilter);
-    document.getElementById("tab-publication").innerText = `Publications (${articleData.length})`;
+    const articleData = await buildPublications(
+      selectedState,
+      currentAuthorFilter,
+    );
+    document.getElementById("tab-publication").innerText =
+      `Publications (${articleData.length})`;
   });
-
 });
 
 // Setze den Standardzustand
-updateToggle('all');
+updateToggle("all");
 
 // First Author Checkbox Toggle
-const firstAuthorCheckbox = document.getElementById('firstAuthorCheckbox');
+const firstAuthorCheckbox = document.getElementById("firstAuthorCheckbox");
 let isFirstAuthorActive = false;
 
-firstAuthorCheckbox.addEventListener('click', async function() {
+firstAuthorCheckbox.addEventListener("click", async function () {
   isFirstAuthorActive = !isFirstAuthorActive;
-  this.classList.toggle('active', isFirstAuthorActive);
-  
-  const authorFilter = isFirstAuthorActive ? 'first' : 'all';
-  const articleData = await buildPublications(currentPublicationType, authorFilter);
-  document.getElementById("tab-publication").innerText = `Publications (${articleData.length})`;
+  this.classList.toggle("active", isFirstAuthorActive);
+
+  const authorFilter = isFirstAuthorActive ? "first" : "all";
+  const articleData = await buildPublications(
+    currentPublicationType,
+    authorFilter,
+  );
+  document.getElementById("tab-publication").innerText =
+    `Publications (${articleData.length})`;
 });
 
-function openCiteBox(citePreText){
+function openCiteBox(citePreText) {
   const overlay = document.getElementById("citeOverlay");
   overlay.classList.remove("hidden");
   overlay.querySelector(".bibtex").innerText = citePreText;
 }
 
 // Copy to clipboard
-document.getElementById("copyBibtexBtn").addEventListener("click", function() {
+document.getElementById("copyBibtexBtn").addEventListener("click", function () {
   const text = document.getElementById("bibtexBlock").innerText;
 
   navigator.clipboard.writeText(text).then(() => {
     const msg = document.getElementById("copyMsg");
     msg.style.display = "inline";
-    setTimeout(() => msg.style.display = "none", 1500);
+    setTimeout(() => (msg.style.display = "none"), 1500);
     const overlay = document.getElementById("citeOverlay");
     setTimeout(() => overlay.classList.add("hidden"), 2500);
   });
 });
 
-
-document.getElementById("citeOverlay").addEventListener("click", function(e) {
+document.getElementById("citeOverlay").addEventListener("click", function (e) {
   const citeBox = document.querySelector(".cite-box");
   if (!citeBox.contains(e.target)) {
     this.classList.add("hidden");

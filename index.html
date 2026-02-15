@@ -194,13 +194,13 @@
         <div class="timeline-wrapper" id="timelineWrapper">
           <!-- Timeline will be generated dynamically -->
         </div>
-        
+
         <div class="toggle-container">
           <div class="toggle all" id="threeOptionToggle">
             <div class="active-area"></div>
             <div class="option" data-state="all">All</div>
             <div class="option" data-state="full">Full Paper</div>
-            <div class="option" data-state="poster">Poster</div>
+            <div class="option" data-state="short">Short Paper</div>
           </div>
           <div class="first-author-filter">
             <span class="filter-label">First Author</span>
@@ -209,7 +209,7 @@
             </div>
           </div>
         </div>
-        
+
         <article id="article-template" class="hidden">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 text-center">
@@ -238,8 +238,9 @@
                 <div class="article-links">
                   <div class="left">
                     <a id="abstract-link" data-toggle="collapse" href="#abstract-data-toggle" role="button"
-                    aria-expanded="false" aria-controls="abstract-data-toggle" class="abstract-btn">Abstract</a>
-                    <a class="citeBtn hidden" style="cursor: pointer;" onclick="openCiteBox('TEST')" id="citeBtn"><i class="fa-solid fa-quote-left"></i></a>
+                      aria-expanded="false" aria-controls="abstract-data-toggle" class="abstract-btn">Abstract</a>
+                    <a class="citeBtn hidden" style="cursor: pointer;" onclick="openCiteBox('TEST')" id="citeBtn"><i
+                        class="fa-solid fa-quote-left"></i></a>
                   </div>
                   <div id="additional-links">
                     <!-- <a href="https://ieeexplore.ieee.org/abstract/document/10445598">IEEE</a> -->
@@ -248,18 +249,38 @@
                 </div>
                 <div class="article-abstract">
                   <div class="collapse" id="abstract-data-toggle">
-                    Hello World
+                    <div class="abstract-content">
+                      Hello World
+                    </div>
                   </div>
-        
+
                 </div>
               </div>
             </div>
           </div>
         </article>
 
+
+        <div id="publications-list"></div>
+
+        <div id="publication-stats" class="publication-stats">
+          <div class="stats-container">
+            <h3>Publication Types</h3>
+            <div id="stats-bar-chart" class="stats-bar-chart">
+              <!-- Bar chart will be generated here -->
+            </div>
+          </div>
+          <div class="meta-container">
+            <h3>Topics & Keywords</h3>
+            <div id="keywords-cloud" class="keywords-cloud">
+              <!-- Keywords will be generated here -->
+            </div>
+          </div>
+        </div>
+
         <div class="cite-overlay hidden" id="citeOverlay">
-          <div class="cite-box" >
-              <pre class="bibtex" id="bibtexBlock">
+          <div class="cite-box">
+            <pre class="bibtex" id="bibtexBlock">
 @article{sample2024,
   title={Sample Article Title},
   author={Author A and Author B},
@@ -271,7 +292,7 @@
   doi={10.1234/sample.2024.1}
 }
 </pre>
-             <button class="citeBtn" id="copyBibtexBtn" >Copy</button>
+            <button class="citeBtn" id="copyBibtexBtn">Copy</button>
             <span id="copyMsg" style="display:none; margin-left:10px; color:green;">Copied!</span>
           </div>
         </div>

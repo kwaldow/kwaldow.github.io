@@ -88,7 +88,7 @@ body {
     background-color: white;
     z-index: 999999; */
   display: flex;
-flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 4rem;
 }
@@ -204,6 +204,20 @@ article {
 }
 .tags > .preprint::before {
   content: "Preprint";
+}
+
+.tags > .demo {
+  background-color: #6a8caf;
+}
+.tags > .demo::before {
+  content: "Demo";
+}
+
+.tags > .workshop {
+  background-color: #6a8caf;
+}
+.tags > .workshop::before {
+  content: "Workshop";
 }
 
 .article-title {
@@ -328,7 +342,7 @@ article {
 }
 
 .timeline-track::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 2rem;
   right: 2rem;
@@ -420,26 +434,26 @@ article {
     font-size: 1rem;
     padding: 0.3rem 0.7rem;
   }
-  
+
   .venue-grid {
     gap: 0.5rem;
   }
-  
+
   .timeline-track {
     padding: 0 1rem;
     min-height: 60px;
   }
-  
+
   .timeline-track::before {
     left: 1rem;
     right: 1rem;
     bottom: 30px;
   }
-  
+
   .year-label {
     font-size: 1rem;
   }
-  
+
   .year-bar {
     width: 30px;
   }
@@ -450,12 +464,12 @@ article {
   text-align: justify;
 }
 
-.article-abstract > div {
+.article-abstract .abstract-content {
   margin-top: 1rem;
   background-color: white;
   padding: 2rem;
   border-radius: 1rem;
-  outline: solid rgb(227, 227, 227) 1px;
+  border: solid rgb(227, 227, 227) 1px;
 }
 
 .abstract-btn {
@@ -633,14 +647,15 @@ article {
   }
 }
 
-
 article {
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
- /* article  .article-title {
+/* article  .article-title {
   opacity: 0;
   transform: translateY(-90px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -681,175 +696,293 @@ article.is-visible {
   text-align: center;
 } */
 
+/* Basisstil für den Container */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-    /* Basisstil für den Container */
-    .toggle-container {
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 50px;
-      font-family: Arial, sans-serif;
-      flex-wrap: wrap;
-      gap: 20px;
-      
-    }
+/* Basisstil für den Toggle-Schalter */
+.toggle {
+  margin-top: -20px;
+  display: flex;
+  position: relative;
+  width: 260px;
+  height: 30px;
+  background-color: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px rgba(99, 99, 99, 0.075);
+}
 
-    /* Basisstil für den Toggle-Schalter */
-    .toggle {
-      margin-top: -20px;
-      display: flex;
-      position: relative;
-      width: 260px;
-      height: 30px;
-      background-color: #ddd;
-      border-radius: 20px;
-      overflow: hidden;
-      cursor: pointer;
-      font-size: 1.25rem;
-      font-weight: bold;
-      box-shadow: 5px 5px 5px rgba(99, 99, 99, 0.075);
-      
-    }
+/* Aktiver Bereich, der sich bei Auswahl verschiebt */
+.toggle .active-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33.33%;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
 
-    /* Aktiver Bereich, der sich bei Auswahl verschiebt */
-    .toggle .active-area {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 33.33%;
-      height: 100%;
-      background-color: #4CAF50;
-      border-radius: 20px;
-      transition: 0.4s ease;
-    }
+/* Einzelne Option im Toggle */
+.toggle .option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Über dem aktiven Bereich anzeigen */
+  color: #666;
 
-    /* Einzelne Option im Toggle */
-    .toggle .option {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1; /* Über dem aktiven Bereich anzeigen */
-      color: #666;
+  transition: all 0.4s ease;
+}
+.toggle .option:hover {
+  border-radius: 20px;
+}
 
-      transition: all 0.4s ease;
-    }
-    .toggle .option:hover {
-        border-radius: 20px;
-    }
+/* Aktiver Text im Toggle */
+.toggle .option.active {
+  color: white;
+}
 
+/* Verschiedene Farben für die drei Zustände */
+.all .active-area {
+  background-color: #313131;
+}
+.full .active-area {
+  background-color: #464e7b;
+}
+.short .active-area {
+  background-color: #9290c3;
+}
 
-    /* Aktiver Text im Toggle */
-    .toggle .option.active {
-      color: white;
-    }
+/* First author checkbox toggle styles */
+.first-author-filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  gap: 10px;
+  top: -10px;
+}
 
-    /* Verschiedene Farben für die drei Zustände */
-    .all .active-area { background-color: #313131; }
-    .full .active-area { background-color: #464e7b; }
-    .poster .active-area { background-color: #9290c3; }
+.filter-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #666;
+}
 
-    /* First author checkbox toggle styles */
-    .first-author-filter {
-      position: relative;
-      display: flex;
-      align-items: center;
-      margin-left: 50px;
-      gap: 10px;
-      top: -10px;
-    }
+.checkbox-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  box-shadow: 5px 5px 5px rgba(99, 99, 99, 0.075);
+}
 
-    .filter-label {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #666;
-    }
+.checkbox-toggle.active {
+  background-color: #2e7d32;
+}
 
-    .checkbox-toggle {
-      position: relative;
-      width: 60px;
-      height: 30px;
-      background-color: #ddd;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background-color 0.4s ease;
-      box-shadow: 5px 5px 5px rgba(99, 99, 99, 0.075);
-    }
+.toggle-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-    .checkbox-toggle.active {
-      background-color: #2e7d32;
-    }
+.checkbox-toggle.active .toggle-slider {
+  transform: translateX(30px);
+}
 
-    .toggle-slider {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 24px;
-      height: 24px;
-      background-color: white;
-      border-radius: 50%;
-      transition: transform 0.4s ease;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+.collapse {
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
 
-    .checkbox-toggle.active .toggle-slider {
-      transform: translateX(30px);
-    }
+#abstract-data-toggle.collapsing {
+  height: auto;
+}
 
+.cite-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+.citeBtn {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0px 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.citeBtn:hover {
+  background-color: #f0f0f0;
+}
+.citeBtn:active {
+  background-color: #e0e0e0;
+}
 
-    .collapse {
-      transition: height 0.3s ease;
-      overflow: hidden;
-    }
-    
-    #abstract-data-toggle.collapsing {
-      height: auto;
-    }
+.cite-box {
+  background-color: whitesmoke;
+  width: 60%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    .cite-overlay{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: grid;
-      place-items: center;
-      z-index: 1000;
-    }
-    .citeBtn{
+.bibtex {
+  font-family: monospace;
+  background: white;
+}
+.bibtex button {
+  margin-top: 10px;
+  right: 10px;
+  top: 10px;
+}
 
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 0px 10px;
-      cursor: pointer;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    }
-    .citeBtn:hover{
-      background-color: #f0f0f0;
-    }
-    .citeBtn:active{
-      background-color: #e0e0e0;
-    }
+/* Publication Stats Styles */
+.publication-stats {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.05);
+}
 
-    .cite-box{
-      background-color: whitesmoke;
-      width: 60%;
-      max-width: 600px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+.publication-stats h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #464e7b;
+  font-weight: bold;
+}
 
-    .bibtex{
-      font-family: monospace;
-      background: white;
-      
-    }
-    .bibtex button {
-      margin-top: 10px;
-      right: 10px;
-      top: 10px;
-    }
+.stats-container,
+.meta-container {
+  margin-bottom: 3rem;
+}
+
+.stats-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stat-label {
+  width: 150px;
+  text-align: right;
+  font-weight: bold;
+  color: #555;
+}
+
+.stat-bar-container {
+  flex: 1;
+  background-color: #f0f0f0;
+  height: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-bar {
+  height: 100%;
+  background-color: #464e7b;
+  border-radius: 12px;
+  transition: width 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  min-width: 3rem;
+}
+
+.stat-count {
+  width: 40px;
+  text-align: left;
+  font-weight: bold;
+  color: #464e7b;
+}
+
+.keywords-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 2rem;
+}
+
+.keyword-tag {
+  background-color: #f0f0f0;
+  color: #555;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.keyword-tag:hover {
+  background-color: #464e7b;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.keyword-tag .count {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .stat-label {
+    width: 100px;
+    font-size: 0.9rem;
+  }
+
+  .stat-bar {
+    font-size: 0.75rem;
+  }
+
+  .keywords-cloud {
+    padding: 0;
+  }
+}

@@ -1,10 +1,89 @@
 {
   "articles": [
     {
+      "id": "2026_Virtosha",
+      "category": "publications",
+      "year": 2026,
+      "tags": ["workshop"],
+      "image": "imgs/Virtosha.png",
+      "title": "VIRTOSHA - A VR Training Simulation for Osteosynthesis Procedures with Force Feedback and Tissue Simulation",
+      "authors": [
+        "Anna Jansen",
+        "Kristoffer Waldow",
+        "Sebastian Pötter",
+        "Turhan Civelek",
+        "Melissa Steininger",
+        "Jerome Perret",
+        "Markus Wellmann",
+        "Steffen-Sascha Stein",
+        "David Lähner",
+        "Kristian Welle",
+        "Arnulph Fuhrmann",
+        "Björn Krüger"
+      ],
+      "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
+      "abstract": "We introduce VIRTOSHA, a work-in-progress VR training system for osteosynthesis procedures, which includes realistic tissue simulation, haptic feedback, improved hand tracking and an auhtoring tool. The current implementation focuses on fibula surgery as an initial use case.",
+      "links": [
+        {
+          "name": "Project",
+          "link": "https://www.th-koeln.de/informations-medien-und-elektrotechnik/forschungsprojekt-virtosha_122480.php"
+        },
+        {
+          "name": "Preprint",
+          "link": "#"
+        }
+      ],
+      "award": false,
+      "bibtex": false,
+      "keywords": [
+        "VR",
+        "training",
+        "osteosynthesis",
+        "haptics",
+        "tissue simulation"
+      ]
+    },
+    {
+      "id": "2026_ScalableLowCost",
+      "category": "publications",
+      "year": 2026,
+      "tags": ["poster"],
+      "image": "imgs/ScalableLowCost.png",
+      "title": "A Scalable and Cost-Effective Multi-View Capture System for Photorealistic Dynamic Human Reconstruction",
+      "authors": [
+        "Steffen-Sascha Stein",
+        "Dennis Amuser",
+        "Kai Altwicker",
+        "David Mertens",
+        "Matthias Bullert",
+        "Alisa Rüge",
+        "David Martin Karg",
+        "Kristoffer Waldow",
+        "Arnulph Fuhrmann"
+      ],
+      "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
+      "abstract": "Photorealistic human representation is a key factor for embodimentand presence in Virtual and Social Virtual Reality. While recentapproaches such as 3D Gaussian Splatting enable high-quality re-constructions, dynamic human capture remains challenging due tothe need for synchronized multi-view data. Existing capture sys-tems are often costly and inaccessible, limiting reproducibility anddataset availability. We present a low-cost, reproducible multi-viewcapture rig consisting of 68 synchronized Raspberry Pi cameras arranged for full 360° coverage. The system enables reliable acquisition of dynamic human data suitable for 3D Gaussian Splatting and VR applications.",
+      "links": [
+        {
+          "name": "Preprint",
+          "link": "https://doi.org/10.13140/RG.2.2.16244.62083"
+        }
+      ],
+      "award": false,
+      "bibtex": false,
+      "keywords": [
+        "multi-view capture",
+        "photorealistic reconstruction",
+        "dynamic human capture",
+        "3D Gaussian Splatting",
+        "low-cost system"
+      ]
+    },
+    {
       "id": "2026_PTE_Cutout",
       "category": "publications",
       "year": 2026,
-      "tags": ["preprint"],
+      "tags": ["journal"],
       "image": "imgs/PTE_Cutout.png",
       "title": "Evaluating Cutout Rendering Techniques for Pass-Through Embodiment Using a Real-Mirror Metaphor",
       "authors": ["Kristoffer Waldow", "Arnulph Fuhrmann", "Daniel Roth"],
@@ -17,13 +96,21 @@
         }
       ],
       "award": false,
-      "bibtex": false
+      "bibtex": false,
+      "keywords": [
+        "Pass-Through Embodiment",
+        "cutout rendering",
+        "real mirror paradigm",
+        "presence",
+        "embodiment",
+        "user study"
+      ]
     },
     {
       "id": "2026_Aligning_Realities",
       "category": "publications",
       "year": 2026,
-      "tags": ["preprint"],
+      "tags": ["full"],
       "image": "imgs/AligningRealities.png",
       "title": "Aligning Realities: A Registration Pipeline for Arbitrary Objects in Mixed Reality Using Controller-Based Point Selection",
       "authors": [
@@ -41,13 +128,21 @@
         }
       ],
       "award": false,
-      "bibtex": false
+      "bibtex": false,
+      "keywords": [
+        "Mixed Reality",
+        "registration pipeline",
+        "point selection",
+        "Kabsch optimization",
+        "usability evaluation",
+        "user study"
+      ]
     },
     {
       "id": "2026_PTE_Demo",
       "category": "publications",
       "year": 2026,
-      "tags": ["preprint"],
+      "tags": ["demo"],
       "image": "imgs/PTE_Demo.png",
       "title": "Seeing the Real Me: Experiencing Real-Body Pass-Through Embodiment and Interaction",
       "authors": ["Kristoffer Waldow", "Arnulph Fuhrmann", "Daniel Roth"],
@@ -60,7 +155,14 @@
         }
       ],
       "award": false,
-      "bibtex": false
+      "bibtex": false,
+      "keywords": [
+        "Pass-Through Embodiment",
+        "real-body representation",
+        "embodiment",
+        "visual coherence",
+        "natural interaction"
+      ]
     },
     {
       "id": "2025_SASBE",
@@ -85,7 +187,14 @@
         }
       ],
       "award": false,
-      "bibtex": false
+      "bibtex": false,
+      "keywords": [
+        "3D Gaussian Splatting",
+        "Laser Scanning",
+        "Structural Concrete",
+        "Circular Reuse",
+        "Sustainable Construction"
+      ]
     },
     {
       "id": "2025_PTE",
@@ -113,7 +222,15 @@
         }
       ],
       "award": true,
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "Pass-Through Embodiment",
+        "video self-avatar",
+        "presence",
+        "embodiment",
+        "virtual reality",
+        "user study"
+      ]
     },
     {
       "id": "2025_DimSplat",
@@ -135,7 +252,14 @@
           "link": "https://ieeexplore.ieee.org/document/10972426"
         }
       ],
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "Diminished Reality",
+        "Gaussian splats",
+        "real-time rendering",
+        "WebXR",
+        "mobile AR"
+      ]
     },
     {
       "id": "2024_3DGSConstruction",
@@ -162,7 +286,14 @@
           "link": "https://link.springer.com/chapter/10.1007/978-981-96-8765-7_3"
         }
       ],
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "3D Gaussian Splatting",
+        "construction site visualization",
+        "virtual reality",
+        "AEC industry",
+        "photogrammetry"
+      ]
     },
     {
       "id": "2024_AnitAliasing",
@@ -187,7 +318,14 @@
           "link": "https://dl.gi.de/items/d094d5b9-f6f5-4618-8178-349e257f7d9a"
         }
       ],
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "Anti-aliasing",
+        "Virtual Reality",
+        "image quality",
+        "user study",
+        "pairwise comparison"
+      ]
     },
     {
       "id": "2024_FaceEnhance",
@@ -205,7 +343,14 @@
           "link": "https://ieeexplore.ieee.org/abstract/document/10536505"
         }
       ],
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "facial feature enhancement",
+        "real-time avatar communication",
+        "personalized CNNs",
+        "sign language",
+        "virtual reality"
+      ]
     },
     {
       "id": "2024_DepthPerception",
@@ -231,7 +376,14 @@
         }
       ],
       "award": true,
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "depth perception",
+        "stereoscopic rendering",
+        "impostor-based rendering",
+        "virtual reality",
+        "user study"
+      ]
     },
     {
       "id": "2024_DeepNeuralLabeling",
@@ -253,7 +405,14 @@
           "link": "https://ieeexplore.ieee.org/abstract/document/10445598"
         }
       ],
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "hand pose estimation",
+        "motion capture",
+        "color gloves",
+        "deep learning",
+        "German sign language"
+      ]
     },
 
     {
