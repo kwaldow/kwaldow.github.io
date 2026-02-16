@@ -9,6 +9,12 @@ async function getMarkdownData(url) {
   return mdText;
 }
 
+async function getHTMLData(url) {
+  const htmlData = await fetch(url);
+  const htmlText = await htmlData.text();
+  return htmlText;
+}
+
 async function getBibtexData(url) {
   const bibtexData = await fetch(url);
   const bibtexText = await bibtexData.text();
@@ -154,7 +160,7 @@ async function buildPublications(type, authorFilter = "all") {
 function generateStats(articles) {
   // 1. Calculate Type Stats
   const typeCounts = {
-    "Full Paper": 0,
+    Conference: 0,
     Journal: 0,
     Poster: 0,
     Demo: 0,
@@ -173,7 +179,7 @@ function generateStats(articles) {
       const lowerTag = tag.toLowerCase();
       // Only count predefined types for the chart
       if (lowerTag === "full" || lowerTag === "full paper") {
-        typeCounts["Full Paper"]++;
+        typeCounts["Conference"]++;
         typeFound = true;
       } else if (lowerTag === "journal") {
         typeCounts["Journal"]++;
@@ -276,10 +282,26 @@ function generateStats(articles) {
     keywordsContainer.innerHTML =
       '<p style="text-align:center; color:#999;">No keywords found.</p>';
   } else {
-    // Take top 20 keywords to avoid overcrowding
-    sortedKeywords.slice(0, 20).forEach(([keyword, count]) => {
+    // Only consider the top 20 keywords
+    const topKeywords = sortedKeywords.slice(0, 20);
+
+    // Find min and max counts for scaling
+    const counts = topKeywords.map(([_, count]) => count);
+    const maxCount = Math.max(...counts);
+    const minCount = Math.min(...counts);
+
+    topKeywords.forEach(([keyword, count], i) => {
       const tag = document.createElement("span");
       tag.className = "keyword-tag";
+
+      // 2-level sizing: Top 5 get a boost, rest are smaller
+      if (i < 5) {
+        tag.style.fontSize = "1.3rem";
+        tag.style.fontWeight = "bold";
+      } else {
+        tag.style.fontSize = "0.9rem";
+      }
+
       tag.innerHTML = `${keyword} <span class="count">${count}</span>`;
       keywordsContainer.appendChild(tag);
     });
@@ -326,14 +348,17 @@ function buildTabs(articleCount) {
       case "publications":
         changeTab(0);
         break;
-      case "research-projects":
+      case "pte":
         changeTab(1);
         break;
-      case "teachingAndReviews":
+      case "research-projects":
         changeTab(2);
         break;
-      case "InteractiveProjects":
+      case "teachingAndReviews":
         changeTab(3);
+        break;
+      case "InteractiveProjects":
+        changeTab(4);
         break;
       default:
         changeTab(0);
@@ -422,6 +447,15 @@ async function buildProjects() {
     newArticle.querySelector(".body").innerHTML = article.body;
     newArticle.querySelector("img").src = article.image;
   }
+}
+
+async function buildPTE() {
+  const pteData = await getHTMLData("/files/pages/pte.html");
+
+  // Directly render the html as we are structuring it with HTML
+  const body = pteData;
+  document.getElementById("pte-content").innerHTML = body;
+  // console.log(body);
 }
 
 async function buildTeaching() {
@@ -516,6 +550,7 @@ async function setup() {
   await buildNews();
   scrollBtnBehaviour();
   await buildProjects();
+  await buildPTE();
   await buildTeaching();
   await buildInteractiveProjects();
 }

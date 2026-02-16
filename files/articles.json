@@ -36,7 +36,7 @@
       "award": false,
       "bibtex": false,
       "keywords": [
-        "VR",
+        "Virtual Reality (VR)",
         "training",
         "osteosynthesis",
         "haptics",
@@ -99,11 +99,11 @@
       "bibtex": false,
       "keywords": [
         "Pass-Through Embodiment",
-        "cutout rendering",
+        "Rendering",
         "real mirror paradigm",
         "presence",
-        "embodiment",
-        "user study"
+        "Embodiment",
+        "Evaluation"
       ]
     },
     {
@@ -135,7 +135,7 @@
         "point selection",
         "Kabsch optimization",
         "usability evaluation",
-        "user study"
+        "Evaluation"
       ]
     },
     {
@@ -159,7 +159,7 @@
       "keywords": [
         "Pass-Through Embodiment",
         "real-body representation",
-        "embodiment",
+        "Embodiment",
         "visual coherence",
         "natural interaction"
       ]
@@ -227,9 +227,9 @@
         "Pass-Through Embodiment",
         "video self-avatar",
         "presence",
-        "embodiment",
-        "virtual reality",
-        "user study"
+        "Embodiment",
+        "Virtual Reality (VR)",
+        "Evaluation"
       ]
     },
     {
@@ -256,7 +256,7 @@
       "keywords": [
         "Diminished Reality",
         "Gaussian splats",
-        "real-time rendering",
+        "Rendering",
         "WebXR",
         "mobile AR"
       ]
@@ -290,7 +290,7 @@
       "keywords": [
         "3D Gaussian Splatting",
         "construction site visualization",
-        "virtual reality",
+        "Virtual Reality (VR)",
         "AEC industry",
         "photogrammetry"
       ]
@@ -321,9 +321,9 @@
       "bibtex": true,
       "keywords": [
         "Anti-aliasing",
-        "Virtual Reality",
+        "Virtual Reality (VR)",
         "image quality",
-        "user study",
+        "Evaluation",
         "pairwise comparison"
       ]
     },
@@ -349,7 +349,7 @@
         "real-time avatar communication",
         "personalized CNNs",
         "sign language",
-        "virtual reality"
+        "Virtual Reality (VR)"
       ]
     },
     {
@@ -379,10 +379,10 @@
       "bibtex": true,
       "keywords": [
         "depth perception",
-        "stereoscopic rendering",
+        "Rendering",
         "impostor-based rendering",
-        "virtual reality",
-        "user study"
+        "Virtual Reality (VR)",
+        "Evaluation"
       ]
     },
     {
@@ -454,6 +454,12 @@
           "name": "ACM",
           "link": "https://dl.acm.org/doi/abs/10.1145/3529190.3529202"
         }
+      ],
+      "keywords": [
+        "sign language",
+        "inclusive virtual humans",
+        "translation pipeline",
+        "annotation scheme"
       ]
     },
 
@@ -492,6 +498,12 @@
           "name": "ACL",
           "link": "https://aclanthology.org/2021.mtsummit-at4ssl.5/"
         }
+      ],
+      "keywords": [
+        "sign language",
+        "inclusive virtual humans",
+        "translation pipeline",
+        "annotation scheme"
       ]
     },
     {
@@ -513,6 +525,12 @@
           "name": "IEEE",
           "link": "https://ieeexplore.ieee.org/document/9419101"
         }
+      ],
+      "keywords": [
+        "ventriloquism effect",
+        "sound source visualization",
+        "Virtual Reality (VR)",
+        "Evaluation"
       ]
     },
     {
@@ -534,6 +552,15 @@
           "name": "IEEE",
           "link": "https://ieeexplore.ieee.org/document/9090404"
         }
+      ],
+      "keywords": [
+        "automatic speech recognition",
+        "Deaf communication",
+        "Communication",
+        "Avatars",
+        "mixed reality",
+        "remote collaboration",
+        "inclusive virtual humans"
       ]
     },
 
@@ -561,7 +588,18 @@
           "link": "https://link.springer.com/chapter/10.1007/978-3-030-31908-3_15"
         }
       ],
-      "bibtex": true
+      "bibtex": true,
+      "keywords": [
+        "embodied visualization",
+        "remote collaboration",
+        "augmented reality",
+        "Evaluation",
+        "Avatars",
+        "Communication",
+        "Avatars",
+        "Embodiment",
+        "copresence"
+      ]
     },
 
     {
@@ -579,6 +617,13 @@
           "name": "GI",
           "link": "https://dx.doi.org/10.18420/muc2019-ws-570"
         }
+      ],
+      "keywords": [
+        "MQTT",
+        "mixed reality",
+        "telepresence",
+        "avatar-mediated communication",
+        "Avatars"
       ]
     },
 
@@ -603,6 +648,12 @@
           "name": "ACM",
           "link": "https://dl.acm.org/doi/10.1145/3281505.3281608"
         }
+      ],
+      "keywords": [
+        "smartphone",
+        "augmented reality",
+        "interaction",
+        "Evaluation"
       ]
     },
 
@@ -625,6 +676,14 @@
           "name": "IEEE",
           "link": "https://ieeexplore.ieee.org/document/8446587"
         }
+      ],
+      "keywords": [
+        "redirected walking",
+        "Virtual Reality (VR)",
+        "perception",
+        "global illumination",
+        "Rendering",
+        "Evaluation"
       ]
     },
 
@@ -649,6 +708,14 @@
           "name": "IEEE",
           "link": "https://ieeexplore.ieee.org/document/7892275"
         }
+      ],
+      "keywords": [
+        "Avatars",
+        "Communication",
+        "socially immersive interaction",
+        "Virtual Reality (VR)",
+        "Evaluation",
+        "motion capture"
       ]
     },
 
@@ -674,6 +741,14 @@
           "name": "ACM",
           "link": "https://dl.acm.org/doi/abs/10.1145/2993369.2996302"
         }
+      ],
+      "keywords": [
+        "Avatars",
+        "Communication",
+        "socially immersive interaction",
+        "Virtual Reality (VR)",
+        "Evaluation",
+        "motion capture"
       ]
     }
   ]

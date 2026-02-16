@@ -1,0 +1,226 @@
+<div class="pte-page">
+
+  <div class="pte-hero">
+    <div class="hero-content">
+      <h1>Pass-Through Embodiment (PTE)</h1>
+      <h2>The Future of Virtual Self-Representation</h2>
+      <p class="subtitle">A Project by Kristoffer Waldow</p>
+      <p class="subtitle" style="margin-top: 5px; font-size: 0.9rem;">Supervised by Arnulph Fuhrmann (TH Köln) & Daniel
+        Roth (TU Munich)</p>
+    </div>
+  </div>
+
+  <div class="pte-intro-container">
+    <div class="pte-split-layout">
+      <div class="text-block">
+        <h3>Scientific Context & Methodology</h3>
+        <p>
+          <strong>Research Motivation:</strong> Current avatar-based embodiment approaches in Virtual Reality often
+          suffer from tracking latency, morphological mismatches, and the "Uncanny Valley" effect, which can
+          significantly diminish the user's sense of self-identification and presence.
+        </p>
+        <p>
+          <strong>Methodology:</strong> Pass-Through Embodiment (PTE) leverages real-time depth segmentation and
+          stereoscopic video pass-through (e.g., via Meta Quest 3) to project a high-fidelity, photon-based
+          representation of the user’s physical body directly into the virtual environment. This approach circumvents
+          the need for complex skeletal tracking models.
+        </p>
+        <p>
+          <strong>Objective:</strong> This research aims to psychophysically validate the efficacy of real-body
+          integration in immersive simulations, establishing a perceptual continuum between physical reality and virtual
+          embodiment to enhance immersion and interaction fidelity.
+        </p>
+      </div>
+      <div class="visual-block">
+
+        <!-- Bootstrap Carousel -->
+        <div id="pteCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#pteCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#pteCarousel" data-slide-to="1"></li>
+            <li data-target="#pteCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="imgs/PTE.png" alt="PTE Concept" class="pte-carousel-img">
+              <div class="carousel-caption">
+                PTE Concept
+              </div>
+            </div>
+            <div class="item">
+              <img src="imgs/PTE_Cutout.png" alt="Optimization" class="pte-carousel-img">
+              <div class="carousel-caption">
+                Edge Optimization
+              </div>
+            </div>
+            <div class="item">
+              <img src="imgs/PTE_Demo.png" alt="User Experience" class="pte-carousel-img">
+              <div class="carousel-caption">
+                User Experience
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#pteCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#pteCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <!-- End Carousel -->
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="pte-pillars-section">
+    <h3>Research Items</h3>
+    <div class="cards-grid">
+
+      <div class="pte-card">
+        <div class="card-icon"><i class="fa-solid fa-check-double"></i></div>
+        <h4>1. Validation</h4>
+        <p class="venue-tag">IEEE VR 2025 (TVCG)</p>
+        <p>A comparative study against customizable graphical avatars in a dynamic sorting task.
+          <strong>Results:</strong> PTE demonstrated statistically significant improvements in General Presence and Body
+          Ownership, confirming the hypothesis that PTE improves presence and embodiment compared to traditional
+          customizable avatars.
+        </p>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10919005" target="_blank" class="card-link"><i
+            class="fa-solid fa-file-pdf"></i> Read Paper (TVCG)</a>
+      </div>
+
+      <div class="pte-card">
+        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h4>2. Optimization</h4>
+        <p class="venue-tag">IEEE VR 2026 (TVCG)</p>
+        <p>Investigating boundary artifacts caused by low-resolution depth sensors. <strong>Innovation:</strong> A
+          perceptual dithering algorithm using ordered noise (Bayer Matrix) to address the "Jagged Edge" problem.
+          <strong>Finding:</strong> Dithering provides a superior perceptual quality over alpha blending while
+          maintaining high performance.
+        </p>
+        <a href="https://www.researchgate.net/publication/400345934_Evaluating_Cutout_Rendering_Techniques_for_Pass-Through_Embodiment_Using_a_Real-Mirror_Metaphor"
+          target="_blank" class="card-link"><i class="fa-solid fa-file-pdf"></i> Read Preprint</a>
+      </div>
+
+      <div class="pte-card">
+        <div class="card-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+        <h4>3. Experience</h4>
+        <p class="venue-tag">IEEE VR 2026 (Demo)</p>
+        <p>A hands-on demonstration across diverse environments (Library, Urban, Indoor). <strong>Contribution:</strong>
+          Validated that scene complexity and lighting conditions significantly influence the perceptual integration of
+          the pass-through body, proving robust object interaction capabilities.</p>
+        <a href="https://doi.org/10.13140/RG.2.2.31676.71041" target="_blank" class="card-link"><i
+            class="fa-solid fa-file-pdf"></i> Read Preprint</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="pte-video-section">
+    <h3>System Demonstration</h3>
+    <div class="video-container-full">
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/PGQpbg4mNK4?si=vSAJ-Px4ZPDOrLdm"
+        title="PTE Demonstration" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="pte-technical-section">
+    <h3>Technical Architecture</h3>
+    <div class="pte-split-layout reverse">
+      <div class="text-block">
+        <p>The system integrates the Meta Depth API for robust occlusion management and real-time segmentation. A custom
+          shader pipeline orchestrates the stereoscopic composition to minimize photon-to-photon latency.</p>
+        <p><strong>Dithering Implementation:</strong> To resolve depth-boundary discontinuities ("jagged edges"), we
+          employ an ordered dithering algorithm based on a Bayer Matrix. This approach creates a pseudo-transparency
+          effect that mitigates the "ghosting" artifacts typical of alpha blending, while maintaining the computational
+          efficiency required for mobile VR platforms.</p>
+      </div>
+      <div class="visual-block">
+        <img src="imgs/PTE_Cutout.png" alt="Dithering Technique" class="pte-featured-img">
+      </div>
+    </div>
+  </div>
+
+  <div class="pte-conclusion">
+    <h3>Implications for Mixed Reality</h3>
+
+    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem; opacity: 0.9;">
+      Pass-Through Embodiment suggests a paradigm shift: moving from <strong>simulating</strong> the user to
+      <strong>integrating</strong> the user.
+    </p>
+
+    <div class="implications-grid">
+
+      <!-- Pillar 1 -->
+      <div class="implication-card">
+        <div class="implication-icon"><i class="fa-solid fa-person-rays"></i></div>
+        <h4>Photon-Captured Integration</h4>
+        <p>Grounding the virtual experience in the user's physical morphology yields significantly higher
+          <strong>General Presence</strong> & <strong>Body Ownership</strong> than avatar reconstruction.
+        </p>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="implication-card">
+        <div class="implication-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h4>The Edge as Anchor</h4>
+        <p>The boundary between realities is psychological. <strong>Dithered Edges</strong> provide a solid "grainy"
+          anchor for agency, avoiding the "ghostly" artifacts of transparency.</p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="implication-card">
+        <div class="implication-icon"><i class="fa-solid fa-gauge-high"></i></div>
+        <h4>Streamlined Immersion</h4>
+        <p>Achieving high-fidelity embodiment without complex rigging or skinning. Leveraging native depth sensors
+          offers stability with <strong>negligible GPU cost</strong>.</p>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="implication-card">
+        <div class="implication-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <h4>Rigorous Evaluation</h4>
+        <p>Using the <strong>"Real-Mirror Metaphor"</strong> (aligning physical mirrors with virtual cutouts) forces a
+          direct confrontation with self-representation artifacts.</p>
+      </div>
+
+      <!-- Pillar 5 -->
+      <div class="implication-card">
+        <div class="implication-icon"><i class="fa-solid fa-sun-plant-wilt"></i></div>
+        <h4>Contextual Dependency</h4>
+        <p>Integration quality depends on scene complexity and lighting. <strong>Photometric alignment</strong> is
+          critical for achieving total visual coherence.</p>
+      </div>
+
+      <!-- Pillar 6 -->
+      <div class="implication-card">
+        <div class="implication-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+        <h4>Scalable Social Presence</h4>
+        <p>PTE offers a pathway for high-fidelity <strong>Telepresence</strong>. It resolves the presence-fidelity
+          trade-off by transmitting the user's real appearance rather than a synthetic approximation.</p>
+      </div>
+
+    </div>
+
+    <div class="action-buttons">
+      <a href="https://www.youtube.com/watch?v=XyfXA59z33M" target="_blank" class="cta-button"><i
+          class="fa-brands fa-youtube"></i> Watch Video</a>
+      <a href="#publications" class="cta-button secondary"
+        onclick="document.getElementById('tab-publication').click()"><i class="fa-solid fa-book"></i> Read Papers</a>
+      <a class="cta-button disabled" title="Repository coming soon upon publication"><i class="fa-brands fa-github"></i>
+        GitHub (Coming Soon)</a>
+    </div>
+  </div>
+
+</div>

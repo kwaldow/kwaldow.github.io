@@ -1,10 +1,14 @@
 {
   "news": [
     {
+      "date": "02/2026",
+      "message": "Big Update! We have launched a dedicated <a href='#' onclick='document.getElementById(\"tab-pte\").click(); return false;'>Pass-Through Embodiment (PTE)</a> project page. Additionally, we have published several new papers this year advancing the field of high-fidelity embodiment!"
+    },
+    {
       "date": "01/2026",
       "message": "Happy New Year 2026 🎉! We are looking forward to new research building on our work on <a href='#2025_PTE'>Pass-Through Embodiment (PTE)</a> in 2026!"
     },
-     {
+    {
       "date": "06/2025",
       "message": "Building on the great feedback we received on the IEEE VR 25 conference, we’ve just started new evaluations and techniques alongside our ongoing work on <a href='#2025_PTE'>Pass-Through Embodiment (PTE)</a>, to better understand what makes it so compelling. We’re excited to continue our journey 🎉! <br> Be prepared 😉!"
     },
