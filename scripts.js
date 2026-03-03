@@ -446,6 +446,49 @@ async function buildProjects() {
       .join("");
     newArticle.querySelector(".body").innerHTML = article.body;
     newArticle.querySelector("img").src = article.image;
+
+    // --- Expand / Collapse Logic ---
+    const wrapper = newArticle.querySelector(".expandable-wrapper");
+    const btn = newArticle.querySelector(".read-more-btn");
+
+    // Use IntersectionObserver to check height when visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Element is now visible, check real height
+          if (wrapper.scrollHeight <= 260) {
+            btn.style.display = "none";
+            wrapper.classList.remove("collapsed");
+            wrapper.querySelector(".fade-overlay").style.display = "none";
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    observer.observe(wrapper);
+
+    btn.addEventListener("click", function () {
+      if (wrapper.classList.contains("collapsed")) {
+        // Expand
+        wrapper.classList.remove("collapsed");
+        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+        this.innerHTML = 'Show Less <i class="fa-solid fa-chevron-up"></i>';
+        this.classList.add("expanded");
+      } else {
+        // Collapse
+        // Set explicit height first for animation
+        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+
+        // Force reflow
+        void wrapper.offsetHeight;
+
+        wrapper.classList.add("collapsed");
+        wrapper.style.maxHeight = null; // Falls back to CSS 250px
+
+        this.innerHTML = 'Read More <i class="fa-solid fa-chevron-down"></i>';
+        this.classList.remove("expanded");
+      }
+    });
   }
 }
 
