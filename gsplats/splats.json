@@ -4,6 +4,7 @@
       "name": "Wohnung (3DGS)",
       "img": "assets/images/flat3DGS.png",
       "fileName": "flat3DGS",
+      "publicationId": "2024_3DGSConstruction",
       "sceneSettings": {
         "rotation": [0, 0, 0],
         "scale": [-1.0, -1.0, 1.0],
@@ -17,6 +18,7 @@
       "name": "Wohnung (Polycam)",
       "img": "assets/images/flatPolycam.png",
       "fileName": "flatPolycam",
+      "publicationId": "2024_3DGSConstruction",
       "sceneSettings": {
         "rotation": [0, 0, 0],
         "scale": [1.0, 1.0, 1.0],
@@ -30,6 +32,7 @@
       "name": "Liegende Stütze A",
       "img": "assets/images/liegendeStuetzeA.png",
       "fileName": "liegendeStuetzeA",
+      "publicationId": "2024_3DGSConstruction",
       "sceneSettings": {
         "rotation": [0, 0, 0],
         "scale": [-1.0, -1.0, 1.0],
@@ -43,6 +46,7 @@
       "name": "Reach project Team",
       "img": "assets/images/reach.png",
       "fileName": "reach",
+      "publicationId": "2026_ScalableLowCost",
       "sceneSettings": {
         "rotation": [0, 0, 0],
         "scale": [1.0, -1.0, 1.0],
@@ -56,6 +60,7 @@
       "name": "Team member: Kris",
       "img": "assets/images/kris.png",
       "fileName": "kris",
+      "publicationId": "2026_ScalableLowCost",
       "sceneSettings": {
         "rotation": [0, 0, 0],
         "scale": [1.0, -1.0, -1.0],
@@ -69,6 +74,7 @@
       "name": "Team member: Merle",
       "img": "assets/images/merle.png",
       "fileName": "merle",
+      "publicationId": "2026_ScalableLowCost",
       "sceneSettings": {
         "rotation": [0, 0, 0],
         "scale": [1.0, -1.0, -1.0],

@@ -6,277 +6,346 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>3D Gaussian Splat Viewer Examples</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --primary-color: #2563eb;
+      /* Modern Blue */
+      --primary-hover: #1d4ed8;
+      --bg-color: #f3f4f6;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --border-color: #e5e7eb;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
     body {
-      background-color: #CCD5DE;
+      background-color: var(--bg-color);
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
       height: 100vh;
-      margin: 0px;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
     }
 
     a {
       text-decoration: none;
-      color: #3333CC;
+      color: var(--primary-color);
+      transition: color 0.2s;
     }
 
     a:hover {
-      text-decoration: underline;
-      color: #1111AA;
+      color: var(--primary-hover);
     }
 
+    /* Generic Layout */
+    .header-content-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .title {
+      text-align: center;
+      padding: 40px 20px;
+      background: white;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .title div {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #2563eb, #4f46e5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Publication Groups */
+    .publication-group {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 40px;
+      padding: 30px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .publication-group:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .publication-header {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .publication-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .publication-meta {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .publication-splats {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    /* Cards */
+    .demo-scene-panel {
+      background-color: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 15px;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+      /* Remove fixed widths and margins from old CSS */
+      width: auto;
+      margin: 0;
+    }
+
+    .demo-scene-panel:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-color);
+    }
+
+    .demo-scene-panel-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .small-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--border-color);
+      margin: 15px 0;
+      width: 100%;
+      display: none;
+      /* Hide HR */
+    }
+
+    /* Buttons */
+    .viewer-btn {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+      /* Push to bottom */
+      flex-wrap: wrap;
+      justify-content: stretch;
+    }
+
+    .button {
+      background-color: #f3f4f6;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex: 1;
+      /* Grow to fill space */
+      white-space: nowrap;
+      text-align: center;
+      box-shadow: none;
+      filter: none;
+    }
+
+    .button:hover {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .button:active {
+      transform: scale(0.98);
+      top: 0;
+      left: 0;
+      filter: none;
+    }
+
+    .publication-link-btn {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 12px;
+      padding: 6px 14px;
+      background-color: #eff6ff;
+      color: var(--primary-color) !important;
+      border-radius: 20px;
+      /* Pill shape */
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .publication-link-btn:hover {
+      background-color: #dbeafe;
+    }
+
+    /* Hidden Utilities */
+    .hidden {
+      display: none !important;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 640px) {
+      .publication-title {
+        font-size: 1.25rem;
+      }
+
+      .publication-splats {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+      }
+
+      .demo-scene-panel-image {
+        height: 200px;
+      }
+
+      .header-content-container {
+        padding: 0 10px;
+      }
+
+      .publication-group {
+        padding: 15px;
+      }
+    }
+
+    /* Loading Spinner */
+    .loading-icon {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Input Styling specific for this page if needed */
+    .file-ext,
+    .file-ext-small {
+      display: inline-block;
+      padding: 2px 6px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    /* Keep other utility classes but reset their definition */
     .demo-content {
       display: block;
       margin: 10px;
     }
 
-    .header-content-container {
-      background-color: #e7e9eb;
-      border-radius: 7px;
-      -moz-box-shadow: 0px 2px 10px -1px rgb(0 0 0 / 39%);
-      -webkit-box-shadow: 0px 2px 10px -1px rgb(0 0 0 / 39%);
-      box-shadow: 0px 2px 10px -1px rgb(0 0 0 / 39%);
-      max-width: 1065px;
-      min-width: 350px;
-      margin: auto;
-      font-family: "PT Sans", Arial, serif;
-      font-size: 12pt;
-    }
-
-    .title {
-      display: flex;
-      text-align: center;
-      padding: 10px;
-      -moz-box-shadow: 0 5px 10px -5px #aaa;
-      -webkit-box-shadow: 0 5px 10px -5px #aaa;
-      box-shadow: 0 5px 10px -5px #aaa;
-      margin-bottom: 15px;
-      font-family: "PT Sans", Arial, serif;
-      font-size: 15pt;
-      color: #111111;
-    }
-
-    .small-title {
-      font-family: "PT Sans", Arial, serif;
-      font-size: 12pt;
-      font-weight: bold;
-      color: #333333;
-    }
-
-    .content-row {
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .demo-scene-panel {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding: 10px;
-      color: #111111;
-      border-radius: 7px;
-      border: #bbbbbb 1px solid;
-      background-color: #f1f1f1;
-      width: 220px;
-      margin-left: 8px;
-      margin-right: 8px;
-    }
-
-    .demo-scene-panel:hover {
-      color: #333333;
-      border-color: #8a9ba8;
-      background-color: #e4edfc;
-
-    }
-
-    .demo-scene-panel-image {
-      width: 95%;
-      border-radius: 5px;
-      margin-bottom: 10px;
-      width: 209px;
-      height: 149px;
-    }
-
-    .button {
-      position: relative;
-      color: #3C5060;
-      border: #AEC5D7 1px solid;
-      background-color: #E5EAEE;
-      padding: 5px;
-      border-radius: 3px;
-      filter: drop-shadow(2px 2px 3px #aaaaaa);
-    }
-
-    .button:hover {
-      cursor: pointer;
-      color: #1B242B;
-      background-color: #E4EFF9;
-      border-color: #4A5A67;
-    }
-    .button:active {
-      top:2px;
-      left:2px;
-      filter: drop-shadow(0px 0px 3px #aaaaaa);
-    }
-
-    .text-input {
-      border: hsl(0, 0%, 67%) 1px solid;
-      background-color: #ffffff;
-      padding: 4px;
-      border-radius: 3px;
-    }
-
-    .checkbox-input {
-      width: 17px;
-      height: 17px;
-      padding: 0px;
-      margin: 0;
-    }
-
+    /* Legacy or specific panel styling */
     .splat-panel {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding: 10px;
-      color: #111111;
-      font-size: 12pt;
-      font-family: "PT Sans", Arial, serif;
-      border-radius: 7px;
-      border: #bbbbbb 1px solid;
-      background-color: #f1f1f1;
-      width: 310px;
-      height: 280px;
-      margin-left: 8px;
-      margin-right: 8px;
-    }
-
-    .loading-icon {
-      width: 35px;
-      padding: 15px;
-      background: #324d70;
-      z-index: 99999;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      --_m:
-        conic-gradient(#0000, #000),
-        linear-gradient(#000 0 0) content-box;
-      -webkit-mask: var(--_m);
-      mask: var(--_m);
-      -webkit-mask-composite: source-out;
-      mask-composite: subtract;
-      box-sizing: border-box;
-      animation: ply-load 1s linear infinite;
+      background-color: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 100%;
+      box-shadow: var(--shadow-sm);
     }
 
     .controls-key {
-      font-weight: bold;
-      padding: 3px;
-      border: #aaaaaa 1px solid;
-      background-color: #dddddd;
+      font-weight: 700;
+      padding: 4px 8px;
+      border: 1px solid var(--border-color);
+      background-color: #f3f4f6;
+      border-radius: 4px;
+      display: inline-block;
+      min-width: 20px;
+      text-align: center;
     }
 
     .controls-key-description {
-      text-align: left;
-      padding-left: 10px;
-    }
-
-    .file-ext {
-      border: #bababa 1px solid;
-      border-radius: 3px;
-      background-color: #e6e6e6;
-      padding-left: 5px;
-      padding-right: 5px;
-      padding-top: 3px;
-      padding-bottom: 3px;
-      margin-left: 3px;
-      margin-right: 3px;
-    }
-
-    .file-ext-small {
-      border: #ababab 1px solid;
-      border-radius: 3px;
-      background-color: #dfdfdf;
-      padding-left: 4px;
-      padding-right: 4px;
-      padding-bottom: 1px;
-      margin-left: 3px;
-      margin-right: 3px;
+      padding-left: 15px;
+      color: var(--text-main);
     }
 
     .valid-value-label {
-      color: #888888;
-      font-size: 10pt;
+      color: var(--text-muted);
+      font-size: 0.85em;
+      margin-left: 5px;
     }
 
-    @keyframes ply-load {
-      to {
-        transform: rotate(1turn)
-      }
+    .text-input {
+      border: 1px solid var(--border-color);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-family: inherit;
+      color: var(--text-main);
+      background: #fff;
     }
 
-    @media (max-width: 740px) {
-
-      .demo-scene-panel {
-        width: 340px;
-      }
-
-      .splat-panel {
-        width: 340px;
-      }
-
-      .demo-scene-panel-image {
-        width: 95%;
-        height: 95%;
-      }
-
+    table {
+      border-collapse: collapse;
     }
 
-    @media (max-width: 370px) {
-
-      .demo-scene-panel {
-        max-width: 300px;
-      }
-
-      .splat-panel {
-        max-width: 300px;
-      }
-
-      .header-content-container {
-        min-width: 330px;
-      }
-
-      .demo-scene-panel-image {
-        width: 95%;
-        height: 95%;
-      }
-
-    }
-    /*MARK: ####### MY OWN #########*/
-    .hidden {
-      display: none;
-    }
-
-    .viewer-btn {
+    /* Force content row to behave */
+    .content-row {
       display: flex;
-      align-items: center;
-      justify-content: space-around;
-      margin: 5px;
-
-      gap: 10px;
-
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
-
-    .viewer-btn>button {
-      flex: auto;
-      font-size: larger;
-    }
-    img{
-      object-fit: cover;
-    }
-
-    /*####### MY OWN END #########*/
   </style>
   <script type="importmap">
     {
@@ -583,10 +652,10 @@
 
   </script>
   <script>
-    function openDemo(mode, file,sceneSettings,viewerSettings) {
+    function openDemo(mode, file, sceneSettings, viewerSettings) {
       let scene = JSON.stringify(sceneSettings);
       let viewer = JSON.stringify(viewerSettings);
-      window.location = 'gsplatViewer.html?mode=' + mode + '&file=' + file+"&sceneSettings="+scene+"&viewerSettings="+viewer;
+      window.location = 'gsplatViewer.html?mode=' + mode + '&file=' + file + "&sceneSettings=" + scene + "&viewerSettings=" + viewer;
     }
     function reset() {
       window.location = 'index.html';
@@ -616,7 +685,7 @@
     </div>
     <br>
     <!-- MARK: Scenes -->
-    <div  class="header-content-container">
+    <div class="header-content-container">
       <div class="title">
         <div style="margin: auto; font-size: 14pt;">
           Scenes
@@ -624,22 +693,22 @@
       </div>
 
       <div style="text-align:center;">
-        <div id="scene-container" class="content-row"
-          style="max-width: 800px; margin:auto; display:flex; align-items: center; justify-content: center;">
-          
-          
-          <div id="scene-template" class="demo-scene-panel hidden">
-            <img id="scene-image" src="assets/images/bonsai.png" class="demo-scene-panel-image">
-            <span id="scene-name" class="small-title">Bonsai</span>
-            <hr>
-            <div class="viewer-btn">
-              <button id="scene-btn-static" onclick="openDemo('static','bonsai')" class="button">View</button>
-              <button id="scene-btn-ar" onclick="openDemo('ar','bonsai')" class="button">AR</button>
-              <button id="scene-btn-vr" onclick="openDemo('vr','bonsai')" class="button">VR</button>
-            </div>
+        <!-- Container for Groups -->
+        <div id="scene-container" style="max-width: 1000px; margin:auto;">
+          <!-- Groups will be inserted here -->
+        </div>
+
+        <!-- Template (Hidden) -->
+        <div id="scene-template" class="demo-scene-panel hidden">
+          <img id="scene-image" src="" class="demo-scene-panel-image">
+          <span id="scene-name" class="small-title">Scene Name</span>
+          <hr>
+          <div class="viewer-btn">
+            <button id="scene-btn-static" class="button">View</button>
+            <button id="scene-btn-ar" class="button">AR</button>
+            <button id="scene-btn-vr" class="button">VR</button>
           </div>
-
-
+        </div>
       </div>
     </div>
 
@@ -865,43 +934,206 @@
     return data;
   }
 
-  async function buildScenes(){
-    let sceneTemplate = document.getElementById("scene-template");
-    let scenesData = await getJsonData("splats.json");
-    let scenes = scenesData.scenes;
-    for (let i = 0; i < scenes.length; i++) {
-      const scene = scenes[i];
-      let newScene = sceneTemplate.cloneNode(true);
-      document.getElementById("scene-container").appendChild(newScene);
-      newScene.classList.remove("hidden");
-      console.log(scene);
-      newScene.querySelector("#scene-name").textContent = scene.name;
-      newScene.querySelector("#scene-image").src = scene.img;
-      newScene.querySelector("#scene-btn-static").addEventListener("click",()=>{
-        openDemo("static",scene.fileName,scene.sceneSettings,scene.viewerSetttings);
-      });
-      newScene.querySelector("#scene-btn-ar").addEventListener("click",()=>{
-        openDemo("ar",scene.fileName,scene.sceneSettings,scene.viewerSetttings);
-      });
-      newScene.querySelector("#scene-btn-vr").addEventListener("click",()=>{
-        openDemo("vr",scene.fileName,scene.sceneSettings,scene.viewerSetttings);
-      });
+  async function buildScenes() {
+    const sceneTemplate = document.getElementById("scene-template");
+    const container = document.getElementById("scene-container");
+
+    // Fetch data
+    const [splatsData, articlesData] = await Promise.all([
+      getJsonData("splats.json"),
+      getJsonData("../files/articles.json")
+    ]);
+
+    const scenes = splatsData.scenes;
+    const articles = articlesData.articles;
+
+    // Map articles by ID for quick lookup
+    const articlesMap = {};
+    articles.forEach(article => {
+      articlesMap[article.id] = article;
+    });
+
+    // Group scenes by publicationId
+    // If no publicationId, group under "Other"
+    const groups = {};
+    // Define order if needed, otherwise order of appearance or publication year
+    // We'll iterate splats and create groups as we encounter them to preserve splat order loosely
+    // OR we iterate articles if we want article order.
+    // Let's iterate scenes and group them.
+
+    scenes.forEach(scene => {
+      const pubId = scene.publicationId || "Other";
+      if (!groups[pubId]) {
+        groups[pubId] = [];
+      }
+      groups[pubId].push(scene);
+    });
+
+    // Keys of groups
+    const groupKeys = Object.keys(groups);
+
+    // Sort keys? Maybe prioritized by article year (descending) or just as is?
+    // Let's sort to put "Other" last, and otherwise maybe by year if we can find it.
+    groupKeys.sort((a, b) => {
+      if (a === "Other") return 1;
+      if (b === "Other") return -1;
+      // Compare years if available
+      const artA = articlesMap[a];
+      const artB = articlesMap[b];
+      if (artA && artB) {
+        return artB.year - artA.year; // Descending
+      }
+      return 0;
+    });
+
+
+    for (const key of groupKeys) {
+      const groupScenes = groups[key];
+
+      // Create Group Container
+      const groupDiv = document.createElement("div");
+      groupDiv.className = "publication-group header-content-container"; // Reusing header-content-container for consistent style if desired, or just publication-group
+      // Overriding or combining:
+      groupDiv.classList.remove("header-content-container");
+      groupDiv.classList.add("publication-group");
+
+
+      // Header
+      const headerDiv = document.createElement("div");
+      headerDiv.className = "publication-header";
+
+      if (key !== "Other" && articlesMap[key]) {
+        const article = articlesMap[key];
+
+        const titleDiv = document.createElement("div");
+        titleDiv.className = "publication-title";
+        titleDiv.textContent = article.title;
+        headerDiv.appendChild(titleDiv);
+
+        const metaDiv = document.createElement("div");
+        metaDiv.className = "publication-meta";
+
+        // Authors
+        const authors = article.authors.join(", ");
+        const authorsDiv = document.createElement("div");
+        authorsDiv.textContent = authors;
+        metaDiv.appendChild(authorsDiv);
+
+        // Pub info
+        const pubInfoDiv = document.createElement("div");
+        pubInfoDiv.style.fontStyle = "italic";
+        pubInfoDiv.textContent = `${article.published} (${article.year})`;
+        metaDiv.appendChild(pubInfoDiv);
+
+        // Link button (if specific link exists, maybe to PDF or similar? article object has links array usually)
+        // Or we just link to the main page / anchor?
+        // User said: "direkt weiterverlinken" (link directly)
+        // If article has a DOI or PDF link in `links`, use that? Or link to the project page?
+        // Usually articles.json has links like [{name: "Paper", url: "..."}].
+        // Let's check articles.json content again.
+
+        // Let's assume we want to link to something. If `links` is empty, maybe no link.
+        // Or maybe link to an anchor on the main page?
+        // User: "Die information sollen aus @articles entnommen werden"
+        // Let's check if there are links.
+        /*
+        "links": [
+            {
+               "name": "Paper",
+               "url": "..."
+            }
+        ]
+        */
+        // I'll iterate links and add buttons.
+        if (article.links && article.links.length > 0) {
+          const linksContainer = document.createElement("div");
+          linksContainer.style.marginTop = "5px";
+          article.links.forEach(link => {
+            if (link.name === "Live Preview") return;
+            const a = document.createElement("a");
+            a.href = link.link;
+            a.className = "publication-link-btn";
+            a.textContent = link.name;
+            a.target = "_blank";
+            a.style.marginRight = "10px";
+            linksContainer.appendChild(a);
+          });
+          metaDiv.appendChild(linksContainer);
+
+          // Also if there is a 'website' or similar. 
+          // Looking at attachment `articles.json`, `links` array is empty in the snippet provided.
+          // But I should code it robustly.
+        } else {
+          // Maybe link to the anchor on the homepage?
+          // Assuming homepage is ../index.html
+          // ID is article.id
+          /*
+          const a = document.createElement("a");
+          a.href = `../index.html#${article.id}`;
+          a.className = "publication-link-btn";
+          a.textContent = "More Info";
+          a.target = "_blank"; // maybe?
+          metaDiv.appendChild(a);
+          */
+        }
+
+        headerDiv.appendChild(metaDiv);
+      } else {
+        // Other / Uncategorized
+        const titleDiv = document.createElement("div");
+        titleDiv.className = "publication-title";
+        titleDiv.textContent = "Miscellaneous";
+        headerDiv.appendChild(titleDiv);
+      }
+
+      groupDiv.appendChild(headerDiv);
+
+      // Splats Container
+      const splatsDiv = document.createElement("div");
+      splatsDiv.className = "publication-splats";
+
+      // Render Scenes
+      for (let i = 0; i < groupScenes.length; i++) {
+        const scene = groupScenes[i];
+        let newScene = sceneTemplate.cloneNode(true);
+        newScene.classList.remove("hidden");
+        // newScene.id = ""; // clear ID to avoid duplicates? cloneNode copies ID. 
+        // Ideally should remove ID, but it's okay for style.
+        newScene.removeAttribute("id");
+
+        newScene.querySelector("#scene-name").textContent = scene.name;
+        newScene.querySelector("#scene-image").src = scene.img;
+        newScene.querySelector("#scene-btn-static").addEventListener("click", () => {
+          openDemo("static", scene.fileName, scene.sceneSettings, scene.viewerSetttings);
+        });
+        newScene.querySelector("#scene-btn-ar").addEventListener("click", () => {
+          openDemo("ar", scene.fileName, scene.sceneSettings, scene.viewerSetttings);
+        });
+        newScene.querySelector("#scene-btn-vr").addEventListener("click", () => {
+          openDemo("vr", scene.fileName, scene.sceneSettings, scene.viewerSetttings);
+        });
+
+        splatsDiv.appendChild(newScene);
+      }
+
+      groupDiv.appendChild(splatsDiv);
+      container.appendChild(groupDiv);
     }
-   
+
   }
 
   buildScenes();
 
-  function toggleMore(){
+  function toggleMore() {
     let obj = document.getElementById("more-content");
-    if(obj.classList.contains("hidden")){
+    if (obj.classList.contains("hidden")) {
       obj.classList.remove("hidden");
-    }else{
+    } else {
       obj.classList.add("hidden");
     }
   }
 
-  
+
 </script>
 <script>
   document.body.onload = function () {
