@@ -686,11 +686,11 @@
     <br>
     <!-- MARK: Scenes -->
     <div class="header-content-container">
-      <div class="title">
+      <!-- <div class="title">
         <div style="margin: auto; font-size: 14pt;">
           Scenes
         </div>
-      </div>
+      </div> -->
 
       <div style="text-align:center;">
         <!-- Container for Groups -->
@@ -929,195 +929,199 @@
 <script>
 
   async function getJsonData(url) {
-    const jsonData = await fetch(url);
-    const data = await jsonData.json();
-    return data;
+    try {
+      // Add a timestamp to prevent caching issues
+      const timestamp = new Date().getTime();
+      const fetchUrl = url.includes('?') ? `${url}&t=${timestamp}` : `${url}?t=${timestamp}`;
+
+      const response = await fetch(fetchUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status} fetching ${url}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (e) {
+      console.error("Error loading JSON:", e);
+      throw e;
+    }
   }
 
   async function buildScenes() {
     const sceneTemplate = document.getElementById("scene-template");
     const container = document.getElementById("scene-container");
 
-    // Fetch data
-    const [splatsData, articlesData] = await Promise.all([
-      getJsonData("splats.json"),
-      getJsonData("../files/articles.json")
-    ]);
+    try {
+      // Fetch data
+      const [splatsData, articlesData] = await Promise.all([
+        getJsonData("splats.json"),
+        getJsonData("../files/articles.json")
+      ]);
 
-    const scenes = splatsData.scenes;
-    const articles = articlesData.articles;
+      const scenes = splatsData.scenes;
+      const articles = articlesData.articles;
 
-    // Map articles by ID for quick lookup
-    const articlesMap = {};
-    articles.forEach(article => {
-      articlesMap[article.id] = article;
-    });
+      console.log("Loaded Scenes:", scenes);
+      console.log("Loaded Articles:", articles);
 
-    // Group scenes by publicationId
-    // If no publicationId, group under "Other"
-    const groups = {};
-    // Define order if needed, otherwise order of appearance or publication year
-    // We'll iterate splats and create groups as we encounter them to preserve splat order loosely
-    // OR we iterate articles if we want article order.
-    // Let's iterate scenes and group them.
-
-    scenes.forEach(scene => {
-      const pubId = scene.publicationId || "Other";
-      if (!groups[pubId]) {
-        groups[pubId] = [];
+      // Map articles by ID for quick lookup
+      const articlesMap = {};
+      if (articles && Array.isArray(articles)) {
+        articles.forEach(article => {
+          if (article.id) {
+            articlesMap[article.id] = article;
+          }
+        });
+      } else {
+        console.warn("Articles data is not in expected format (array under 'articles' key).");
       }
-      groups[pubId].push(scene);
-    });
 
-    // Keys of groups
-    const groupKeys = Object.keys(groups);
+      // Group scenes by publicationId
+      // If no publicationId, group under "Other"
+      const groups = {};
 
-    // Sort keys? Maybe prioritized by article year (descending) or just as is?
-    // Let's sort to put "Other" last, and otherwise maybe by year if we can find it.
-    groupKeys.sort((a, b) => {
-      if (a === "Other") return 1;
-      if (b === "Other") return -1;
-      // Compare years if available
-      const artA = articlesMap[a];
-      const artB = articlesMap[b];
-      if (artA && artB) {
-        return artB.year - artA.year; // Descending
-      }
-      return 0;
-    });
+      scenes.forEach(scene => {
+        const pubId = scene.publicationId || "Other";
+        if (!groups[pubId]) {
+          groups[pubId] = [];
+        }
+        groups[pubId].push(scene);
+      });
+
+      console.log("Groups created:", Object.keys(groups));
+
+      // Keys of groups
+      const groupKeys = Object.keys(groups);
+
+      // Sort keys
+      groupKeys.sort((a, b) => {
+        if (a === "Other") return 1;
+        if (b === "Other") return -1;
+        // Compare years if available
+        const artA = articlesMap[a];
+        const artB = articlesMap[b];
+        if (artA && artB) {
+          // Sort by year descending (newest first)
+          return (artB.year || 0) - (artA.year || 0);
+        }
+        return 0; // Keep current order if year not available
+      });
 
 
-    for (const key of groupKeys) {
-      const groupScenes = groups[key];
+      for (const key of groupKeys) {
+        const groupScenes = groups[key];
 
-      // Create Group Container
-      const groupDiv = document.createElement("div");
-      groupDiv.className = "publication-group header-content-container"; // Reusing header-content-container for consistent style if desired, or just publication-group
-      // Overriding or combining:
-      groupDiv.classList.remove("header-content-container");
-      groupDiv.classList.add("publication-group");
+        // Create Group Container
+        const groupDiv = document.createElement("div");
+        groupDiv.className = "publication-group header-content-container"; // Reusing header-content-container for consistent style if desired, or just publication-group
+        // Overriding or combining:
+        groupDiv.classList.remove("header-content-container");
+        groupDiv.classList.add("publication-group");
 
 
-      // Header
-      const headerDiv = document.createElement("div");
-      headerDiv.className = "publication-header";
+        // Header
+        const headerDiv = document.createElement("div");
+        headerDiv.className = "publication-header";
 
-      if (key !== "Other" && articlesMap[key]) {
-        const article = articlesMap[key];
+        if (key !== "Other" && articlesMap[key]) {
+          const article = articlesMap[key];
 
-        const titleDiv = document.createElement("div");
-        titleDiv.className = "publication-title";
-        titleDiv.textContent = article.title;
-        headerDiv.appendChild(titleDiv);
+          const titleDiv = document.createElement("div");
+          titleDiv.className = "publication-title";
+          titleDiv.textContent = article.title;
+          headerDiv.appendChild(titleDiv);
 
-        const metaDiv = document.createElement("div");
-        metaDiv.className = "publication-meta";
+          const metaDiv = document.createElement("div");
+          metaDiv.className = "publication-meta";
 
-        // Authors
-        const authors = article.authors.join(", ");
-        const authorsDiv = document.createElement("div");
-        authorsDiv.textContent = authors;
-        metaDiv.appendChild(authorsDiv);
+          // Authors
+          if (article.authors) {
+            const authors = Array.isArray(article.authors) ? article.authors.join(", ") : article.authors;
+            const authorsDiv = document.createElement("div");
+            authorsDiv.textContent = authors;
+            metaDiv.appendChild(authorsDiv);
+          }
 
-        // Pub info
-        const pubInfoDiv = document.createElement("div");
-        pubInfoDiv.style.fontStyle = "italic";
-        pubInfoDiv.textContent = `${article.published} (${article.year})`;
-        metaDiv.appendChild(pubInfoDiv);
+          // Pub info
+          if (article.published) {
+            const pubInfoDiv = document.createElement("div");
+            pubInfoDiv.style.fontStyle = "italic";
+            pubInfoDiv.textContent = `${article.published} ${article.year ? '(' + article.year + ')' : ''}`;
+            metaDiv.appendChild(pubInfoDiv);
+          }
 
-        // Link button (if specific link exists, maybe to PDF or similar? article object has links array usually)
-        // Or we just link to the main page / anchor?
-        // User said: "direkt weiterverlinken" (link directly)
-        // If article has a DOI or PDF link in `links`, use that? Or link to the project page?
-        // Usually articles.json has links like [{name: "Paper", url: "..."}].
-        // Let's check articles.json content again.
+          // Links
+          if (article.links && article.links.length > 0) {
+            const linksContainer = document.createElement("div");
+            linksContainer.style.marginTop = "5px";
+            article.links.forEach(link => {
+              if (link.name === "Live Preview") return;
+              const a = document.createElement("a");
+              a.href = link.link;
+              a.className = "publication-link-btn";
+              a.textContent = link.name;
+              a.target = "_blank";
+              a.style.marginRight = "10px";
+              linksContainer.appendChild(a);
+            });
+            metaDiv.appendChild(linksContainer);
+          }
 
-        // Let's assume we want to link to something. If `links` is empty, maybe no link.
-        // Or maybe link to an anchor on the main page?
-        // User: "Die information sollen aus @articles entnommen werden"
-        // Let's check if there are links.
-        /*
-        "links": [
-            {
-               "name": "Paper",
-               "url": "..."
-            }
-        ]
-        */
-        // I'll iterate links and add buttons.
-        if (article.links && article.links.length > 0) {
-          const linksContainer = document.createElement("div");
-          linksContainer.style.marginTop = "5px";
-          article.links.forEach(link => {
-            if (link.name === "Live Preview") return;
-            const a = document.createElement("a");
-            a.href = link.link;
-            a.className = "publication-link-btn";
-            a.textContent = link.name;
-            a.target = "_blank";
-            a.style.marginRight = "10px";
-            linksContainer.appendChild(a);
-          });
-          metaDiv.appendChild(linksContainer);
-
-          // Also if there is a 'website' or similar. 
-          // Looking at attachment `articles.json`, `links` array is empty in the snippet provided.
-          // But I should code it robustly.
+          headerDiv.appendChild(metaDiv);
         } else {
-          // Maybe link to the anchor on the homepage?
-          // Assuming homepage is ../index.html
-          // ID is article.id
-          /*
-          const a = document.createElement("a");
-          a.href = `../index.html#${article.id}`;
-          a.className = "publication-link-btn";
-          a.textContent = "More Info";
-          a.target = "_blank"; // maybe?
-          metaDiv.appendChild(a);
-          */
+          // Other / Uncategorized
+          const titleDiv = document.createElement("div");
+          titleDiv.className = "publication-title";
+          titleDiv.textContent = "Miscellaneous";
+          headerDiv.appendChild(titleDiv);
         }
 
-        headerDiv.appendChild(metaDiv);
-      } else {
-        // Other / Uncategorized
-        const titleDiv = document.createElement("div");
-        titleDiv.className = "publication-title";
-        titleDiv.textContent = "Miscellaneous";
-        headerDiv.appendChild(titleDiv);
+        groupDiv.appendChild(headerDiv);
+
+        // Splats Container
+        const splatsDiv = document.createElement("div");
+        splatsDiv.className = "publication-splats";
+
+        // Render Scenes
+        for (let i = 0; i < groupScenes.length; i++) {
+          const scene = groupScenes[i];
+          let newScene = sceneTemplate.cloneNode(true);
+          newScene.classList.remove("hidden");
+          newScene.removeAttribute("id");
+
+          newScene.querySelector("#scene-name").textContent = scene.name;
+          newScene.querySelector("#scene-image").src = scene.img;
+
+          // Helper for buttons
+          const attachBtn = (id, mode) => {
+            const btn = newScene.querySelector(id);
+            if (btn) {
+              btn.addEventListener("click", () => {
+                openDemo(mode, scene.fileName, scene.sceneSettings, scene.viewerSetttings);
+              });
+            }
+          };
+
+          attachBtn("#scene-btn-static", "static");
+          attachBtn("#scene-btn-ar", "ar");
+          attachBtn("#scene-btn-vr", "vr");
+
+          splatsDiv.appendChild(newScene);
+        }
+
+        groupDiv.appendChild(splatsDiv);
+        container.appendChild(groupDiv);
       }
-
-      groupDiv.appendChild(headerDiv);
-
-      // Splats Container
-      const splatsDiv = document.createElement("div");
-      splatsDiv.className = "publication-splats";
-
-      // Render Scenes
-      for (let i = 0; i < groupScenes.length; i++) {
-        const scene = groupScenes[i];
-        let newScene = sceneTemplate.cloneNode(true);
-        newScene.classList.remove("hidden");
-        // newScene.id = ""; // clear ID to avoid duplicates? cloneNode copies ID. 
-        // Ideally should remove ID, but it's okay for style.
-        newScene.removeAttribute("id");
-
-        newScene.querySelector("#scene-name").textContent = scene.name;
-        newScene.querySelector("#scene-image").src = scene.img;
-        newScene.querySelector("#scene-btn-static").addEventListener("click", () => {
-          openDemo("static", scene.fileName, scene.sceneSettings, scene.viewerSetttings);
-        });
-        newScene.querySelector("#scene-btn-ar").addEventListener("click", () => {
-          openDemo("ar", scene.fileName, scene.sceneSettings, scene.viewerSetttings);
-        });
-        newScene.querySelector("#scene-btn-vr").addEventListener("click", () => {
-          openDemo("vr", scene.fileName, scene.sceneSettings, scene.viewerSetttings);
-        });
-
-        splatsDiv.appendChild(newScene);
+    } catch (err) {
+      console.error("Error building scenes:", err);
+      // Optional: Display error on page
+      if (container) {
+        const errorDiv = document.createElement("div");
+        errorDiv.style.color = "red";
+        errorDiv.style.textAlign = "center";
+        errorDiv.style.padding = "20px";
+        errorDiv.textContent = "Error loading scenes. Please check the console for details.";
+        container.appendChild(errorDiv);
       }
-
-      groupDiv.appendChild(splatsDiv);
-      container.appendChild(groupDiv);
     }
 
   }
