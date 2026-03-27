@@ -366,16 +366,66 @@ function buildTabs(articleCount) {
   }
 }
 
+// async function buildNews() {
+//   const data = await getJsonData("files/news.json");
+//   const newsContainer = document.getElementById("news");
+//   const newsHTMLData = data.news
+//     .map(
+//       (newsItem) =>
+//         ` <li><span class='time'>[${newsItem.date}]</span> <span class='message'>${newsItem.message}</span></li>`,
+//     )
+//     .join("");
+//   newsContainer.innerHTML = newsHTMLData;
+// }
+
 async function buildNews() {
-  const data = await getJsonData("files/news.json");
-  const newsContainer = document.getElementById("news");
-  const newsHTMLData = data.news
-    .map(
-      (newsItem) =>
-        ` <li><span class='time'>[${newsItem.date}]</span> <span class='message'>${newsItem.message}</span></li>`,
-    )
-    .join("");
-  newsContainer.innerHTML = newsHTMLData;
+
+  const baseUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSG6mCwqtZi_tRQgY4o6avrGGgCo736FgaX7gQKt3Og3kHI30Yf5QuLuP2XRi08OSEsVSLAODFjYRVx/pub?gid=0&single=true&output=csv";
+  
+  //Cache Buster!
+  const cacheBuster = `&t=${new Date().getTime()}`;
+  const sheetUrl = baseUrl + cacheBuster;
+
+  try {
+    const response = await fetch(sheetUrl);
+    const csvText = await response.text();
+    
+    // 2. CSV in Zeilen trennen und Header-Zeile entfernen
+    const rows = csvText.split("\n").slice(1);
+    
+    // 3. Daten in das Format konvertieren, das dein altes Skript erwartet
+    const newsData = rows.map(row => {
+      // Teilt die Spalten sicher auf
+      const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+      
+      // Funktion zum sauberen Entfernen von umschließenden Anführungszeichen
+      const clean = (str) => {
+        if (!str) return "";
+        return str.trim()
+                  .replace(/^"/, '')  // Entfernt " am Anfang
+                  .replace(/"$/, '')  // Entfernt " am Ende
+                  .replace(/""/g, '"'); // Repariert doppelte Anführungszeichen (CSV-Standard)
+      };
+
+      return {
+        date: clean(columns[0]),
+        message: clean(columns[1])
+      };
+    }).filter(item => item.date);
+
+
+    const newsContainer = document.getElementById("news");
+    const newsHTMLData = newsData
+      .map(
+        (newsItem) =>
+          `<li><span class='time'>[${newsItem.date}]</span> <span class='message'>${newsItem.message}</span></li>`,
+      )
+      .join("");
+      
+    newsContainer.innerHTML = newsHTMLData;
+  } catch (error) {
+    console.error("News konnten nicht geladen werden:", error);
+  }
 }
 
 function scrollBtnBehaviour() {
