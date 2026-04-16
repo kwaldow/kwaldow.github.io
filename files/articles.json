@@ -19,8 +19,8 @@
       "abstract": "Multi-camera dynamic Augmented Reality (AR) applications require a camera pose estimation to leverage individual information from each camera in one common system. This can be achieved by combining contextual information, such as markers or objects, across multiple views. While commonly cameras are calibrated in an initial step or updated through the constant use of markers, another option is to leverage information already present in the scene, like known objects. Another downside of marker-based tracking is that markers have to be tracked inside the field-of-view (FoV) of the cameras. To overcome these limitations, we propose a constant dynamic camera pose estimation leveraging spatiotemporal FoV overlaps of known objects on the fly. To achieve that, we enhance the state-of-the-art object pose estimator to update our spatiotemporal scene graph, enabling a relation even among non-overlapping FoV cameras. To evaluate our approach, we introduce a multi-camera, multi-object pose estimation dataset with temporal FoV overlap, including static and dynamic cameras. Furthermore, in FoV overlapping scenarios, we outperform the state-of-the-art on the widely used YCB-V and T-LESS dataset in camera pose accuracy. Our performance on both previous and our proposed datasets validates the effectiveness of our marker-less approach for AR applications. The code and dataset are available on https://github.com/roth-hex-lab/IEEE-VR-2026-MultiCam.",
       "links": [
         {
-          "name": "Preprint",
-          "link": "https://www.researchgate.net/publication/403112659_MultiCam_On-the-fly_Multi-Camera_Pose_Estimation_Using_Spatiotemporal_Overlaps_of_Known_Objects"
+          "name": "IEEE TVCG",
+          "link": "https://ieeexplore.ieee.org/document/11458691"
         }
       ],
       "award": false,
@@ -59,7 +59,7 @@
         },
         {
           "name": "Preprint",
-          "link": "#"
+          "link": "https://www.researchgate.net/publication/403758980_VIRTOSHA_-A_VR_Training_Simulation_for_Osteosynthesis_Procedures_with_Force_Feedback_and_Tissue_Simulation_preprint"
         }
       ],
       "award": false,
@@ -120,8 +120,12 @@
       "abstract": "Creating a convincing sense of embodiment is vital for Virtual Reality (VR), yet realistic avatar appearance remains challenging. One promising solution is Pass-Through Embodiment (PTE), which visualizes the user’s real body, but depth sensor limitations create visual artifacts at boundaries. Therefore, we evaluated three edge techniques: soft gradient, hard mask, and a novel dithering technique. Combined with a unique real mirror paradigm, we assessed their impact on presence and embodiment. Results show dithered and soft edges significantly outperform hard masks while dithering provides a computationally efficient, perceptually comparable alternative to smooth blending for enhancing PTE in immersive environments.",
       "links": [
         {
-          "name": "Preprint",
-          "link": "https://www.researchgate.net/publication/400345934_Evaluating_Cutout_Rendering_Techniques_for_Pass-Through_Embodiment_Using_a_Real-Mirror_Metaphor"
+          "name": "Video",
+          "link": "https://youtu.be/ZgshTuBqDr8"
+        },
+        {
+          "name": "IEEE TVCG",
+          "link": "https://ieeexplore.ieee.org/document/11475224"
         }
       ],
       "award": false,
@@ -156,8 +160,8 @@
           "link": "https://github.com/DavidMertTH/AligningRealities"
         },
         {
-          "name": "Preprint",
-          "link": "https://www.researchgate.net/publication/400386706_Aligning_Realities_A_Registration_Pipeline_for_Arbitrary_Objects_in_Mixed_Reality_Using_Controller-Based_Point_Selection"
+          "name": "IEEE",
+          "link": "https://ieeexplore.ieee.org/document/11457542"
         }
       ],
       "award": false,
@@ -182,6 +186,10 @@
       "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
       "abstract": "Embodiment is fundamental to immersive VR, yet traditional avatars often suffer from perceptual mismatches. Pass-Through Embodiment (PTE) addresses this by integrating a stereoscopic live video feed of the user's body into the virtual environment. By combining depth-based segmentation with video-see-through streams, PTE provides a high-fidelity, photon-captured representation. We present the first public PTE demonstration, allowing users to perceive themselves while interacting with diverse virtual scenes. Participants can evaluate how their body, different edge rendering, and environmental contexts affect visual coherence in real-time. This demonstrates how PTE facilitates a naturally anchored sense of embodiment , bridging physical and virtual worlds through natural interaction.",
       "links": [
+        {
+          "name": "Video",
+          "link": "https://youtu.be/PGQpbg4mNK4"
+        },
         {
           "name": "Preprint",
           "link": "https://doi.org/10.13140/RG.2.2.31676.71041"
