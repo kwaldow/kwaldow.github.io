@@ -24,7 +24,7 @@
         }
       ],
       "award": false,
-      "bibtex": false,
+      "bibtex": true,
       "keywords": [
         "Camera pose estimation", "bundle adjustment", "augmented reality", "multi-view 6D object pose"
       ]
@@ -50,7 +50,8 @@
         "Arnulph Fuhrmann",
         "Björn Krüger"
       ],
-      "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
+ 
+      "published": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "abstract": "We introduce VIRTOSHA, a work-in-progress VR training system for osteosynthesis procedures, which includes realistic tissue simulation, haptic feedback, improved hand tracking and an auhtoring tool. The current implementation focuses on fibula surgery as an initial use case.",
       "links": [
         {
@@ -90,7 +91,7 @@
         "Kristoffer Waldow",
         "Arnulph Fuhrmann"
       ],
-      "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
+      "published": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "abstract": "Photorealistic human representation is a key factor for embodimentand presence in Virtual and Social Virtual Reality. While recentapproaches such as 3D Gaussian Splatting enable high-quality re-constructions, dynamic human capture remains challenging due tothe need for synchronized multi-view data. Existing capture sys-tems are often costly and inaccessible, limiting reproducibility anddataset availability. We present a low-cost, reproducible multi-viewcapture rig consisting of 68 synchronized Raspberry Pi cameras arranged for full 360° coverage. The system enables reliable acquisition of dynamic human data suitable for 3D Gaussian Splatting and VR applications.",
       "links": [
         {
@@ -129,7 +130,7 @@
         }
       ],
       "award": false,
-      "bibtex": false,
+      "bibtex": true,
       "keywords": [
         "Pass-Through Embodiment",
         "Rendering",
@@ -165,7 +166,7 @@
         }
       ],
       "award": false,
-      "bibtex": false,
+      "bibtex": true,
       "keywords": [
         "Mixed Reality",
         "registration pipeline",
@@ -183,7 +184,7 @@
       "image": "imgs/PTE_Demo.png",
       "title": "Seeing the Real Me: Experiencing Real-Body Pass-Through Embodiment and Interaction",
       "authors": ["Kristoffer Waldow", "Arnulph Fuhrmann", "Daniel Roth"],
-      "published": "Proceedings of 33th IEEE Virtual Reality Conference (VR ’26)",
+      "published": "2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "abstract": "Embodiment is fundamental to immersive VR, yet traditional avatars often suffer from perceptual mismatches. Pass-Through Embodiment (PTE) addresses this by integrating a stereoscopic live video feed of the user's body into the virtual environment. By combining depth-based segmentation with video-see-through streams, PTE provides a high-fidelity, photon-captured representation. We present the first public PTE demonstration, allowing users to perceive themselves while interacting with diverse virtual scenes. Participants can evaluate how their body, different edge rendering, and environmental contexts affect visual coherence in real-time. This demonstrates how PTE facilitates a naturally anchored sense of embodiment , bridging physical and virtual worlds through natural interaction.",
       "links": [
         {
@@ -281,7 +282,7 @@
       "image": "imgs/DimSplat.png",
       "title": "DimSplat: A Real-Time Diminished Reality System for Revisiting Environments Using Gaussian Splats in Mobile WebXR",
       "authors": ["Kristoffer Waldow", "Jonas Scholz", "Arnulph Fuhrmann"],
-      "published": "Proceedings of 32th IEEE Virtual Reality Conference (VR ’25)",
+      "published": "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "abstract": "Diminished Reality (DR) allows for the selective removal or transformation of real-world objects from a user’s feld of view. In certain cases, it becomes essential to revisit environments and observe them in their original state. While Smartphone and Web-based approaches provide intuitive and convenient AR platforms, it also faces challenges like limited resources. This work introduces a DR system using Gaussian splats for real-time object removal on WebXR-enabled devices. We achieve up to 60 FPS while maintaining high visual fdelity, validated with different image quality metrics, offering a scalable solution for revisiting and manipulating temporally altered environments.",
       "links": [
         {
@@ -376,7 +377,7 @@
       "image": "imgs/EnhanceFace.png",
       "title": "Facial Feature Enhancement for Immersive Real-Time Avatar-Based Sign Language Communication using Personalized CNNs",
       "authors": ["Kristoffer Waldow", "Arnulph Fuhrmann", "Daniel Roth"],
-      "published": "Proceedings of 31th IEEE Virtual Reality Conference (VR ’24)",
+      "published": "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "abstract": "Facial recognition is crucial in sign language communication. Especially for virtual reality and avatar-based communication, increased facial features have the potential to integrate the deaf and hard-of-hearing community to improve speech comprehension and empathy. But, current methods lack precision in capturing nuanced expressions. To address this, we present a real-time solution that utilizes personalized Convolutional Neural Networks (CNNs) to capture intricate facial details, such as tongue movement and individual puffed cheeks. Our system's classification models offer easy expansion and integration into existing facial recognition systems via UDP network broadcasting.",
       "links": [
         {
@@ -408,7 +409,7 @@
         "Daniel Roth",
         "Marc Erich Latoschik"
       ],
-      "published": "Proceedings of 31th IEEE Virtual Reality Conference (VR ’24)",
+      "published": "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "abstract": "Depth perception is essential for our daily experiences, aiding in orientation and interaction with our surroundings. Virtual Reality allows us to decouple such depth cues mainly represented through binocular disparity and motion parallax. Dealing with fully-mesh-based rendering methods these cues are not problematic as they originate from the object's underlying geometry. However, manipulating motion parallax, as seen in stereoscopic imposter-based rendering, raises multiple perceptual questions. Therefore, we conducted a user experiment to investigate how varying object sizes affect such visual errors and perceived 3-dimensionality, revealing an interestingly significant negative correlation and new assumptions about visual quality.",
       "links": [
         {
@@ -555,7 +556,7 @@
       "image": "imgs/Ventriloquism.png",
       "title": "Investigating the Influence of Sound Source Visualization on the Ventriloquism Effect in an Auralized Virtual Reality Environment",
       "authors": ["Nigel Frangenberg", "Kristoffer Waldow", "Arnulph Fuhrmann"],
-      "published": "Proceedings of 28th IEEE Virtual Reality Conference (VR ’21), Lisbon, Portugal",
+      "published": "2021 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
       "abstract": "The ventriloquism effect (VQE) describes the illusion that the puppeteer’s voice seems to come out of the puppet’s mouth. This effect can even be observed in virtual reality (VR) when a spatial discrepancy between the auditory and visual component occurs. However, previous studies have never fully investigated the impact of visual quality on VQE. Therefore, we conducted an exploratory experiment to investigate the influence of the visual appearance of a loudspeaker on the VQE in VR. Our evaluation yields significant differences in the vertical plane which leads to the assumption that the less realistic model had a stronger VQE than the realistic one.",
       "links": [
         {
