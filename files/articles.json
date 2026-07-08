@@ -64,7 +64,7 @@
         }
       ],
       "award": false,
-      "bibtex": false,
+      "bibtex": true,
       "keywords": [
         "Virtual Reality (VR)",
         "training",
@@ -100,7 +100,7 @@
         }
       ],
       "award": false,
-      "bibtex": false,
+      "bibtex": true,
       "keywords": [
         "multi-view capture",
         "photorealistic reconstruction",
@@ -229,7 +229,7 @@
         }
       ],
       "award": false,
-      "bibtex": false,
+      "bibtex": true,
       "keywords": [
         "3D Gaussian Splatting",
         "Laser Scanning",
@@ -497,6 +497,7 @@
           "link": "https://dl.acm.org/doi/abs/10.1145/3529190.3529202"
         }
       ],
+      "bibtex": true,
       "keywords": [
         "sign language",
         "inclusive virtual humans",
@@ -541,6 +542,7 @@
           "link": "https://aclanthology.org/2021.mtsummit-at4ssl.5/"
         }
       ],
+      "bibtex": true,
       "keywords": [
         "sign language",
         "inclusive virtual humans",
@@ -568,6 +570,7 @@
           "link": "https://ieeexplore.ieee.org/document/9419101"
         }
       ],
+      "bibtex": true,
       "keywords": [
         "ventriloquism effect",
         "sound source visualization",
@@ -595,6 +598,7 @@
           "link": "https://ieeexplore.ieee.org/document/9090404"
         }
       ],
+      "bibtex": true,
       "keywords": [
         "automatic speech recognition",
         "Deaf communication",
