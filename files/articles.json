@@ -201,7 +201,7 @@
         }
       ],
       "award": false,
-      "bibtex": false,
+      "bibtex": true,
       "keywords": [
         "Pass-Through Embodiment",
         "real-body representation",
