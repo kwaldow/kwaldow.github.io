@@ -1,5 +1,31 @@
 {
   "articles": [
+         {
+      "id": "2026_Optimization_IK",
+      "category": "publications",
+      "year": 2026,
+      "tags": ["full"],
+      "image": "imgs/Optimization_IK.png",
+      "title": "An Optimization-Based Inverse Kinematics Solver for Safe Human-Robot Collaboration in XR Environments",
+      "authors": [
+        "Merle Meyer",
+        "Kristoffer Waldow", 
+        "Arnulph Fuhrmann"
+      ],
+      "published": "Virtuelle und Erweiterte Realität – 23. Workshop der GI-Fachgruppe VR/AR, 2026",
+      "abstract": "Inverse kinematics (IK) plays a crucial role in Virtual/Mixed Reality (VR/MR) and Human–Robot Interaction (HRI), especially when users directly manipulate target positions for physical robots within immersive environments. Traditional analytical or heuristic IK solvers, such as FABRIK, offer efficient iterative solutions but often struggle with complex joint constraints, non-linear link geometries, and real-world mechanical limitations. In this work, we present a custom optimization-based IK solver for a multi-joint, 6 DoF robot integrated into VR/MR systems. We report preliminary findings on positional and rotational accuracy, compare our algorithm with established IK approaches, and outline future extensions for the collision avoidance and path prediction.",
+      "links": [
+        {
+          "name": "Preprint",
+          "link": "https://www.researchgate.net/publication/414881658_An_Optimization-Based_Inverse_Kinematics_Solver_for_Safe_Human-Robot_Collaboration_in_XR_Environments"
+        }
+      ],
+      "award": false,
+      "bibtex": true,
+      "keywords": [
+        "Camera pose estimation", "bundle adjustment", "augmented reality", "multi-view 6D object pose"
+      ]
+    },
      {
       "id": "2026_MultiCam",
       "category": "publications",
